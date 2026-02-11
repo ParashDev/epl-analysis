@@ -24,6 +24,9 @@ data/raw/
 # Claude Code local settings
 .claude/
 
+# Skill templates (dev only)
+skill/
+
 # OS
 .DS_Store
 Thumbs.db
