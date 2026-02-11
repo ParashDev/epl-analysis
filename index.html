@@ -1,0 +1,1475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Does Money Buy Points? -- EPL Data Analysis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Source+Serif+4:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            base: '#0f0f1a',
+            surface: '#1a1a2e',
+            'surface-hover': '#252540',
+            chalk: '#f0ede6',
+            accent: '#52b788',
+            warn: '#e76f51',
+            gold: '#d4a843',
+            blue: '#4895ef',
+          },
+          fontFamily: {
+            body: ['"DM Sans"', 'sans-serif'],
+            heading: ['"Source Serif 4"', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'DM Sans', sans-serif; background: #0f0f1a; color: #f0ede6; }
+    .tag { font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #52b788; }
+    .section-border { border-top: 1px solid rgba(255,255,255,0.06); }
+    .nav-link { border-bottom: 2px solid transparent; transition: border-color 0.2s; }
+    .nav-link:hover, .nav-link.active { border-color: #52b788; color: #52b788; }
+    .stat-card { background: linear-gradient(135deg, #1a1a2e 0%, #252540 100%); border: 1px solid rgba(255,255,255,0.06); }
+    .chart-box { background: #1a1a2e; border: 1px solid rgba(255,255,255,0.06); }
+    table th { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em; color: #6b7280; }
+    table td { font-size: 0.85rem; }
+    .pos-badge { width: 28px; height: 28px; display: inline-flex; align-items: center; justify-content: center; border-radius: 6px; font-weight: 700; font-size: 0.75rem; }
+    .pos-cl { background: rgba(82,183,136,0.15); color: #52b788; }
+    .pos-el { background: rgba(72,149,239,0.15); color: #4895ef; }
+    .pos-rel { background: rgba(231,111,81,0.15); color: #e76f51; }
+    .pos-mid { background: rgba(255,255,255,0.05); color: #6b7280; }
+    @keyframes pulse-live { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+    .live-dot { width: 8px; height: 8px; border-radius: 50%; background: #52b788; animation: pulse-live 2s infinite; display: inline-block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+    .fade-in { animation: fadeIn 0.5s ease-out forwards; }
+    .progress-bar { height: 4px; background: #252540; border-radius: 2px; overflow: hidden; }
+    .progress-fill { height: 100%; background: #52b788; border-radius: 2px; transition: width 0.3s; }
+    #loading { display: flex; } #dashboard { display: none; } #error-msg { display: none; }
+  </style>
+</head>
+<body class="min-h-screen">
+
+  <!-- NAV -->
+  <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-base/80 backdrop-blur-md border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between h-14">
+      <div class="flex items-center gap-3">
+        <span class="font-heading font-bold text-lg text-chalk" id="nav-season">EPL 25/26</span>
+        <span id="live-badge" class="hidden items-center gap-1.5 text-xs font-bold text-accent uppercase">
+          <span class="live-dot"></span> LIVE
+        </span>
+      </div>
+      <div class="hidden md:flex items-center gap-6 text-sm text-gray-400">
+        <a href="#brief" class="nav-link py-4">Brief</a>
+        <a href="#raw-data" class="nav-link py-4">Data</a>
+        <a href="#pipeline" class="nav-link py-4">Pipeline</a>
+        <a href="#dashboard-section" class="nav-link py-4">Dashboard</a>
+        <a href="#money-section" class="nav-link py-4">Money</a>
+        <a href="#players-section" class="nav-link py-4">Players</a>
+        <a href="#takeaway" class="nav-link py-4">Takeaway</a>
+      </div>
+      <div id="last-updated" class="hidden text-xs text-gray-500"></div>
+    </div>
+  </nav>
+
+  <!-- LOADING STATE -->
+  <div id="loading" class="items-center justify-center min-h-screen">
+    <p class="text-gray-400 text-lg">Loading dashboard data...</p>
+  </div>
+
+  <!-- ERROR STATE -->
+  <div id="error-msg" class="items-center justify-center min-h-screen text-center px-4">
+    <div>
+      <p class="text-warn text-xl font-bold mb-2">Failed to load data</p>
+      <p class="text-gray-400">Make sure you are serving this file via a local server:</p>
+      <code class="block mt-2 text-accent text-sm">python -m http.server 8000</code>
+    </div>
+  </div>
+
+  <!-- DASHBOARD CONTENT -->
+  <div id="dashboard" class="max-w-7xl mx-auto px-4 sm:px-6 pt-20 pb-16">
+
+    <!-- SECTION 1: THE BRIEF -->
+    <section id="brief" class="mb-20">
+      <p class="tag mb-3">Case Study 001</p>
+      <h1 class="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-chalk leading-tight mb-6" id="hero-title">
+        Does Money Buy Points<br>in the Premier League?
+      </h1>
+      <p class="text-gray-400 text-lg max-w-2xl mb-8" id="brief-text"></p>
+      <div class="flex flex-wrap gap-2" id="tech-pills"></div>
+    </section>
+
+    <!-- SECTION 2: THE RAW DATA -->
+    <section id="raw-data" class="section-border pt-16 mb-20">
+      <p class="tag mb-3">Section 01</p>
+      <h2 class="font-heading font-semibold text-2xl text-chalk mb-4">The Raw Data</h2>
+      <p class="text-gray-500 text-sm mb-8 max-w-3xl">Three independent data sources, each with their own schema, naming conventions, and quality issues. The job of the pipeline is to normalize all of this into one consistent dataset.</p>
+
+      <!-- SOURCE CARDS -->
+      <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wide mb-4">Data Sources</h3>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
+        <div class="chart-box rounded-lg p-5">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="w-2 h-2 rounded-full bg-accent"></span>
+            <p class="text-chalk font-medium text-sm">football-data.co.uk</p>
+          </div>
+          <p class="text-gray-500 text-xs mb-3">Historical match results as CSV files. One file per season per league.</p>
+          <div class="space-y-2 text-xs">
+            <div class="flex justify-between"><span class="text-gray-500">Format</span><span class="text-gray-300">CSV (UTF-8 with BOM)</span></div>
+            <div class="flex justify-between"><span class="text-gray-500">Columns</span><span class="text-gray-300">107 - 133 per season</span></div>
+            <div class="flex justify-between"><span class="text-gray-500">Useful columns</span><span class="text-accent">24 of 133</span></div>
+            <div class="flex justify-between"><span class="text-gray-500">Coverage</span><span class="text-gray-300">4 seasons (2022-26)</span></div>
+            <div class="flex justify-between"><span class="text-gray-500">Team names</span><span class="text-warn">Abbreviated</span></div>
+          </div>
+          <p class="text-gray-600 text-xs mt-3 italic">Man United, Nott'm Forest, Wolves, Tottenham</p>
+        </div>
+
+        <div class="chart-box rounded-lg p-5">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="w-2 h-2 rounded-full bg-blue"></span>
+            <p class="text-chalk font-medium text-sm">Fantasy Premier League API</p>
+          </div>
+          <p class="text-gray-500 text-xs mb-3">Live player stats, prices, and fixture details from the official FPL game.</p>
+          <div class="space-y-2 text-xs">
+            <div class="flex justify-between"><span class="text-gray-500">Format</span><span class="text-gray-300">JSON REST API</span></div>
+            <div class="flex justify-between"><span class="text-gray-500">Endpoints used</span><span class="text-gray-300">bootstrap-static, fixtures</span></div>
+            <div class="flex justify-between"><span class="text-gray-500">Players</span><span class="text-blue" id="raw-fpl-players">817</span></div>
+            <div class="flex justify-between"><span class="text-gray-500">Key fields</span><span class="text-gray-300">price, goals, assists, minutes</span></div>
+            <div class="flex justify-between"><span class="text-gray-500">Team names</span><span class="text-warn">Different abbreviations</span></div>
+          </div>
+          <p class="text-gray-600 text-xs mt-3 italic">Man Utd, Spurs, Wolves, Nott'm Forest</p>
+        </div>
+
+        <div class="chart-box rounded-lg p-5">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="w-2 h-2 rounded-full bg-gold"></span>
+            <p class="text-chalk font-medium text-sm">Understat</p>
+          </div>
+          <p class="text-gray-500 text-xs mb-3">Expected goals (xG) model data for matches, teams, and players.</p>
+          <div class="space-y-2 text-xs">
+            <div class="flex justify-between"><span class="text-gray-500">Format</span><span class="text-gray-300">Python API wrapper</span></div>
+            <div class="flex justify-between"><span class="text-gray-500">Granularity</span><span class="text-gray-300">Match, team, and player level</span></div>
+            <div class="flex justify-between"><span class="text-gray-500">Key metrics</span><span class="text-gray-300">xG, npxG, xA, PPDA</span></div>
+            <div class="flex justify-between"><span class="text-gray-500">Rate limiting</span><span class="text-gray-300">Required (1s delay)</span></div>
+            <div class="flex justify-between"><span class="text-gray-500">Team names</span><span class="text-warn">Yet another format</span></div>
+          </div>
+          <p class="text-gray-600 text-xs mt-3 italic">Wolverhampton Wanderers, Tottenham, West Ham</p>
+        </div>
+      </div>
+
+      <!-- THE NAME PROBLEM -->
+      <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wide mb-4">The Name Problem</h3>
+      <p class="text-gray-500 text-xs mb-4 max-w-2xl">The same team has a different name in every source. Merging data across sources requires a canonical name map. One mismatch and an entire team disappears from the analysis.</p>
+      <div class="chart-box rounded-lg overflow-hidden mb-10">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left min-w-[500px]">
+            <thead>
+              <tr class="border-b border-white/5 bg-black/20">
+                <th class="px-4 py-2.5 text-xs text-gray-500 font-bold uppercase">Canonical Name</th>
+                <th class="px-4 py-2.5 text-xs text-gray-500 font-bold uppercase">football-data.co.uk</th>
+                <th class="px-4 py-2.5 text-xs text-gray-500 font-bold uppercase">FPL API</th>
+                <th class="px-4 py-2.5 text-xs text-gray-500 font-bold uppercase">Understat</th>
+              </tr>
+            </thead>
+            <tbody class="text-xs">
+              <tr class="border-b border-white/5"><td class="px-4 py-2 text-accent font-medium">Manchester United</td><td class="px-4 py-2 text-warn">Man United</td><td class="px-4 py-2 text-warn">Man Utd</td><td class="px-4 py-2 text-gray-400">Manchester United</td></tr>
+              <tr class="border-b border-white/5"><td class="px-4 py-2 text-accent font-medium">Tottenham Hotspur</td><td class="px-4 py-2 text-warn">Tottenham</td><td class="px-4 py-2 text-warn">Spurs</td><td class="px-4 py-2 text-warn">Tottenham</td></tr>
+              <tr class="border-b border-white/5"><td class="px-4 py-2 text-accent font-medium">Wolverhampton</td><td class="px-4 py-2 text-warn">Wolves</td><td class="px-4 py-2 text-warn">Wolves</td><td class="px-4 py-2 text-warn">Wolverhampton Wanderers</td></tr>
+              <tr class="border-b border-white/5"><td class="px-4 py-2 text-accent font-medium">Nottingham Forest</td><td class="px-4 py-2 text-warn">Nott'm Forest</td><td class="px-4 py-2 text-warn">Nott'm Forest</td><td class="px-4 py-2 text-gray-400">Nottingham Forest</td></tr>
+              <tr class="border-b border-white/5"><td class="px-4 py-2 text-accent font-medium">Newcastle United</td><td class="px-4 py-2 text-warn">Newcastle</td><td class="px-4 py-2 text-warn">Newcastle</td><td class="px-4 py-2 text-gray-400">Newcastle United</td></tr>
+              <tr><td class="px-4 py-2 text-accent font-medium">West Ham United</td><td class="px-4 py-2 text-warn">West Ham</td><td class="px-4 py-2 text-warn">West Ham</td><td class="px-4 py-2 text-warn">West Ham</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="px-4 py-2 bg-black/20 border-t border-white/5">
+          <p class="text-xs text-gray-600">Solution: <span class="text-gray-400">scripts/config.py</span> holds 3 separate name maps (one per source). Every script normalizes to the canonical form before writing any output.</p>
+        </div>
+      </div>
+
+      <!-- BEFORE / AFTER STATS -->
+      <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wide mb-4">Before vs After Cleaning</h3>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10">
+        <div class="stat-card rounded-lg p-5">
+          <p class="text-gray-400 text-sm mb-1">Raw Columns</p>
+          <p class="text-3xl font-bold text-warn">133</p>
+          <p class="text-xs text-gray-500 mt-1">Widest season (2025-26)</p>
+        </div>
+        <div class="stat-card rounded-lg p-5">
+          <p class="text-gray-400 text-sm mb-1">Cleaned Columns</p>
+          <p class="text-3xl font-bold text-accent">29</p>
+          <p class="text-xs text-gray-500 mt-1">78% reduction</p>
+        </div>
+        <div class="stat-card rounded-lg p-5">
+          <p class="text-gray-400 text-sm mb-1">Betting Columns</p>
+          <p class="text-3xl font-bold text-warn">96+</p>
+          <p class="text-xs text-gray-500 mt-1">7 bookmakers x 3 outcomes x 4+ markets</p>
+        </div>
+        <div class="stat-card rounded-lg p-5">
+          <p class="text-gray-400 text-sm mb-1">Derived Columns</p>
+          <p class="text-3xl font-bold text-blue">5</p>
+          <p class="text-xs text-gray-500 mt-1">result, total_goals, goal_diff, matchday, season</p>
+        </div>
+      </div>
+
+      <!-- RAW TERMINAL PREVIEW -->
+      <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wide mb-4">What the Raw Data Looks Like</h3>
+      <div class="chart-box rounded-lg overflow-hidden mb-4">
+        <div class="flex items-center gap-2 px-4 py-2 bg-black/30 border-b border-white/5">
+          <span class="w-3 h-3 rounded-full bg-warn/60"></span>
+          <span class="w-3 h-3 rounded-full bg-gold/60"></span>
+          <span class="w-3 h-3 rounded-full bg-accent/60"></span>
+          <span class="text-xs text-gray-500 ml-2">head -1 data/raw/matches_2526.csv</span>
+        </div>
+        <div class="p-4 text-xs font-mono text-gray-400 overflow-x-auto leading-relaxed">
+          <p><span class="text-warn">\xEF\xBB\xBF</span>Div,Date,Time,HomeTeam,AwayTeam,<span class="text-chalk">FTHG,FTAG,FTR</span>,HTHG,HTAG,HTR,Referee,HS,AS,HST,AST,HF,AF,HC,AC,HY,AY,HR,AR,<span class="text-warn">B365H,B365D,B365A,BWH,BWD,BWA,IWH,IWD,IWA,PSH,PSD,PSA,WHH,WHD,WHA,VCH,VCD,VCA,MaxH,MaxD,MaxA,AvgH,AvgD,AvgA,B365&gt;2.5,B365&lt;2.5,P&gt;2.5,P&lt;2.5,Max&gt;2.5,Max&lt;2.5,Avg&gt;2.5,Avg&lt;2.5,AHh,B365AHH,B365AHA,PAHH,PAHA,MaxAHH,MaxAHA,AvgAHH,AvgAHA,...</span></p>
+          <p class="mt-2 text-gray-600">// <span class="text-warn">BOM character</span> at byte 0 | <span class="text-chalk">24 useful columns</span> | <span class="text-warn">109 betting columns</span></p>
+        </div>
+      </div>
+
+      <!-- CLEANED TERMINAL PREVIEW -->
+      <div class="chart-box rounded-lg overflow-hidden mb-10">
+        <div class="flex items-center gap-2 px-4 py-2 bg-black/30 border-b border-white/5">
+          <span class="w-3 h-3 rounded-full bg-warn/60"></span>
+          <span class="w-3 h-3 rounded-full bg-gold/60"></span>
+          <span class="w-3 h-3 rounded-full bg-accent/60"></span>
+          <span class="text-xs text-gray-500 ml-2">head -2 data/cleaned/matches_clean.csv</span>
+        </div>
+        <div class="p-4 text-xs font-mono text-gray-400 overflow-x-auto leading-relaxed">
+          <p class="text-accent">date,home_team,away_team,home_goals,away_goals,result,home_shots,away_shots,home_shots_on_target,away_shots_on_target,home_fouls,away_fouls,home_corners,away_corners,home_yellows,away_yellows,home_reds,away_reds,referee,half_time_home,half_time_away,total_goals,goal_difference,matchday,season</p>
+          <p class="text-gray-400 mt-1">2025-08-16,<span class="text-chalk">Manchester United</span>,<span class="text-chalk">Aston Villa</span>,1,2,A,14,11,6,5,10,8,5,3,1,2,0,0,<span class="text-chalk">A Taylor</span>,0,1,3,...</p>
+          <p class="mt-2 text-gray-600">// BOM stripped | dates standardized to ISO 8601 | team names canonical | snake_case headers | betting columns gone</p>
+        </div>
+      </div>
+
+      <!-- DATA QUALITY FLAGS -->
+      <h3 class="text-sm font-bold text-gray-400 uppercase tracking-wide mb-4">Data Quality Issues Found</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div class="chart-box rounded-lg p-4">
+          <div class="flex gap-3 items-start">
+            <span class="tag mt-0.5 shrink-0">Encoding</span>
+            <div>
+              <p class="text-gray-300 text-sm font-medium">UTF-8 BOM prefix on every CSV</p>
+              <p class="text-gray-500 text-xs mt-1">First column header reads <code class="text-warn">\xEF\xBB\xBFDiv</code> instead of <code class="text-accent">Div</code>. Pandas reads it silently but the phantom bytes break column lookups. Fixed with <code class="text-gray-400">encoding='utf-8-sig'</code>.</p>
+            </div>
+          </div>
+        </div>
+        <div class="chart-box rounded-lg p-4">
+          <div class="flex gap-3 items-start">
+            <span class="tag mt-0.5 shrink-0">Dates</span>
+            <div>
+              <p class="text-gray-300 text-sm font-medium">Inconsistent date formats across seasons</p>
+              <p class="text-gray-500 text-xs mt-1">2022-23 uses <code class="text-warn">DD/MM/YYYY</code>, 2024-25 uses <code class="text-warn">DD/MM/YY</code>. A naive parser reads "01/02/25" as February 1st, 0025 AD. Fixed with <code class="text-gray-400">dayfirst=True</code> + explicit format detection.</p>
+            </div>
+          </div>
+        </div>
+        <div class="chart-box rounded-lg p-4">
+          <div class="flex gap-3 items-start">
+            <span class="tag mt-0.5 shrink-0">Schema</span>
+            <div>
+              <p class="text-gray-300 text-sm font-medium">Column counts vary between seasons</p>
+              <p class="text-gray-500 text-xs mt-1">2022-23 has 107 columns, 2025-26 has 133. New betting exchanges get added each year. Fixed by selecting only the 24 columns we need by name, ignoring everything else.</p>
+            </div>
+          </div>
+        </div>
+        <div class="chart-box rounded-lg p-4">
+          <div class="flex gap-3 items-start">
+            <span class="tag mt-0.5 shrink-0">Names</span>
+            <div>
+              <p class="text-gray-300 text-sm font-medium">6 teams have different names in every source</p>
+              <p class="text-gray-500 text-xs mt-1">"Wolves" (football-data) vs "Wolves" (FPL) vs "Wolverhampton Wanderers" (Understat). One unmapped name = one team silently vanishes from merged charts. Fixed via 3 source-specific name maps in config.py.</p>
+            </div>
+          </div>
+        </div>
+        <div class="chart-box rounded-lg p-4">
+          <div class="flex gap-3 items-start">
+            <span class="tag mt-0.5 shrink-0">Whitespace</span>
+            <div>
+              <p class="text-gray-300 text-sm font-medium">Trailing spaces in referee names</p>
+              <p class="text-gray-500 text-xs mt-1"><code class="text-warn">"A Taylor "</code> and <code class="text-accent">"A Taylor"</code> appear as two different referees, inflating unique count from 28 to 35. Fixed with <code class="text-gray-400">.str.strip()</code> on all string columns.</p>
+            </div>
+          </div>
+        </div>
+        <div class="chart-box rounded-lg p-4">
+          <div class="flex gap-3 items-start">
+            <span class="tag mt-0.5 shrink-0">Promoted</span>
+            <div>
+              <p class="text-gray-300 text-sm font-medium">Team roster changes every season</p>
+              <p class="text-gray-500 text-xs mt-1">3 teams get promoted and 3 relegated each year. 2025-26 brought Burnley, Leeds, and Sunderland. The canonical team list in config.py must be updated per season or merges fail silently.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: THE PIPELINE -->
+    <section id="pipeline" class="section-border pt-16 mb-20">
+      <p class="tag mb-3">Section 02</p>
+      <h2 class="font-heading font-semibold text-2xl text-chalk mb-8">The Pipeline</h2>
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mb-8">
+        <div class="stat-card rounded-lg p-4 text-center">
+          <p class="text-accent text-xs font-bold uppercase mb-2">Extract + Clean</p>
+          <p class="text-chalk text-sm font-medium">01_clean.py</p>
+          <p class="text-gray-500 text-xs mt-1">Download CSVs, standardize names, dates</p>
+        </div>
+        <div class="stat-card rounded-lg p-4 text-center">
+          <p class="text-accent text-xs font-bold uppercase mb-2">Enrich (FPL)</p>
+          <p class="text-chalk text-sm font-medium">03_fetch_fpl.py</p>
+          <p class="text-gray-500 text-xs mt-1">Player stats + prices from FPL API</p>
+        </div>
+        <div class="stat-card rounded-lg p-4 text-center">
+          <p class="text-accent text-xs font-bold uppercase mb-2">Enrich (xG)</p>
+          <p class="text-chalk text-sm font-medium">04_fetch_xg.py</p>
+          <p class="text-gray-500 text-xs mt-1">Expected goals from Understat</p>
+        </div>
+        <div class="stat-card rounded-lg p-4 text-center">
+          <p class="text-accent text-xs font-bold uppercase mb-2">Transform</p>
+          <p class="text-chalk text-sm font-medium">02_transform.py</p>
+          <p class="text-gray-500 text-xs mt-1">Merge all sources, aggregate to JSON</p>
+        </div>
+        <div class="stat-card rounded-lg p-4 text-center">
+          <p class="text-accent text-xs font-bold uppercase mb-2">Serve</p>
+          <p class="text-chalk text-sm font-medium">index.html</p>
+          <p class="text-gray-500 text-xs mt-1">Chart.js + Tailwind dashboard</p>
+        </div>
+      </div>
+      <div class="chart-box rounded-lg overflow-hidden">
+        <div class="flex items-center gap-2 px-4 py-2 bg-black/30 border-b border-white/5">
+          <span class="text-xs text-gray-500">scripts/01_clean.py -- team name standardization</span>
+        </div>
+        <pre class="p-4 text-xs font-mono text-gray-400 overflow-x-auto"><code># football-data.co.uk uses abbreviations that break cross-source merges
+FOOTBALL_DATA_NAME_MAP = {
+    "Man United":    "Manchester United",
+    "Nott'm Forest": "Nottingham Forest",
+    "Tottenham":     "Tottenham Hotspur",
+    "Wolves":        "Wolverhampton",
+}
+df['home_team'] = df['HomeTeam'].replace(FOOTBALL_DATA_NAME_MAP)</code></pre>
+      </div>
+    </section>
+
+    <!-- SECTION 4: THE DASHBOARD -->
+    <section id="dashboard-section" class="section-border pt-16 mb-20">
+      <p class="tag mb-3">Section 03</p>
+      <h2 class="font-heading font-semibold text-2xl text-chalk mb-2" id="table-heading">The Dashboard</h2>
+      <p class="text-gray-500 text-sm mb-8" id="dashboard-subtitle"></p>
+
+      <!-- KPI ROW -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+        <div class="stat-card rounded-lg p-5">
+          <p class="text-gray-400 text-sm mb-1">Matches Played</p>
+          <p class="text-3xl font-bold text-chalk" id="kpi-matches"></p>
+          <div class="progress-bar mt-2" id="matches-progress-container" style="display:none">
+            <div class="progress-fill" id="matches-progress"></div>
+          </div>
+        </div>
+        <div class="stat-card rounded-lg p-5">
+          <p class="text-gray-400 text-sm mb-1">Total Goals</p>
+          <p class="text-3xl font-bold text-chalk" id="kpi-goals"></p>
+        </div>
+        <div class="stat-card rounded-lg p-5">
+          <p class="text-gray-400 text-sm mb-1">Goals Per Match</p>
+          <p class="text-3xl font-bold text-accent" id="kpi-gpm"></p>
+        </div>
+        <div class="stat-card rounded-lg p-5">
+          <p class="text-gray-400 text-sm mb-1" id="champion-label">Champions</p>
+          <p class="text-2xl font-bold text-gold" id="kpi-champion"></p>
+        </div>
+      </div>
+
+      <!-- LEAGUE TABLE -->
+      <div class="chart-box rounded-lg p-4 sm:p-6 mb-8 overflow-x-auto">
+        <h3 class="font-heading font-semibold text-lg text-chalk mb-4" id="league-table-title"></h3>
+        <table class="w-full text-left min-w-[640px]">
+          <thead>
+            <tr class="border-b border-white/5">
+              <th class="pb-3 pr-2 w-10">#</th>
+              <th class="pb-3 pr-4">Team</th>
+              <th class="pb-3 pr-2 text-center">P</th>
+              <th class="pb-3 pr-2 text-center">W</th>
+              <th class="pb-3 pr-2 text-center">D</th>
+              <th class="pb-3 pr-2 text-center">L</th>
+              <th class="pb-3 pr-2 text-center">GF</th>
+              <th class="pb-3 pr-2 text-center">GA</th>
+              <th class="pb-3 pr-2 text-center">GD</th>
+              <th class="pb-3 pr-2 text-center hidden sm:table-cell">Shots</th>
+              <th class="pb-3 pr-2 text-center hidden sm:table-cell">Acc%</th>
+              <th class="pb-3 pr-2 text-center hidden md:table-cell">CS</th>
+              <th class="pb-3 text-center font-bold">Pts</th>
+            </tr>
+          </thead>
+          <tbody id="league-table-body"></tbody>
+        </table>
+      </div>
+
+      <!-- MONEY VS POINTS (the thesis) -->
+      <div id="money-section" class="hidden mb-10">
+        <p class="tag mb-3">The Thesis</p>
+        <h3 class="font-heading font-semibold text-xl text-chalk mb-2">Squad Spending vs League Points</h3>
+        <p class="text-gray-500 text-sm mb-6" id="money-subtitle"></p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+          <div class="chart-box rounded-lg p-4 sm:p-6">
+            <h4 class="text-sm font-bold text-gray-400 uppercase tracking-wide mb-4">Squad Value vs Points</h4>
+            <div style="height: 400px;"><canvas id="chart-money-scatter"></canvas></div>
+          </div>
+          <div class="chart-box rounded-lg p-4 sm:p-6">
+            <h4 class="text-sm font-bold text-gray-400 uppercase tracking-wide mb-4">Over / Under Performance vs Spend</h4>
+            <div style="height: 400px;"><canvas id="chart-overperformers"></canvas></div>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
+          <div class="stat-card rounded-lg p-5">
+            <p class="text-gray-400 text-sm mb-1">R-squared</p>
+            <p class="text-3xl font-bold text-warn" id="money-r2"></p>
+            <p class="text-xs text-gray-500 mt-1">How much spending explains points</p>
+          </div>
+          <div class="stat-card rounded-lg p-5">
+            <p class="text-gray-400 text-sm mb-1">Biggest Overperformer</p>
+            <p class="text-xl font-bold text-accent" id="money-best"></p>
+            <p class="text-xs text-gray-500 mt-1" id="money-best-detail"></p>
+          </div>
+          <div class="stat-card rounded-lg p-5">
+            <p class="text-gray-400 text-sm mb-1">Biggest Underperformer</p>
+            <p class="text-xl font-bold text-warn" id="money-worst"></p>
+            <p class="text-xs text-gray-500 mt-1" id="money-worst-detail"></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- MONEY FALLBACK -->
+      <div id="money-fallback" class="hidden mb-10">
+        <div class="chart-box rounded-lg p-8 text-center">
+          <p class="text-gray-500">Squad value data not available. Run <code class="text-accent">python scripts/03_fetch_fpl.py</code> to enable the money analysis.</p>
+        </div>
+      </div>
+
+      <!-- CHARTS GRID -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+        <!-- Points Race -->
+        <div class="chart-box rounded-lg p-4 sm:p-6 md:col-span-2">
+          <h3 class="font-heading font-semibold text-lg text-chalk mb-4">Points Race</h3>
+          <div style="height: 400px;"><canvas id="chart-points-race"></canvas></div>
+        </div>
+        <!-- Monthly Goals -->
+        <div class="chart-box rounded-lg p-4 sm:p-6">
+          <h3 class="font-heading font-semibold text-lg text-chalk mb-4">Goals by Month</h3>
+          <div style="height: 300px;"><canvas id="chart-monthly-goals"></canvas></div>
+        </div>
+        <!-- Home vs Away -->
+        <div class="chart-box rounded-lg p-4 sm:p-6">
+          <h3 class="font-heading font-semibold text-lg text-chalk mb-4">Home vs Away</h3>
+          <div style="height: 250px;"><canvas id="chart-home-away"></canvas></div>
+          <div class="grid grid-cols-3 gap-2 mt-4 text-center text-sm" id="home-away-stats"></div>
+        </div>
+        <!-- Referee Cards -->
+        <div class="chart-box rounded-lg p-4 sm:p-6">
+          <h3 class="font-heading font-semibold text-lg text-chalk mb-4">Referee Card Rates</h3>
+          <div style="height: 360px;"><canvas id="chart-referee"></canvas></div>
+        </div>
+        <!-- Scorelines -->
+        <div class="chart-box rounded-lg p-4 sm:p-6">
+          <h3 class="font-heading font-semibold text-lg text-chalk mb-4">Most Common Scorelines</h3>
+          <div style="height: 300px;"><canvas id="chart-scorelines"></canvas></div>
+        </div>
+        <!-- Season Comparison -->
+        <div class="chart-box rounded-lg p-4 sm:p-6 md:col-span-2">
+          <h3 class="font-heading font-semibold text-lg text-chalk mb-4">Season Comparison</h3>
+          <div style="height: 300px;"><canvas id="chart-season-comparison"></canvas></div>
+        </div>
+      </div>
+
+      <!-- xG SECTION (conditional) -->
+      <div id="xg-section" class="hidden mt-10">
+        <p class="tag mb-3">Advanced Analytics</p>
+        <h3 class="font-heading font-semibold text-xl text-chalk mb-6">Expected Goals (xG) Analysis</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+          <div class="chart-box rounded-lg p-4 sm:p-6">
+            <h4 class="text-sm font-bold text-gray-400 uppercase tracking-wide mb-4">xG vs Actual Goals</h4>
+            <div style="height: 350px;"><canvas id="chart-xg-scatter"></canvas></div>
+          </div>
+          <div class="chart-box rounded-lg p-4 sm:p-6">
+            <h4 class="text-sm font-bold text-gray-400 uppercase tracking-wide mb-4">Top Scorers: Goals vs xG</h4>
+            <div style="height: 350px;"><canvas id="chart-top-scorers"></canvas></div>
+          </div>
+        </div>
+        <div class="chart-box rounded-lg p-4 sm:p-6 mb-8">
+          <h4 class="text-sm font-bold text-gray-400 uppercase tracking-wide mb-4">Shot Quality by Team (xG per Shot)</h4>
+          <div style="height: 500px;"><canvas id="chart-shot-quality"></canvas></div>
+        </div>
+      </div>
+
+      <!-- xG FALLBACK -->
+      <div id="xg-fallback" class="hidden mt-10">
+        <div class="chart-box rounded-lg p-8 text-center">
+          <p class="text-gray-500">xG data not loaded. Run <code class="text-accent">python scripts/04_fetch_xg.py</code> to enable advanced analytics.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLAYER LEADERBOARDS (conditional) -->
+    <section id="players-section" class="hidden section-border pt-16 mb-20">
+      <p class="tag mb-3">Player Stats</p>
+      <h2 class="font-heading font-semibold text-2xl text-chalk mb-2">Player Leaderboards</h2>
+      <p class="text-gray-500 text-sm mb-8">Individual player statistics from FPL data, enriched with xG where available. Minimum 450 minutes for rate-based metrics.</p>
+
+      <!-- Goals by Position summary -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8" id="goals-by-position"></div>
+
+      <!-- Goal Scorers Table -->
+      <div class="chart-box rounded-lg p-4 sm:p-6 mb-6 overflow-x-auto">
+        <h3 class="font-heading font-semibold text-lg text-chalk mb-4">Top Goal Scorers</h3>
+        <table class="w-full text-left min-w-[700px]">
+          <thead>
+            <tr class="border-b border-white/5">
+              <th class="pb-3 pr-2 w-8">#</th>
+              <th class="pb-3 pr-4">Player</th>
+              <th class="pb-3 pr-2">Team</th>
+              <th class="pb-3 pr-2 text-center">Pos</th>
+              <th class="pb-3 pr-2 text-center">G</th>
+              <th class="pb-3 pr-2 text-center">A</th>
+              <th class="pb-3 pr-2 text-center">Min</th>
+              <th class="pb-3 pr-2 text-center">G/90</th>
+              <th class="pb-3 pr-2 text-center hidden sm:table-cell">xG</th>
+              <th class="pb-3 pr-2 text-center hidden sm:table-cell">Price</th>
+            </tr>
+          </thead>
+          <tbody id="scorers-table-body"></tbody>
+        </table>
+      </div>
+
+      <!-- Assist Leaders Table -->
+      <div class="chart-box rounded-lg p-4 sm:p-6 mb-6 overflow-x-auto">
+        <h3 class="font-heading font-semibold text-lg text-chalk mb-4">Assist Leaders</h3>
+        <table class="w-full text-left min-w-[700px]">
+          <thead>
+            <tr class="border-b border-white/5">
+              <th class="pb-3 pr-2 w-8">#</th>
+              <th class="pb-3 pr-4">Player</th>
+              <th class="pb-3 pr-2">Team</th>
+              <th class="pb-3 pr-2 text-center">Pos</th>
+              <th class="pb-3 pr-2 text-center">A</th>
+              <th class="pb-3 pr-2 text-center">G</th>
+              <th class="pb-3 pr-2 text-center">Min</th>
+              <th class="pb-3 pr-2 text-center">A/90</th>
+              <th class="pb-3 pr-2 text-center hidden sm:table-cell">xA</th>
+              <th class="pb-3 pr-2 text-center hidden sm:table-cell">Price</th>
+            </tr>
+          </thead>
+          <tbody id="assists-table-body"></tbody>
+        </table>
+      </div>
+
+      <!-- Charts row: Best Value + Disciplinary -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+        <div class="chart-box rounded-lg p-4 sm:p-6">
+          <h3 class="font-heading font-semibold text-lg text-chalk mb-4">Best Value (G+A per Million)</h3>
+          <div style="height: 400px;"><canvas id="chart-best-value"></canvas></div>
+        </div>
+        <div class="chart-box rounded-lg p-4 sm:p-6">
+          <h3 class="font-heading font-semibold text-lg text-chalk mb-4">Most Booked Players</h3>
+          <div style="height: 400px;"><canvas id="chart-most-cards"></canvas></div>
+        </div>
+      </div>
+
+      <!-- Iron Men: most minutes per team -->
+      <div class="chart-box rounded-lg p-4 sm:p-6 overflow-x-auto">
+        <h3 class="font-heading font-semibold text-lg text-chalk mb-4">Iron Men -- Most Minutes Per Team</h3>
+        <div style="height: 500px;"><canvas id="chart-iron-men"></canvas></div>
+      </div>
+    </section>
+
+    <!-- Player Leaderboards Fallback -->
+    <div id="players-fallback" class="hidden section-border pt-16 mb-20">
+      <div class="chart-box rounded-lg p-8 text-center">
+        <p class="text-gray-500">Player data not available. Run <code class="text-accent">python scripts/03_fetch_fpl.py</code> to enable player leaderboards.</p>
+      </div>
+    </div>
+
+    <!-- SECTION 5: THE TAKEAWAY -->
+    <section id="takeaway" class="section-border pt-16 mb-20">
+      <p class="tag mb-3">Section 04</p>
+      <h2 class="font-heading font-semibold text-2xl text-chalk mb-6">The Takeaway</h2>
+      <div class="max-w-3xl space-y-4 text-gray-400 leading-relaxed" id="takeaway-text"></div>
+
+      <div class="mt-12">
+        <h3 class="font-heading font-semibold text-lg text-chalk mb-4">What I Would Do Differently</h3>
+        <ul class="space-y-2 text-gray-400 text-sm list-disc list-inside">
+          <li>Use Transfermarkt market values instead of FPL prices for a more accurate spending proxy</li>
+          <li>Add wage bill data -- salary spend may correlate with points more than transfer fees</li>
+          <li>Build a multi-season regression to see if money-vs-points R-squared changes over time</li>
+          <li>Factor in net spend (transfer balance) rather than just current squad value</li>
+          <li>Add player-level event data for shot maps and pass networks</li>
+        </ul>
+      </div>
+
+      <div class="mt-12">
+        <h3 class="font-heading font-semibold text-lg text-chalk mb-4">Tools Used</h3>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+          <div class="stat-card rounded-lg p-3 text-center text-sm text-gray-400">Python / Pandas</div>
+          <div class="stat-card rounded-lg p-3 text-center text-sm text-gray-400">Chart.js</div>
+          <div class="stat-card rounded-lg p-3 text-center text-sm text-gray-400">Tailwind CSS</div>
+          <div class="stat-card rounded-lg p-3 text-center text-sm text-gray-400">GitHub Actions</div>
+        </div>
+      </div>
+
+      <div class="mt-12 text-sm text-gray-500">
+        <p>Data sourced from <a href="https://www.football-data.co.uk/" class="text-accent hover:underline">football-data.co.uk</a>,
+          the <a href="https://fantasy.premierleague.com/" class="text-accent hover:underline">Fantasy Premier League API</a>,
+          and <a href="https://understat.com/" class="text-accent hover:underline">Understat</a>.</p>
+        <p class="mt-1">Reproduce: <code class="text-gray-400">git clone &rarr; pip install -r requirements.txt &rarr; python scripts/01_clean.py &rarr; python scripts/02_transform.py &rarr; python -m http.server 8000</code></p>
+      </div>
+    </section>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-white/5 py-6 text-center text-xs text-gray-600">
+    Does Money Buy Points? EPL Data Analysis. Data: football-data.co.uk, FPL API, Understat. Not affiliated with the Premier League.
+  </footer>
+
+<script>
+// -- GLOBALS ---------------------------------------------------------------
+Chart.defaults.color = '#6b7280';
+Chart.defaults.borderColor = 'rgba(255,255,255,0.04)';
+Chart.defaults.font.family = "'DM Sans', sans-serif";
+Chart.defaults.font.size = 12;
+Chart.defaults.plugins.legend.labels.boxWidth = 12;
+Chart.defaults.plugins.legend.labels.padding = 16;
+
+const TEAM_COLORS = {
+  'Arsenal': '#EF0107', 'Aston Villa': '#95BFE5', 'Bournemouth': '#DA291C',
+  'Brentford': '#e30613', 'Brighton': '#0057B8', 'Burnley': '#6C1D45',
+  'Chelsea': '#034694', 'Crystal Palace': '#1B458F', 'Everton': '#003399',
+  'Fulham': '#CC0000', 'Ipswich': '#3a64a3', 'Leeds United': '#FFCD00',
+  'Leicester City': '#003090', 'Liverpool': '#C8102E',
+  'Manchester City': '#6CABDD', 'Manchester United': '#DA291C',
+  'Newcastle United': '#241F20', 'Nottingham Forest': '#E53233',
+  'Southampton': '#D71920', 'Sunderland': '#EB172B',
+  'Tottenham Hotspur': '#132257',
+  'West Ham United': '#7A263A', 'Wolverhampton': '#FDB913',
+};
+
+let DATA = null;
+let isLive = false;
+
+// -- INIT ------------------------------------------------------------------
+async function init() {
+  try {
+    const resp = await fetch('data/dashboard_data.json');
+    if (!resp.ok) throw new Error('HTTP ' + resp.status);
+    DATA = await resp.json();
+    isLive = !DATA.season_status.is_complete;
+
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('dashboard').style.display = 'block';
+    document.getElementById('dashboard').classList.add('fade-in');
+
+    renderLiveState();
+    // Data-driven season label
+    if (DATA.season) {
+      const parts = DATA.season.split('-');
+      document.getElementById('nav-season').textContent = `EPL ${parts[0].slice(2)}/${parts[1]}`;
+    }
+    renderKPIs();
+    renderBrief();
+    renderLeagueTable();
+    renderPointsRace();
+    renderMonthlyGoals();
+    renderHomeAway();
+    renderReferee();
+    renderScorelines();
+    renderSeasonComparison();
+    renderConditionalSections();
+    renderTakeaway();
+    initScrollSpy();
+  } catch (e) {
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('error-msg').style.display = 'flex';
+    console.error('Failed to load dashboard data:', e);
+  }
+}
+
+// -- LIVE STATE ------------------------------------------------------------
+function renderLiveState() {
+  if (!isLive) return;
+  document.getElementById('live-badge').classList.remove('hidden');
+  document.getElementById('live-badge').classList.add('flex');
+  const upd = document.getElementById('last-updated');
+  upd.classList.remove('hidden');
+  upd.textContent = 'Data as of ' + DATA.season_status.last_match_date;
+}
+
+// -- BRIEF -----------------------------------------------------------------
+function renderBrief() {
+  const s = DATA.season_status;
+  const matchText = isLive
+    ? `${s.matches_played} of ${s.matches_total} matches played so far`
+    : `all ${s.matches_total} matches completed`;
+
+  let briefHTML = '';
+  if (DATA.money_vs_points) {
+    const r2 = DATA.money_vs_points.regression.r_squared;
+    const best = DATA.money_vs_points.teams[0];
+    const worst = DATA.money_vs_points.teams[DATA.money_vs_points.teams.length - 1];
+    briefHTML =
+      `Every summer, Premier League clubs pour hundreds of millions into squad building. ` +
+      `The conventional wisdom says the biggest spenders win titles. But does that hold up? ` +
+      `With ${matchText} in the ${DATA.season} season, I used FPL player prices as a proxy ` +
+      `for squad value and ran a regression against league points. ` +
+      `The answer: spending explains just ${(r2 * 100).toFixed(1)}% of the variance. ` +
+      `${best.team} ${isLive ? 'are' : 'were'} the standout overperformer -- ` +
+      `${best.over_under.toFixed(0)} points above what their budget would predict. ` +
+      `${worst.team}? ${Math.abs(worst.over_under).toFixed(0)} points below.`;
+  } else {
+    briefHTML =
+      `Four seasons of English Premier League data -- ${matchText} in the current season alone. ` +
+      `Raw CSVs with 120 columns of betting noise, cleaned down to 29 columns of match statistics, ` +
+      `enriched with player prices and expected goals data, and served as an interactive dashboard.`;
+  }
+  document.getElementById('brief-text').textContent = briefHTML;
+  const pills = ['Python / Pandas', 'Linear Regression', 'ETL Pipeline', 'Chart.js', 'FPL API', 'Understat API'];
+  document.getElementById('tech-pills').innerHTML = pills.map(p =>
+    `<span class="px-3 py-1 rounded-full text-xs font-medium bg-surface border border-white/5 text-gray-400">${p}</span>`
+  ).join('');
+}
+
+// -- KPIs ------------------------------------------------------------------
+function renderKPIs() {
+  const s = DATA.season_status;
+  if (isLive) {
+    document.getElementById('kpi-matches').textContent = `${s.matches_played} / ${s.matches_total}`;
+    document.getElementById('matches-progress-container').style.display = 'block';
+    document.getElementById('matches-progress').style.width = `${(s.matches_played / s.matches_total * 100).toFixed(1)}%`;
+  } else {
+    document.getElementById('kpi-matches').textContent = s.matches_played.toLocaleString();
+  }
+  document.getElementById('kpi-goals').textContent = DATA.total_goals.toLocaleString();
+  document.getElementById('kpi-gpm').textContent = DATA.goals_per_match.toFixed(2);
+
+  const champ = DATA.league_table[0];
+  if (isLive) {
+    document.getElementById('champion-label').textContent = 'Table Leader';
+    document.getElementById('kpi-champion').textContent = champ.team;
+  } else {
+    document.getElementById('kpi-champion').textContent = champ.team;
+  }
+}
+
+// -- LEAGUE TABLE ----------------------------------------------------------
+function renderLeagueTable() {
+  const s = DATA.season_status;
+  const title = isLive
+    ? `${DATA.season} Standings (Matchday ${s.matchdays_played})`
+    : `${DATA.season} Final Standings`;
+  document.getElementById('league-table-title').textContent = title;
+
+  const tbody = document.getElementById('league-table-body');
+  tbody.innerHTML = DATA.league_table.map(t => {
+    let posClass = 'pos-mid';
+    if (t.position <= 4) posClass = 'pos-cl';
+    else if (t.position <= 6) posClass = 'pos-el';
+    else if (t.position >= 18) posClass = 'pos-rel';
+
+    const gdColor = t.goal_difference > 0 ? 'text-accent' : t.goal_difference < 0 ? 'text-warn' : 'text-gray-400';
+
+    return `<tr class="border-b border-white/5 hover:bg-surface-hover/30 transition-colors">
+      <td class="py-2.5 pr-2"><span class="pos-badge ${posClass}">${t.position}</span></td>
+      <td class="py-2.5 pr-4 font-medium text-chalk">${t.team}</td>
+      <td class="py-2.5 pr-2 text-center text-gray-400">${t.played}</td>
+      <td class="py-2.5 pr-2 text-center">${t.won}</td>
+      <td class="py-2.5 pr-2 text-center text-gray-400">${t.drawn}</td>
+      <td class="py-2.5 pr-2 text-center text-gray-400">${t.lost}</td>
+      <td class="py-2.5 pr-2 text-center">${t.goals_for}</td>
+      <td class="py-2.5 pr-2 text-center text-gray-400">${t.goals_against}</td>
+      <td class="py-2.5 pr-2 text-center font-medium ${gdColor}">${t.goal_difference > 0 ? '+' : ''}${t.goal_difference}</td>
+      <td class="py-2.5 pr-2 text-center text-gray-400 hidden sm:table-cell">${t.total_shots}</td>
+      <td class="py-2.5 pr-2 text-center text-gray-400 hidden sm:table-cell">${t.shot_accuracy}%</td>
+      <td class="py-2.5 pr-2 text-center text-gray-400 hidden md:table-cell">${t.clean_sheets}</td>
+      <td class="py-2.5 text-center font-bold text-chalk">${t.points}</td>
+    </tr>`;
+  }).join('');
+}
+
+// -- POINTS RACE -----------------------------------------------------------
+function renderPointsRace() {
+  const cp = DATA.cumulative_points;
+  const table = DATA.league_table;
+  const top6 = table.slice(0, 6).map(t => t.team);
+  const bottom3 = table.slice(-3).map(t => t.team);
+  const teams = [...top6, ...bottom3];
+
+  const maxMD = isLive ? DATA.season_status.matchdays_played : 38;
+  const labels = Array.from({length: maxMD}, (_, i) => i + 1);
+
+  const datasets = teams.map(team => {
+    const pts = cp[team] || [];
+    const isBottom = bottom3.includes(team);
+    return {
+      label: team,
+      data: pts.slice(0, maxMD).map(p => p.points),
+      borderColor: TEAM_COLORS[team] || '#6b7280',
+      backgroundColor: 'transparent',
+      borderWidth: isBottom ? 1.5 : 2.5,
+      borderDash: isBottom ? [5, 3] : [],
+      pointRadius: 0,
+      pointHoverRadius: 4,
+      tension: 0.2,
+    };
+  });
+
+  new Chart(document.getElementById('chart-points-race'), {
+    type: 'line',
+    data: { labels, datasets },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { position: 'bottom', labels: { usePointStyle: true, pointStyle: 'line' } },
+        tooltip: { mode: 'index', intersect: false, backgroundColor: '#1a1a2e', borderColor: 'rgba(255,255,255,0.1)', borderWidth: 1 }
+      },
+      scales: {
+        x: { title: { display: true, text: 'Matchday' }, grid: { display: false } },
+        y: { title: { display: true, text: 'Points' }, beginAtZero: true }
+      }
+    }
+  });
+}
+
+// -- MONTHLY GOALS ---------------------------------------------------------
+function renderMonthlyGoals() {
+  const mt = DATA.monthly_trends;
+  const labels = mt.map(m => {
+    const [y, mo] = m.month.split('-');
+    const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    return months[parseInt(mo) - 1] + ' ' + y.slice(2);
+  });
+
+  new Chart(document.getElementById('chart-monthly-goals'), {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [{
+        label: 'Avg Goals/Match',
+        data: mt.map(m => m.avg_goals),
+        backgroundColor: mt.map(m => m.avg_goals >= 3.0 ? '#52b788' : 'rgba(82,183,136,0.5)'),
+        borderRadius: 4,
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#1a1a2e', borderColor: 'rgba(255,255,255,0.1)', borderWidth: 1,
+          callbacks: { afterLabel: (ctx) => { const m = mt[ctx.dataIndex]; return `${m.matches} matches, ${m.total_goals} total goals`; } }
+        }
+      },
+      scales: { x: { grid: { display: false } }, y: { beginAtZero: true, title: { display: true, text: 'Avg Goals' } } }
+    }
+  });
+}
+
+// -- HOME VS AWAY ----------------------------------------------------------
+function renderHomeAway() {
+  const ha = DATA.home_away;
+  new Chart(document.getElementById('chart-home-away'), {
+    type: 'doughnut',
+    data: {
+      labels: ['Home Wins', 'Draws', 'Away Wins'],
+      datasets: [{
+        data: [ha.home_wins, ha.draws, ha.away_wins],
+        backgroundColor: ['#52b788', '#d4a843', '#e76f51'],
+        borderWidth: 0,
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      cutout: '60%',
+      plugins: {
+        legend: { position: 'bottom' },
+        tooltip: { backgroundColor: '#1a1a2e', borderColor: 'rgba(255,255,255,0.1)', borderWidth: 1 }
+      }
+    }
+  });
+  document.getElementById('home-away-stats').innerHTML = `
+    <div><p class="text-2xl font-bold text-accent">${ha.home_goals_avg}</p><p class="text-xs text-gray-500">Home Goals/Match</p></div>
+    <div><p class="text-2xl font-bold text-gold">${ha.draws}</p><p class="text-xs text-gray-500">Draws</p></div>
+    <div><p class="text-2xl font-bold text-warn">${ha.away_goals_avg}</p><p class="text-xs text-gray-500">Away Goals/Match</p></div>`;
+}
+
+// -- REFEREE CARD RATES ----------------------------------------------------
+function renderReferee() {
+  const refs = DATA.referee_stats.filter(r => r.matches >= 5).slice(0, 15);
+  new Chart(document.getElementById('chart-referee'), {
+    type: 'bar',
+    data: {
+      labels: refs.map(r => r.referee),
+      datasets: [
+        { label: 'Avg Cards/Match', data: refs.map(r => r.avg_cards), backgroundColor: '#e76f51', borderRadius: 3 },
+        { label: 'Avg Fouls/Match', data: refs.map(r => r.avg_fouls), backgroundColor: 'rgba(212,168,67,0.3)', borderRadius: 3 },
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false, indexAxis: 'y',
+      plugins: { legend: { position: 'bottom' }, tooltip: { backgroundColor: '#1a1a2e', borderColor: 'rgba(255,255,255,0.1)', borderWidth: 1 } },
+      scales: { x: { beginAtZero: true }, y: { grid: { display: false } } }
+    }
+  });
+}
+
+// -- SCORELINES ------------------------------------------------------------
+function renderScorelines() {
+  const sf = DATA.scoreline_frequency;
+  new Chart(document.getElementById('chart-scorelines'), {
+    type: 'bar',
+    data: {
+      labels: sf.map(s => s.score),
+      datasets: [{
+        label: 'Frequency',
+        data: sf.map(s => s.count),
+        backgroundColor: sf.map((s, i) => i === 0 ? '#52b788' : 'rgba(82,183,136,0.35)'),
+        borderRadius: 4,
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip: { backgroundColor: '#1a1a2e', borderColor: 'rgba(255,255,255,0.1)', borderWidth: 1 } },
+      scales: { x: { grid: { display: false } }, y: { beginAtZero: true, title: { display: true, text: 'Count' } } }
+    }
+  });
+}
+
+// -- SEASON COMPARISON -----------------------------------------------------
+function renderSeasonComparison() {
+  const sc = DATA.season_comparison;
+  new Chart(document.getElementById('chart-season-comparison'), {
+    type: 'bar',
+    data: {
+      labels: sc.map(s => s.season),
+      datasets: [
+        { label: 'Avg Goals', data: sc.map(s => s.avg_goals), backgroundColor: '#52b788', borderRadius: 4 },
+        { label: 'Avg Cards', data: sc.map(s => s.avg_cards), backgroundColor: '#e76f51', borderRadius: 4 },
+        { label: 'Home Win % (scaled /10)', data: sc.map(s => (s.home_win_pct / 10).toFixed(2)), backgroundColor: '#d4a843', borderRadius: 4 },
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { position: 'bottom' },
+        tooltip: {
+          backgroundColor: '#1a1a2e', borderColor: 'rgba(255,255,255,0.1)', borderWidth: 1,
+          callbacks: { afterLabel: (ctx) => { if (ctx.datasetIndex === 2) return `Actual: ${sc[ctx.dataIndex].home_win_pct}%`; return ''; } }
+        }
+      },
+      scales: { x: { grid: { display: false } }, y: { beginAtZero: true } }
+    }
+  });
+}
+
+// -- CONDITIONAL SECTIONS --------------------------------------------------
+function renderConditionalSections() {
+  // Money vs Points (the thesis)
+  if (DATA.money_vs_points && DATA.money_vs_points.teams.length > 0) {
+    document.getElementById('money-section').classList.remove('hidden');
+    renderMoneyVsPoints();
+  } else {
+    document.getElementById('money-fallback').classList.remove('hidden');
+  }
+
+  // xG analysis
+  if (DATA.xg_vs_actual && DATA.xg_vs_actual.length > 0) {
+    document.getElementById('xg-section').classList.remove('hidden');
+    renderXgScatter();
+    if (DATA.top_scorers && DATA.top_scorers.length > 0) renderTopScorers();
+    if (DATA.shot_quality && DATA.shot_quality.length > 0) renderShotQuality();
+  } else {
+    document.getElementById('xg-fallback').classList.remove('hidden');
+  }
+
+  // Player leaderboards
+  if (DATA.player_leaderboards) {
+    document.getElementById('players-section').classList.remove('hidden');
+    renderPlayerLeaderboards();
+  } else {
+    document.getElementById('players-fallback').classList.remove('hidden');
+  }
+}
+
+// -- MONEY VS POINTS -------------------------------------------------------
+function renderMoneyVsPoints() {
+  const m = DATA.money_vs_points;
+  const reg = m.regression;
+  const teams = m.teams;
+
+  // Subtitle
+  const r2Pct = (reg.r_squared * 100).toFixed(1);
+  document.getElementById('money-subtitle').textContent =
+    `Using FPL player prices as a proxy for squad market value. R-squared = ${reg.r_squared.toFixed(3)} -- spending explains just ${r2Pct}% of the variance in points.`;
+
+  // KPI cards
+  document.getElementById('money-r2').textContent = reg.r_squared.toFixed(3);
+  const best = teams[0];
+  const worst = teams[teams.length - 1];
+  document.getElementById('money-best').textContent = best.team;
+  document.getElementById('money-best-detail').textContent = `+${best.over_under.toFixed(1)} pts above expected for their spend`;
+  document.getElementById('money-worst').textContent = worst.team;
+  document.getElementById('money-worst-detail').textContent = `${worst.over_under.toFixed(1)} pts below expected for their spend`;
+
+  // Scatter plot: squad value (x) vs points (y) with regression line
+  const scatterData = teams.map(t => ({
+    x: t.squad_value,
+    y: t.points,
+    label: t.team,
+    over_under: t.over_under,
+  }));
+
+  const minX = Math.min(...teams.map(t => t.squad_value)) - 10;
+  const maxX = Math.max(...teams.map(t => t.squad_value)) + 10;
+
+  new Chart(document.getElementById('chart-money-scatter'), {
+    type: 'scatter',
+    data: {
+      datasets: [
+        {
+          label: 'Teams',
+          data: scatterData,
+          backgroundColor: scatterData.map(d => d.over_under > 0 ? '#52b788' : '#e76f51'),
+          pointRadius: 8,
+          pointHoverRadius: 11,
+        },
+        {
+          label: 'Expected (regression)',
+          type: 'line',
+          data: [
+            { x: minX, y: reg.slope * minX + reg.intercept },
+            { x: maxX, y: reg.slope * maxX + reg.intercept },
+          ],
+          borderColor: 'rgba(212,168,67,0.6)',
+          borderDash: [8, 4],
+          borderWidth: 2,
+          pointRadius: 0,
+          fill: false,
+        },
+      ],
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#1a1a2e', borderColor: 'rgba(255,255,255,0.1)', borderWidth: 1,
+          callbacks: {
+            label: (ctx) => {
+              const d = ctx.raw;
+              if (!d.label) return '';
+              const sign = d.over_under > 0 ? '+' : '';
+              return `${d.label}: ${d.y} pts / ${d.x}m (${sign}${d.over_under.toFixed(1)} vs expected)`;
+            }
+          }
+        }
+      },
+      scales: {
+        x: { title: { display: true, text: 'Squad Value (FPL prices, millions)' }, grid: { color: 'rgba(255,255,255,0.03)' } },
+        y: { title: { display: true, text: 'Points' }, grid: { color: 'rgba(255,255,255,0.03)' } },
+      }
+    }
+  });
+
+  // Horizontal bar: over/underperformers sorted by over_under
+  const sorted = [...teams].sort((a, b) => b.over_under - a.over_under);
+  new Chart(document.getElementById('chart-overperformers'), {
+    type: 'bar',
+    data: {
+      labels: sorted.map(t => t.team),
+      datasets: [{
+        label: 'Points vs Expected',
+        data: sorted.map(t => t.over_under),
+        backgroundColor: sorted.map(t => t.over_under > 0 ? '#52b788' : '#e76f51'),
+        borderRadius: 3,
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false, indexAxis: 'y',
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#1a1a2e', borderColor: 'rgba(255,255,255,0.1)', borderWidth: 1,
+          callbacks: {
+            afterLabel: (ctx) => {
+              const t = sorted[ctx.dataIndex];
+              return `Squad: ${t.squad_value}m | Actual: ${t.points} pts | Expected: ${t.expected_points} pts`;
+            }
+          }
+        }
+      },
+      scales: {
+        x: { title: { display: true, text: 'Points Above / Below Expected' }, grid: { color: 'rgba(255,255,255,0.03)' } },
+        y: { grid: { display: false } },
+      }
+    }
+  });
+}
+
+function renderXgScatter() {
+  const xg = DATA.xg_vs_actual;
+  const datasets = [{
+    label: 'Teams',
+    data: xg.map(t => ({ x: t.total_xg, y: t.actual_goals, label: t.team })),
+    backgroundColor: xg.map(t => t.difference > 0 ? '#52b788' : '#e76f51'),
+    pointRadius: 7,
+    pointHoverRadius: 10,
+  }];
+  // Reference line (y=x)
+  const minVal = Math.min(...xg.map(t => Math.min(t.total_xg, t.actual_goals))) - 5;
+  const maxVal = Math.max(...xg.map(t => Math.max(t.total_xg, t.actual_goals))) + 5;
+  datasets.push({
+    label: 'Fair line (xG = Goals)',
+    data: [{ x: minVal, y: minVal }, { x: maxVal, y: maxVal }],
+    type: 'line', borderColor: 'rgba(255,255,255,0.15)', borderDash: [5, 5],
+    borderWidth: 1, pointRadius: 0, fill: false,
+  });
+
+  new Chart(document.getElementById('chart-xg-scatter'), {
+    type: 'scatter',
+    data: { datasets },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#1a1a2e', borderColor: 'rgba(255,255,255,0.1)', borderWidth: 1,
+          callbacks: {
+            label: (ctx) => {
+              const d = ctx.raw;
+              if (!d.label) return '';
+              return `${d.label}: ${d.y} goals (${d.x.toFixed(1)} xG)`;
+            }
+          }
+        }
+      },
+      scales: {
+        x: { title: { display: true, text: 'Total xG' } },
+        y: { title: { display: true, text: 'Actual Goals' } }
+      }
+    }
+  });
+}
+
+function renderTopScorers() {
+  const ts = DATA.top_scorers;
+  new Chart(document.getElementById('chart-top-scorers'), {
+    type: 'bar',
+    data: {
+      labels: ts.map(p => p.player_name),
+      datasets: [
+        { label: 'Goals', data: ts.map(p => p.goals), backgroundColor: '#52b788', borderRadius: 4 },
+        { label: 'xG', data: ts.map(p => p.xg), backgroundColor: 'rgba(212,168,67,0.5)', borderRadius: 4 },
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { position: 'bottom' }, tooltip: { backgroundColor: '#1a1a2e', borderColor: 'rgba(255,255,255,0.1)', borderWidth: 1 } },
+      scales: { x: { grid: { display: false } }, y: { beginAtZero: true } }
+    }
+  });
+}
+
+function renderShotQuality() {
+  const sq = DATA.shot_quality;
+  const maxXg = Math.max(...sq.map(s => s.xg_per_shot));
+  const minXg = Math.min(...sq.map(s => s.xg_per_shot));
+  const range = maxXg - minXg || 1;
+
+  new Chart(document.getElementById('chart-shot-quality'), {
+    type: 'bar',
+    data: {
+      labels: sq.map(s => s.team),
+      datasets: [{
+        label: 'xG per Shot',
+        data: sq.map(s => s.xg_per_shot),
+        backgroundColor: sq.map(s => {
+          const ratio = (s.xg_per_shot - minXg) / range;
+          return ratio > 0.5 ? '#52b788' : '#e76f51';
+        }),
+        borderRadius: 3,
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false, indexAxis: 'y',
+      plugins: { legend: { display: false }, tooltip: { backgroundColor: '#1a1a2e', borderColor: 'rgba(255,255,255,0.1)', borderWidth: 1 } },
+      scales: { x: { beginAtZero: true, title: { display: true, text: 'xG per Shot' } }, y: { grid: { display: false } } }
+    }
+  });
+}
+
+// -- PLAYER LEADERBOARDS ---------------------------------------------------
+function renderPlayerLeaderboards() {
+  const lb = DATA.player_leaderboards;
+
+  // Goals by position summary cards
+  const posContainer = document.getElementById('goals-by-position');
+  const posColors = { FWD: 'accent', MID: 'blue', DEF: 'gold', GK: 'warn' };
+  const posLabels = { FWD: 'Forwards', MID: 'Midfielders', DEF: 'Defenders', GK: 'Goalkeepers' };
+  posContainer.innerHTML = lb.goals_by_position.map(p => `
+    <div class="stat-card rounded-lg p-4">
+      <p class="text-${posColors[p.position] || 'gray-400'} text-xs font-bold uppercase mb-1">${posLabels[p.position] || p.position}</p>
+      <p class="text-2xl font-bold text-chalk">${p.total_goals}<span class="text-sm font-normal text-gray-500"> goals</span></p>
+      <p class="text-xs text-gray-500 mt-1">${p.total_assists} assists from ${p.player_count} players</p>
+    </div>
+  `).join('');
+
+  // Goal scorers table
+  const scorersBody = document.getElementById('scorers-table-body');
+  scorersBody.innerHTML = lb.goal_scorers.map(p => {
+    const xgCell = p.xg != null ? p.xg.toFixed(1) : '-';
+    const xgColor = p.xg != null ? (p.goals > p.xg ? 'text-accent' : 'text-warn') : 'text-gray-600';
+    return `<tr class="border-b border-white/5 hover:bg-surface-hover/30 transition-colors">
+      <td class="py-2 pr-2 text-gray-500">${p.rank}</td>
+      <td class="py-2 pr-4 font-medium text-chalk">${p.player_name}</td>
+      <td class="py-2 pr-2 text-gray-400 text-sm">${p.team}</td>
+      <td class="py-2 pr-2 text-center text-xs text-gray-500">${p.position}</td>
+      <td class="py-2 pr-2 text-center font-bold text-chalk">${p.goals}</td>
+      <td class="py-2 pr-2 text-center text-gray-400">${p.assists}</td>
+      <td class="py-2 pr-2 text-center text-gray-500">${p.minutes.toLocaleString()}</td>
+      <td class="py-2 pr-2 text-center text-accent font-medium">${p.goals_per_90}</td>
+      <td class="py-2 pr-2 text-center ${xgColor} hidden sm:table-cell">${xgCell}</td>
+      <td class="py-2 pr-2 text-center text-gray-500 hidden sm:table-cell">${p.price}m</td>
+    </tr>`;
+  }).join('');
+
+  // Assist leaders table
+  const assistsBody = document.getElementById('assists-table-body');
+  assistsBody.innerHTML = lb.assist_leaders.map(p => {
+    const xaCell = p.xa != null ? p.xa.toFixed(1) : '-';
+    return `<tr class="border-b border-white/5 hover:bg-surface-hover/30 transition-colors">
+      <td class="py-2 pr-2 text-gray-500">${p.rank}</td>
+      <td class="py-2 pr-4 font-medium text-chalk">${p.player_name}</td>
+      <td class="py-2 pr-2 text-gray-400 text-sm">${p.team}</td>
+      <td class="py-2 pr-2 text-center text-xs text-gray-500">${p.position}</td>
+      <td class="py-2 pr-2 text-center font-bold text-chalk">${p.assists}</td>
+      <td class="py-2 pr-2 text-center text-gray-400">${p.goals}</td>
+      <td class="py-2 pr-2 text-center text-gray-500">${p.minutes.toLocaleString()}</td>
+      <td class="py-2 pr-2 text-center text-blue font-medium">${p.assists_per_90}</td>
+      <td class="py-2 pr-2 text-center text-gray-400 hidden sm:table-cell">${xaCell}</td>
+      <td class="py-2 pr-2 text-center text-gray-500 hidden sm:table-cell">${p.price}m</td>
+    </tr>`;
+  }).join('');
+
+  // Best Value chart (horizontal bar)
+  const bv = lb.best_value;
+  new Chart(document.getElementById('chart-best-value'), {
+    type: 'bar',
+    data: {
+      labels: bv.map(p => `${p.player_name} (${p.price}m)`),
+      datasets: [{
+        label: 'G+A per Million',
+        data: bv.map(p => p.ga_per_million),
+        backgroundColor: bv.map(p => {
+          if (p.position === 'FWD') return '#52b788';
+          if (p.position === 'MID') return '#4895ef';
+          if (p.position === 'DEF') return '#d4a843';
+          return '#6b7280';
+        }),
+        borderRadius: 3,
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false, indexAxis: 'y',
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#1a1a2e', borderColor: 'rgba(255,255,255,0.1)', borderWidth: 1,
+          callbacks: {
+            afterLabel: (ctx) => {
+              const p = bv[ctx.dataIndex];
+              return `${p.goals}G + ${p.assists}A | ${p.minutes} min | ${p.team}`;
+            }
+          }
+        }
+      },
+      scales: {
+        x: { beginAtZero: true, title: { display: true, text: 'G+A per Million' }, grid: { color: 'rgba(255,255,255,0.03)' } },
+        y: { grid: { display: false } },
+      }
+    }
+  });
+
+  // Most Cards chart
+  const mc = lb.most_cards;
+  new Chart(document.getElementById('chart-most-cards'), {
+    type: 'bar',
+    data: {
+      labels: mc.map(p => p.player_name),
+      datasets: [
+        { label: 'Yellows', data: mc.map(p => p.yellows), backgroundColor: '#d4a843', borderRadius: 3 },
+        { label: 'Reds', data: mc.map(p => p.reds), backgroundColor: '#e76f51', borderRadius: 3 },
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false, indexAxis: 'y',
+      plugins: {
+        legend: { position: 'bottom' },
+        tooltip: {
+          backgroundColor: '#1a1a2e', borderColor: 'rgba(255,255,255,0.1)', borderWidth: 1,
+          callbacks: { afterLabel: (ctx) => `${mc[ctx.dataIndex].team} | ${mc[ctx.dataIndex].minutes} min` }
+        }
+      },
+      scales: {
+        x: { beginAtZero: true, stacked: true, grid: { color: 'rgba(255,255,255,0.03)' } },
+        y: { stacked: true, grid: { display: false } },
+      }
+    }
+  });
+
+  // Iron Men chart (horizontal bar - minutes per team's top player)
+  const im = lb.iron_men;
+  new Chart(document.getElementById('chart-iron-men'), {
+    type: 'bar',
+    data: {
+      labels: im.map(p => `${p.player_name} (${p.team})`),
+      datasets: [{
+        label: 'Minutes Played',
+        data: im.map(p => p.minutes),
+        backgroundColor: im.map(p => TEAM_COLORS[p.team] || '#6b7280'),
+        borderRadius: 3,
+      }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false, indexAxis: 'y',
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: '#1a1a2e', borderColor: 'rgba(255,255,255,0.1)', borderWidth: 1,
+          callbacks: {
+            afterLabel: (ctx) => {
+              const p = im[ctx.dataIndex];
+              return `${p.games_equivalent} full games | ${p.goals}G ${p.assists}A | ${p.position}`;
+            }
+          }
+        }
+      },
+      scales: {
+        x: { beginAtZero: true, title: { display: true, text: 'Minutes Played' }, grid: { color: 'rgba(255,255,255,0.03)' } },
+        y: { grid: { display: false } },
+      }
+    }
+  });
+}
+
+// -- TAKEAWAY (data-driven) ------------------------------------------------
+function renderTakeaway() {
+  const t = DATA.league_table;
+  const champ = t[0];
+  const runner = t[1];
+  const bestDefense = [...t].sort((a, b) => a.goals_against - b.goals_against)[0];
+  const ha = DATA.home_away;
+
+  const verb = isLive ? 'lead' : 'won';
+  const tense = isLive ? 'are' : 'were';
+  const suffix = isLive ? ` after ${DATA.season_status.matchdays_played} matchdays` : '';
+
+  let text = '';
+
+  // Lead with the money thesis
+  if (DATA.money_vs_points) {
+    const m = DATA.money_vs_points;
+    const reg = m.regression;
+    const best = m.teams[0];
+    const worst = m.teams[m.teams.length - 1];
+    const r2Pct = (reg.r_squared * 100).toFixed(1);
+
+    text += `<p class="text-lg text-chalk font-medium">The short answer: not really. With an R-squared of ${reg.r_squared.toFixed(3)}, ` +
+      `squad spending explains just ${r2Pct}% of the variance in league points this season. ` +
+      `The regression line ${isLive ? 'is' : 'was'} nearly flat.</p>`;
+
+    text += `<p>${best.team} ${tense} the story of the season from a value perspective -- ` +
+      `${best.points} points from a squad valued at ${best.squad_value}m, a full ${best.over_under.toFixed(1)} points ` +
+      `above what the model predicts for that level of spending. `;
+    if (m.teams.length >= 2) {
+      const second = m.teams[1];
+      text += `${second.team} (+${second.over_under.toFixed(1)}) ${tense} not far behind.`;
+    }
+    text += `</p>`;
+
+    text += `<p>At the other end, ${worst.team} ${tense} the biggest underperformer relative to spend -- ` +
+      `${worst.points} points from a ${worst.squad_value}m squad, ${Math.abs(worst.over_under).toFixed(1)} points ` +
+      `below expectation. Money alone clearly ${isLive ? "isn't" : "wasn't"} buying results.</p>`;
+  }
+
+  // Standard league summary
+  text += `<p>${champ.team} ${verb} the league with ${champ.points} points${suffix}, ` +
+    `${isLive ? 'ahead of' : 'finishing ahead of'} ${runner.team} on ${runner.points} points. ` +
+    `${bestDefense.team} ${tense} the meanest defense, conceding just ${bestDefense.goals_against} goals ` +
+    `in ${bestDefense.played} matches (${(bestDefense.goals_against / bestDefense.played).toFixed(2)} per game).</p>`;
+
+  text += `<p>Home advantage ${isLive ? 'remains' : 'was'} real but not overwhelming: ` +
+    `${ha.home_win_pct}% home wins vs ${ha.away_win_pct}% away wins, ` +
+    `with home sides averaging ${ha.home_goals_avg} goals compared to ${ha.away_goals_avg} for visitors.</p>`;
+
+  if (!isLive) {
+    const relegated = t.slice(-3).map(r => r.team);
+    text += `<p>${relegated.join(', ')} ${tense} relegated.</p>`;
+  }
+
+  // xG insights
+  if (DATA.xg_vs_actual && DATA.xg_vs_actual.length > 0) {
+    const overperformers = DATA.xg_vs_actual.filter(x => x.difference > 3).sort((a,b) => b.difference - a.difference);
+    const underperformers = DATA.xg_vs_actual.filter(x => x.difference < -3).sort((a,b) => a.difference - b.difference);
+    if (overperformers.length > 0) {
+      text += `<p>The xG data adds nuance: ${overperformers[0].team} ${tense} the most clinical side, scoring ${overperformers[0].actual_goals} goals from ${overperformers[0].total_xg.toFixed(1)} xG -- ` +
+        `${overperformers[0].difference.toFixed(1)} goals above expectation. `;
+      if (underperformers.length > 0) {
+        text += `${underperformers[0].team} ${isLive ? 'sit' : 'sat'} at the opposite extreme, underperforming by ${Math.abs(underperformers[0].difference).toFixed(1)} goals.`;
+      }
+      text += `</p>`;
+    }
+  }
+
+  // Closing thought
+  if (DATA.money_vs_points) {
+    text += `<p class="text-gray-500 italic">Coaching, culture, recruitment strategy, and plain luck still matter far more than the size of the chequebook. ` +
+      `The Premier League remains the league where anyone can beat anyone on their day.</p>`;
+  }
+
+  document.getElementById('takeaway-text').innerHTML = text;
+}
+
+// -- SCROLL SPY ------------------------------------------------------------
+function initScrollSpy() {
+  const sections = ['brief', 'raw-data', 'pipeline', 'dashboard-section', 'money-section', 'players-section', 'takeaway'];
+  const links = document.querySelectorAll('.nav-link');
+
+  // Smooth scroll
+  links.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+
+  // Active state on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        links.forEach(l => l.classList.remove('active'));
+        const activeLink = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
+        if (activeLink) activeLink.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) observer.observe(el);
+  });
+}
+
+// -- BOOT ------------------------------------------------------------------
+document.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>
