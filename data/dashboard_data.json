@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-10T18:57:59.666116",
+  "generated_at": "2026-02-11T01:21:28.731060",
   "season": "2025-26",
   "source": "football-data.co.uk",
   "total_matches": 250,
@@ -3705,19 +3705,6 @@
       },
       {
         "rank": 3,
-        "player_name": "Jo\u00e3o Pedro",
-        "team": "Chelsea",
-        "position": "FWD",
-        "assists": 8,
-        "goals": 10,
-        "minutes": 1887,
-        "assists_per_90": 0.38,
-        "xa": 3.5,
-        "key_passes": 24,
-        "price": 7.6
-      },
-      {
-        "rank": 4,
         "player_name": "Minteh",
         "team": "Brighton",
         "position": "MID",
@@ -3730,33 +3717,20 @@
         "price": 5.6
       },
       {
+        "rank": 4,
+        "player_name": "Jo\u00e3o Pedro",
+        "team": "Chelsea",
+        "position": "FWD",
+        "assists": 8,
+        "goals": 10,
+        "minutes": 1887,
+        "assists_per_90": 0.38,
+        "xa": 3.5,
+        "key_passes": 24,
+        "price": 7.6
+      },
+      {
         "rank": 5,
-        "player_name": "Saka",
-        "team": "Arsenal",
-        "position": "MID",
-        "assists": 7,
-        "goals": 4,
-        "minutes": 1543,
-        "assists_per_90": 0.41,
-        "xa": null,
-        "key_passes": null,
-        "price": 9.9
-      },
-      {
-        "rank": 6,
-        "player_name": "Rice",
-        "team": "Arsenal",
-        "position": "MID",
-        "assists": 7,
-        "goals": 4,
-        "minutes": 2055,
-        "assists_per_90": 0.31,
-        "xa": null,
-        "key_passes": null,
-        "price": 7.5
-      },
-      {
-        "rank": 7,
         "player_name": "Doku",
         "team": "Manchester City",
         "position": "MID",
@@ -3769,20 +3743,33 @@
         "price": 6.4
       },
       {
-        "rank": 8,
-        "player_name": "Matheus N.",
-        "team": "Manchester City",
-        "position": "DEF",
-        "assists": 6,
-        "goals": 1,
-        "minutes": 1845,
-        "assists_per_90": 0.29,
+        "rank": 6,
+        "player_name": "Saka",
+        "team": "Arsenal",
+        "position": "MID",
+        "assists": 7,
+        "goals": 4,
+        "minutes": 1543,
+        "assists_per_90": 0.41,
         "xa": null,
         "key_passes": null,
-        "price": 5.4
+        "price": 9.9
       },
       {
-        "rank": 9,
+        "rank": 7,
+        "player_name": "Rice",
+        "team": "Arsenal",
+        "position": "MID",
+        "assists": 7,
+        "goals": 4,
+        "minutes": 2055,
+        "assists_per_90": 0.31,
+        "xa": null,
+        "key_passes": null,
+        "price": 7.5
+      },
+      {
+        "rank": 8,
         "player_name": "Dalot",
         "team": "Manchester United",
         "position": "DEF",
@@ -3795,7 +3782,7 @@
         "price": 4.5
       },
       {
-        "rank": 10,
+        "rank": 9,
         "player_name": "Haaland",
         "team": "Manchester City",
         "position": "FWD",
@@ -3806,6 +3793,19 @@
         "xa": null,
         "key_passes": null,
         "price": 14.9
+      },
+      {
+        "rank": 10,
+        "player_name": "Stach",
+        "team": "Leeds United",
+        "position": "MID",
+        "assists": 6,
+        "goals": 3,
+        "minutes": 1693,
+        "assists_per_90": 0.32,
+        "xa": null,
+        "key_passes": null,
+        "price": 4.8
       },
       {
         "rank": 11,
@@ -3835,13 +3835,13 @@
       },
       {
         "rank": 13,
-        "player_name": "Aaronson",
-        "team": "Leeds United",
-        "position": "MID",
+        "player_name": "Matheus N.",
+        "team": "Manchester City",
+        "position": "DEF",
         "assists": 6,
-        "goals": 4,
-        "minutes": 1653,
-        "assists_per_90": 0.33,
+        "goals": 1,
+        "minutes": 1845,
+        "assists_per_90": 0.29,
         "xa": null,
         "key_passes": null,
         "price": 5.4
@@ -3861,16 +3861,16 @@
       },
       {
         "rank": 15,
-        "player_name": "Stach",
+        "player_name": "Aaronson",
         "team": "Leeds United",
         "position": "MID",
         "assists": 6,
-        "goals": 3,
-        "minutes": 1693,
-        "assists_per_90": 0.32,
+        "goals": 4,
+        "minutes": 1653,
+        "assists_per_90": 0.33,
         "xa": null,
         "key_passes": null,
-        "price": 4.8
+        "price": 5.4
       }
     ],
     "iron_men": [
@@ -4176,17 +4176,6 @@
       },
       {
         "rank": 9,
-        "player_name": "Dewsbury-Hall",
-        "team": "Everton",
-        "position": "MID",
-        "price": 4.9,
-        "goals": 5,
-        "assists": 4,
-        "ga_per_million": 1.84,
-        "minutes": 1560
-      },
-      {
-        "rank": 10,
         "player_name": "B.Fernandes",
         "team": "Manchester United",
         "position": "MID",
@@ -4195,6 +4184,17 @@
         "assists": 12,
         "ga_per_million": 1.84,
         "minutes": 1985
+      },
+      {
+        "rank": 10,
+        "player_name": "Dewsbury-Hall",
+        "team": "Everton",
+        "position": "MID",
+        "price": 4.9,
+        "goals": 5,
+        "assists": 4,
+        "ga_per_million": 1.84,
+        "minutes": 1560
       },
       {
         "rank": 11,
@@ -4281,13 +4281,13 @@
         "minutes": 1774
       },
       {
-        "player_name": "Walker",
-        "team": "Burnley",
-        "position": "DEF",
+        "player_name": "J.Gomes",
+        "team": "Wolverhampton",
+        "position": "MID",
         "yellows": 8,
         "reds": 0,
         "total_cards": 8,
-        "minutes": 2146
+        "minutes": 1934
       },
       {
         "player_name": "Andr\u00e9",
@@ -4299,6 +4299,15 @@
         "minutes": 1682
       },
       {
+        "player_name": "Iroegbunam",
+        "team": "Everton",
+        "position": "MID",
+        "yellows": 8,
+        "reds": 0,
+        "total_cards": 8,
+        "minutes": 934
+      },
+      {
         "player_name": "A.Jimenez",
         "team": "Bournemouth",
         "position": "DEF",
@@ -4306,15 +4315,6 @@
         "reds": 0,
         "total_cards": 8,
         "minutes": 1587
-      },
-      {
-        "player_name": "J.Gomes",
-        "team": "Wolverhampton",
-        "position": "MID",
-        "yellows": 8,
-        "reds": 0,
-        "total_cards": 8,
-        "minutes": 1934
       },
       {
         "player_name": "Dunk",
@@ -4326,22 +4326,22 @@
         "minutes": 2115
       },
       {
-        "player_name": "Iroegbunam",
-        "team": "Everton",
-        "position": "MID",
+        "player_name": "Walker",
+        "team": "Burnley",
+        "position": "DEF",
         "yellows": 8,
         "reds": 0,
         "total_cards": 8,
-        "minutes": 934
+        "minutes": 2146
       },
       {
-        "player_name": "Senesi",
-        "team": "Bournemouth",
-        "position": "DEF",
-        "yellows": 7,
-        "reds": 0,
+        "player_name": "Schade",
+        "team": "Brentford",
+        "position": "MID",
+        "yellows": 6,
+        "reds": 1,
         "total_cards": 7,
-        "minutes": 2208
+        "minutes": 1857
       }
     ]
   },
