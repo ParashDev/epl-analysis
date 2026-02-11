@@ -21,11 +21,13 @@ data/raw/
 *.swo
 *~
 
-# Claude Code local settings
+# AI agent configs and prompts
 .claude/
-
-# Skill templates (dev only)
+CLAUDE.md
+PROMPT.md
 skill/
+PRD/
+FRD/
 
 # OS
 .DS_Store
