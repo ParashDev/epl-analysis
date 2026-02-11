@@ -5,9 +5,17 @@ on:
     # Every Monday at 08:00 UTC (after the weekend's matches)
     - cron: '0 8 * * 1'
   workflow_dispatch:
+  push:
+    branches: [main]
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
   update-data:
@@ -39,3 +47,29 @@ jobs:
           git add data/cleaned/ data/dashboard_data.json
           git diff --staged --quiet || git commit -m "Update EPL data (automated)"
           git push
+
+  deploy:
+    needs: update-data
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
