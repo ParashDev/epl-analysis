@@ -2,8 +2,8 @@ name: Update EPL Data
 
 on:
   schedule:
-    # Every Monday at 08:00 UTC (after the weekend's matches)
-    - cron: '0 8 * * 1'
+    # Daily at 08:00 UTC (catches weekend, Monday, and midweek fixtures)
+    - cron: '0 8 * * *'
   workflow_dispatch:
   push:
     branches: [main]
