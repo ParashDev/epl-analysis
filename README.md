@@ -2,7 +2,7 @@
 
 Four seasons of English Premier League match data cleaned, enriched with player prices and expected goals, and visualized as an interactive dashboard to answer a simple question: does spending predict success?
 
-[Live Demo](#) | [Data Sources](https://www.football-data.co.uk/)
+[Live Demo](https://parashdev.github.io/epl-analysis) | [Data Sources](https://www.football-data.co.uk/)
 
 ## The Question
 
@@ -44,8 +44,8 @@ EPL-Analysis/
 Prerequisites: Python 3.11+, pip
 
 ```bash
-git clone https://github.com/ParashDev/EPL-Analysis.git
-cd EPL-Analysis
+git clone https://github.com/ParashDev/epl-analysis.git
+cd epl-analysis
 pip install -r requirements.txt
 
 # Full pipeline (order matters: 01 first, then 03/04 in any order, then 02 last)
@@ -65,7 +65,7 @@ The dashboard works with only match data. If FPL or xG scripts fail (network iss
 
 1. Push to GitHub
 2. Settings > Pages > Source: main branch, / (root)
-3. Site is live at `https://ParashDev.github.io/EPL-Analysis`
+3. Site is live at `https://parashdev.github.io/epl-analysis`
 
 ## What This Demonstrates
 
