@@ -52,6 +52,15 @@
     .progress-bar { height: 4px; background: #252540; border-radius: 2px; overflow: hidden; }
     .progress-fill { height: 100%; background: #52b788; border-radius: 2px; transition: width 0.3s; }
     #loading { display: flex; } #dashboard { display: none; } #error-msg { display: none; }
+    .report-context { color: #6b7280; font-size: 0.9rem; line-height: 1.7; max-width: 56rem; margin-bottom: 1.25rem; }
+    .report-insight { border-left: 3px solid #52b788; background: rgba(82,183,136,0.04); padding: 1rem 1.25rem; margin-top: 1.25rem; border-radius: 0 8px 8px 0; }
+    .report-insight p { color: #d1d5db; font-size: 0.875rem; line-height: 1.7; }
+    .report-insight strong { color: #52b788; }
+    .chapter-tag { font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #52b788; display: inline-block; padding: 3px 10px; border: 1px solid rgba(82,183,136,0.25); border-radius: 4px; margin-bottom: 0.75rem; }
+    .exec-card { background: linear-gradient(135deg, #1a1a2e 0%, #252540 100%); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 1.5rem; }
+    .exec-card .exec-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; color: #6b7280; margin-bottom: 0.5rem; }
+    .exec-card .exec-value { font-size: 2rem; font-weight: 700; line-height: 1.2; }
+    .exec-card .exec-detail { font-size: 0.75rem; color: #6b7280; margin-top: 0.35rem; }
   </style>
 </head>
 <body class="min-h-screen">
@@ -69,10 +78,13 @@
         <a href="#brief" class="nav-link py-4">Brief</a>
         <a href="#raw-data" class="nav-link py-4">Data</a>
         <a href="#pipeline" class="nav-link py-4">Pipeline</a>
-        <a href="#dashboard-section" class="nav-link py-4">Dashboard</a>
-        <a href="#money-section" class="nav-link py-4">Money</a>
-        <a href="#players-section" class="nav-link py-4">Players</a>
-        <a href="#takeaway" class="nav-link py-4">Takeaway</a>
+        <a href="#ch-league" class="nav-link py-4">League</a>
+        <a href="#ch-attack" class="nav-link py-4">Attack</a>
+        <a href="#ch-money" class="nav-link py-4">Money</a>
+        <a href="#ch-xg" class="nav-link py-4">xG</a>
+        <a href="#ch-players" class="nav-link py-4">Players</a>
+        <a href="#ch-history" class="nav-link py-4">History</a>
+        <a href="#verdict" class="nav-link py-4">Verdict</a>
       </div>
       <div id="last-updated" class="hidden text-xs text-gray-500"></div>
     </div>
@@ -95,13 +107,43 @@
   <!-- DASHBOARD CONTENT -->
   <div id="dashboard" class="max-w-7xl mx-auto px-4 sm:px-6 pt-20 pb-16">
 
-    <!-- SECTION 1: THE BRIEF -->
+    <!-- SECTION 1: THE BRIEF / EXECUTIVE SUMMARY -->
     <section id="brief" class="mb-20">
       <p class="tag mb-3">Case Study 001</p>
       <h1 class="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-chalk leading-tight mb-6" id="hero-title">
         Does Money Buy Points<br>in the Premier League?
       </h1>
-      <p class="text-gray-400 text-lg max-w-2xl mb-8" id="brief-text"></p>
+
+      <!-- Executive summary cards -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8" id="exec-cards">
+        <div class="exec-card">
+          <p class="exec-label">Season Progress</p>
+          <p class="exec-value text-chalk" id="exec-progress"></p>
+          <p class="exec-detail" id="exec-progress-detail"></p>
+        </div>
+        <div class="exec-card">
+          <p class="exec-label">Spend vs Points R-squared</p>
+          <p class="exec-value text-warn" id="exec-r2">--</p>
+          <p class="exec-detail" id="exec-r2-detail">Run FPL script to enable</p>
+        </div>
+        <div class="exec-card">
+          <p class="exec-label">Best Overperformer</p>
+          <p class="exec-value text-accent" id="exec-best">--</p>
+          <p class="exec-detail" id="exec-best-detail"></p>
+        </div>
+        <div class="exec-card">
+          <p class="exec-label">Worst Underperformer</p>
+          <p class="exec-value text-warn" id="exec-worst">--</p>
+          <p class="exec-detail" id="exec-worst-detail"></p>
+        </div>
+      </div>
+
+      <!-- Two-paragraph executive summary -->
+      <div class="max-w-3xl mb-8">
+        <p class="text-chalk text-lg leading-relaxed mb-4" id="exec-headline"></p>
+        <p class="text-gray-400 leading-relaxed" id="exec-methodology"></p>
+      </div>
+
       <div class="flex flex-wrap gap-2" id="tech-pills"></div>
     </section>
 
@@ -353,10 +395,12 @@ df['home_team'] = df['HomeTeam'].replace(FOOTBALL_DATA_NAME_MAP)</code></pre>
       </div>
     </section>
 
-    <!-- SECTION 4: THE DASHBOARD -->
-    <section id="dashboard-section" class="section-border pt-16 mb-20">
-      <p class="tag mb-3">Section 03</p>
-      <h2 class="font-heading font-semibold text-2xl text-chalk mb-2" id="table-heading">The Dashboard</h2>
+    <!-- ============================================================ -->
+    <!-- CHAPTER 1: LEAGUE AT A GLANCE                                -->
+    <!-- ============================================================ -->
+    <section id="ch-league" class="section-border pt-16 mb-20">
+      <span class="chapter-tag">Chapter 1</span>
+      <h2 class="font-heading font-semibold text-2xl text-chalk mb-2" id="table-heading">League at a Glance</h2>
       <p class="text-gray-500 text-sm mb-8" id="dashboard-subtitle"></p>
 
       <!-- KPI ROW -->
@@ -382,8 +426,9 @@ df['home_team'] = df['HomeTeam'].replace(FOOTBALL_DATA_NAME_MAP)</code></pre>
         </div>
       </div>
 
-      <!-- LEAGUE TABLE -->
-      <div class="chart-box rounded-lg p-4 sm:p-6 mb-8 overflow-x-auto">
+      <!-- LEAGUE TABLE with context/insight -->
+      <div class="report-context" id="ctx-league-table"></div>
+      <div class="chart-box rounded-lg p-4 sm:p-6 mb-2 overflow-x-auto">
         <h3 class="font-heading font-semibold text-lg text-chalk mb-4" id="league-table-title"></h3>
         <table class="w-full text-left min-w-[640px]">
           <thead>
@@ -406,13 +451,61 @@ df['home_team'] = df['HomeTeam'].replace(FOOTBALL_DATA_NAME_MAP)</code></pre>
           <tbody id="league-table-body"></tbody>
         </table>
       </div>
+      <div class="report-insight mb-10" id="insight-league-table"></div>
 
-      <!-- MONEY VS POINTS (the thesis) -->
-      <div id="money-section" class="hidden mb-10">
-        <p class="tag mb-3">The Thesis</p>
-        <h3 class="font-heading font-semibold text-xl text-chalk mb-2">Squad Spending vs League Points</h3>
-        <p class="text-gray-500 text-sm mb-6" id="money-subtitle"></p>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+      <!-- POINTS RACE with context/insight -->
+      <div class="report-context" id="ctx-points-race"></div>
+      <div class="chart-box rounded-lg p-4 sm:p-6 mb-2">
+        <h3 class="font-heading font-semibold text-lg text-chalk mb-4">Points Race</h3>
+        <div style="height: 400px;"><canvas id="chart-points-race"></canvas></div>
+      </div>
+      <div class="report-insight mb-10" id="insight-points-race"></div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- CHAPTER 2: ATTACK & DEFENSE                                  -->
+    <!-- ============================================================ -->
+    <section id="ch-attack" class="section-border pt-16 mb-20">
+      <span class="chapter-tag">Chapter 2</span>
+      <h2 class="font-heading font-semibold text-2xl text-chalk mb-8">Attack and Defense</h2>
+
+      <!-- MONTHLY GOALS -->
+      <div class="report-context" id="ctx-monthly-goals"></div>
+      <div class="chart-box rounded-lg p-4 sm:p-6 mb-2">
+        <h3 class="font-heading font-semibold text-lg text-chalk mb-4">Goals by Month</h3>
+        <div style="height: 300px;"><canvas id="chart-monthly-goals"></canvas></div>
+      </div>
+      <div class="report-insight mb-10" id="insight-monthly-goals"></div>
+
+      <!-- HOME VS AWAY -->
+      <div class="report-context" id="ctx-home-away"></div>
+      <div class="chart-box rounded-lg p-4 sm:p-6 mb-2">
+        <h3 class="font-heading font-semibold text-lg text-chalk mb-4">Home vs Away</h3>
+        <div style="height: 250px;"><canvas id="chart-home-away"></canvas></div>
+        <div class="grid grid-cols-3 gap-2 mt-4 text-center text-sm" id="home-away-stats"></div>
+      </div>
+      <div class="report-insight mb-10" id="insight-home-away"></div>
+
+      <!-- SCORELINES -->
+      <div class="report-context" id="ctx-scorelines"></div>
+      <div class="chart-box rounded-lg p-4 sm:p-6 mb-2">
+        <h3 class="font-heading font-semibold text-lg text-chalk mb-4">Most Common Scorelines</h3>
+        <div style="height: 300px;"><canvas id="chart-scorelines"></canvas></div>
+      </div>
+      <div class="report-insight mb-10" id="insight-scorelines"></div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- CHAPTER 3: THE MONEY QUESTION                                -->
+    <!-- ============================================================ -->
+    <section id="ch-money" class="section-border pt-16 mb-20">
+      <span class="chapter-tag">Chapter 3</span>
+      <h2 class="font-heading font-semibold text-2xl text-chalk mb-2">The Money Question</h2>
+      <p class="text-gray-500 text-sm mb-8">Does squad spending predict league position? Using FPL player prices as a proxy for market value.</p>
+
+      <div id="money-section" class="hidden">
+        <div class="report-context" id="ctx-money-scatter"></div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-2">
           <div class="chart-box rounded-lg p-4 sm:p-6">
             <h4 class="text-sm font-bold text-gray-400 uppercase tracking-wide mb-4">Squad Value vs Points</h4>
             <div style="height: 400px;"><canvas id="chart-money-scatter"></canvas></div>
@@ -422,6 +515,8 @@ df['home_team'] = df['HomeTeam'].replace(FOOTBALL_DATA_NAME_MAP)</code></pre>
             <div style="height: 400px;"><canvas id="chart-overperformers"></canvas></div>
           </div>
         </div>
+        <div class="report-insight mb-10" id="insight-money-scatter"></div>
+
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
           <div class="stat-card rounded-lg p-5">
             <p class="text-gray-400 text-sm mb-1">R-squared</p>
@@ -442,52 +537,23 @@ df['home_team'] = df['HomeTeam'].replace(FOOTBALL_DATA_NAME_MAP)</code></pre>
       </div>
 
       <!-- MONEY FALLBACK -->
-      <div id="money-fallback" class="hidden mb-10">
+      <div id="money-fallback" class="hidden">
         <div class="chart-box rounded-lg p-8 text-center">
           <p class="text-gray-500">Squad value data not available. Run <code class="text-accent">python scripts/03_fetch_fpl.py</code> to enable the money analysis.</p>
         </div>
       </div>
+    </section>
 
-      <!-- CHARTS GRID -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-        <!-- Points Race -->
-        <div class="chart-box rounded-lg p-4 sm:p-6 md:col-span-2">
-          <h3 class="font-heading font-semibold text-lg text-chalk mb-4">Points Race</h3>
-          <div style="height: 400px;"><canvas id="chart-points-race"></canvas></div>
-        </div>
-        <!-- Monthly Goals -->
-        <div class="chart-box rounded-lg p-4 sm:p-6">
-          <h3 class="font-heading font-semibold text-lg text-chalk mb-4">Goals by Month</h3>
-          <div style="height: 300px;"><canvas id="chart-monthly-goals"></canvas></div>
-        </div>
-        <!-- Home vs Away -->
-        <div class="chart-box rounded-lg p-4 sm:p-6">
-          <h3 class="font-heading font-semibold text-lg text-chalk mb-4">Home vs Away</h3>
-          <div style="height: 250px;"><canvas id="chart-home-away"></canvas></div>
-          <div class="grid grid-cols-3 gap-2 mt-4 text-center text-sm" id="home-away-stats"></div>
-        </div>
-        <!-- Referee Cards -->
-        <div class="chart-box rounded-lg p-4 sm:p-6">
-          <h3 class="font-heading font-semibold text-lg text-chalk mb-4">Referee Card Rates</h3>
-          <div style="height: 360px;"><canvas id="chart-referee"></canvas></div>
-        </div>
-        <!-- Scorelines -->
-        <div class="chart-box rounded-lg p-4 sm:p-6">
-          <h3 class="font-heading font-semibold text-lg text-chalk mb-4">Most Common Scorelines</h3>
-          <div style="height: 300px;"><canvas id="chart-scorelines"></canvas></div>
-        </div>
-        <!-- Season Comparison -->
-        <div class="chart-box rounded-lg p-4 sm:p-6 md:col-span-2">
-          <h3 class="font-heading font-semibold text-lg text-chalk mb-4">Season Comparison</h3>
-          <div style="height: 300px;"><canvas id="chart-season-comparison"></canvas></div>
-        </div>
-      </div>
+    <!-- ============================================================ -->
+    <!-- CHAPTER 4: EXPECTED GOALS                                    -->
+    <!-- ============================================================ -->
+    <section id="ch-xg" class="section-border pt-16 mb-20">
+      <span class="chapter-tag">Chapter 4</span>
+      <h2 class="font-heading font-semibold text-2xl text-chalk mb-8">Expected Goals (xG)</h2>
 
-      <!-- xG SECTION (conditional) -->
-      <div id="xg-section" class="hidden mt-10">
-        <p class="tag mb-3">Advanced Analytics</p>
-        <h3 class="font-heading font-semibold text-xl text-chalk mb-6">Expected Goals (xG) Analysis</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+      <div id="xg-section" class="hidden">
+        <div class="report-context" id="ctx-xg-scatter"></div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-2">
           <div class="chart-box rounded-lg p-4 sm:p-6">
             <h4 class="text-sm font-bold text-gray-400 uppercase tracking-wide mb-4">xG vs Actual Goals</h4>
             <div style="height: 350px;"><canvas id="chart-xg-scatter"></canvas></div>
@@ -497,104 +563,145 @@ df['home_team'] = df['HomeTeam'].replace(FOOTBALL_DATA_NAME_MAP)</code></pre>
             <div style="height: 350px;"><canvas id="chart-top-scorers"></canvas></div>
           </div>
         </div>
-        <div class="chart-box rounded-lg p-4 sm:p-6 mb-8">
+        <div class="report-insight mb-10" id="insight-xg-scatter"></div>
+
+        <div class="report-context" id="ctx-shot-quality"></div>
+        <div class="chart-box rounded-lg p-4 sm:p-6 mb-2">
           <h4 class="text-sm font-bold text-gray-400 uppercase tracking-wide mb-4">Shot Quality by Team (xG per Shot)</h4>
           <div style="height: 500px;"><canvas id="chart-shot-quality"></canvas></div>
         </div>
+        <div class="report-insight mb-10" id="insight-shot-quality"></div>
       </div>
 
       <!-- xG FALLBACK -->
-      <div id="xg-fallback" class="hidden mt-10">
+      <div id="xg-fallback" class="hidden">
         <div class="chart-box rounded-lg p-8 text-center">
           <p class="text-gray-500">xG data not loaded. Run <code class="text-accent">python scripts/04_fetch_xg.py</code> to enable advanced analytics.</p>
         </div>
       </div>
     </section>
 
-    <!-- PLAYER LEADERBOARDS (conditional) -->
-    <section id="players-section" class="hidden section-border pt-16 mb-20">
-      <p class="tag mb-3">Player Stats</p>
-      <h2 class="font-heading font-semibold text-2xl text-chalk mb-2">Player Leaderboards</h2>
+    <!-- ============================================================ -->
+    <!-- CHAPTER 5: PLAYERS                                           -->
+    <!-- ============================================================ -->
+    <section id="ch-players" class="section-border pt-16 mb-20">
+      <span class="chapter-tag">Chapter 5</span>
+      <h2 class="font-heading font-semibold text-2xl text-chalk mb-2">Player Analysis</h2>
       <p class="text-gray-500 text-sm mb-8">Individual player statistics from FPL data, enriched with xG where available. Minimum 450 minutes for rate-based metrics.</p>
 
-      <!-- Goals by Position summary -->
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8" id="goals-by-position"></div>
+      <div id="players-section" class="hidden">
+        <!-- Goals by Position summary -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8" id="goals-by-position"></div>
 
-      <!-- Goal Scorers Table -->
-      <div class="chart-box rounded-lg p-4 sm:p-6 mb-6 overflow-x-auto">
-        <h3 class="font-heading font-semibold text-lg text-chalk mb-4">Top Goal Scorers</h3>
-        <table class="w-full text-left min-w-[700px]">
-          <thead>
-            <tr class="border-b border-white/5">
-              <th class="pb-3 pr-2 w-8">#</th>
-              <th class="pb-3 pr-4">Player</th>
-              <th class="pb-3 pr-2">Team</th>
-              <th class="pb-3 pr-2 text-center">Pos</th>
-              <th class="pb-3 pr-2 text-center">G</th>
-              <th class="pb-3 pr-2 text-center">A</th>
-              <th class="pb-3 pr-2 text-center">Min</th>
-              <th class="pb-3 pr-2 text-center">G/90</th>
-              <th class="pb-3 pr-2 text-center hidden sm:table-cell">xG</th>
-              <th class="pb-3 pr-2 text-center hidden sm:table-cell">Price</th>
-            </tr>
-          </thead>
-          <tbody id="scorers-table-body"></tbody>
-        </table>
-      </div>
-
-      <!-- Assist Leaders Table -->
-      <div class="chart-box rounded-lg p-4 sm:p-6 mb-6 overflow-x-auto">
-        <h3 class="font-heading font-semibold text-lg text-chalk mb-4">Assist Leaders</h3>
-        <table class="w-full text-left min-w-[700px]">
-          <thead>
-            <tr class="border-b border-white/5">
-              <th class="pb-3 pr-2 w-8">#</th>
-              <th class="pb-3 pr-4">Player</th>
-              <th class="pb-3 pr-2">Team</th>
-              <th class="pb-3 pr-2 text-center">Pos</th>
-              <th class="pb-3 pr-2 text-center">A</th>
-              <th class="pb-3 pr-2 text-center">G</th>
-              <th class="pb-3 pr-2 text-center">Min</th>
-              <th class="pb-3 pr-2 text-center">A/90</th>
-              <th class="pb-3 pr-2 text-center hidden sm:table-cell">xA</th>
-              <th class="pb-3 pr-2 text-center hidden sm:table-cell">Price</th>
-            </tr>
-          </thead>
-          <tbody id="assists-table-body"></tbody>
-        </table>
-      </div>
-
-      <!-- Charts row: Best Value + Disciplinary -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-        <div class="chart-box rounded-lg p-4 sm:p-6">
-          <h3 class="font-heading font-semibold text-lg text-chalk mb-4">Best Value (G+A per Million)</h3>
-          <div style="height: 400px;"><canvas id="chart-best-value"></canvas></div>
+        <!-- Goal Scorers Table -->
+        <div class="report-context" id="ctx-scorers"></div>
+        <div class="chart-box rounded-lg p-4 sm:p-6 mb-2 overflow-x-auto">
+          <h3 class="font-heading font-semibold text-lg text-chalk mb-4">Top Goal Scorers</h3>
+          <table class="w-full text-left min-w-[700px]">
+            <thead>
+              <tr class="border-b border-white/5">
+                <th class="pb-3 pr-2 w-8">#</th>
+                <th class="pb-3 pr-4">Player</th>
+                <th class="pb-3 pr-2">Team</th>
+                <th class="pb-3 pr-2 text-center">Pos</th>
+                <th class="pb-3 pr-2 text-center">G</th>
+                <th class="pb-3 pr-2 text-center">A</th>
+                <th class="pb-3 pr-2 text-center">Min</th>
+                <th class="pb-3 pr-2 text-center">G/90</th>
+                <th class="pb-3 pr-2 text-center hidden sm:table-cell">xG</th>
+                <th class="pb-3 pr-2 text-center hidden sm:table-cell">Price</th>
+              </tr>
+            </thead>
+            <tbody id="scorers-table-body"></tbody>
+          </table>
         </div>
-        <div class="chart-box rounded-lg p-4 sm:p-6">
-          <h3 class="font-heading font-semibold text-lg text-chalk mb-4">Most Booked Players</h3>
-          <div style="height: 400px;"><canvas id="chart-most-cards"></canvas></div>
+        <div class="report-insight mb-10" id="insight-scorers"></div>
+
+        <!-- Assist Leaders Table -->
+        <div class="report-context" id="ctx-assists"></div>
+        <div class="chart-box rounded-lg p-4 sm:p-6 mb-2 overflow-x-auto">
+          <h3 class="font-heading font-semibold text-lg text-chalk mb-4">Assist Leaders</h3>
+          <table class="w-full text-left min-w-[700px]">
+            <thead>
+              <tr class="border-b border-white/5">
+                <th class="pb-3 pr-2 w-8">#</th>
+                <th class="pb-3 pr-4">Player</th>
+                <th class="pb-3 pr-2">Team</th>
+                <th class="pb-3 pr-2 text-center">Pos</th>
+                <th class="pb-3 pr-2 text-center">A</th>
+                <th class="pb-3 pr-2 text-center">G</th>
+                <th class="pb-3 pr-2 text-center">Min</th>
+                <th class="pb-3 pr-2 text-center">A/90</th>
+                <th class="pb-3 pr-2 text-center hidden sm:table-cell">xA</th>
+                <th class="pb-3 pr-2 text-center hidden sm:table-cell">Price</th>
+              </tr>
+            </thead>
+            <tbody id="assists-table-body"></tbody>
+          </table>
         </div>
+        <div class="report-insight mb-10" id="insight-assists"></div>
+
+        <!-- Charts row: Best Value + Disciplinary -->
+        <div class="report-context" id="ctx-value"></div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-2">
+          <div class="chart-box rounded-lg p-4 sm:p-6">
+            <h3 class="font-heading font-semibold text-lg text-chalk mb-4">Best Value (G+A per Million)</h3>
+            <div style="height: 400px;"><canvas id="chart-best-value"></canvas></div>
+          </div>
+          <div class="chart-box rounded-lg p-4 sm:p-6">
+            <h3 class="font-heading font-semibold text-lg text-chalk mb-4">Most Booked Players</h3>
+            <div style="height: 400px;"><canvas id="chart-most-cards"></canvas></div>
+          </div>
+        </div>
+        <div class="report-insight mb-10" id="insight-value"></div>
+
+        <!-- Iron Men: most minutes per team -->
+        <div class="report-context" id="ctx-iron-men"></div>
+        <div class="chart-box rounded-lg p-4 sm:p-6 mb-2 overflow-x-auto">
+          <h3 class="font-heading font-semibold text-lg text-chalk mb-4">Iron Men -- Most Minutes Per Team</h3>
+          <div style="height: 500px;"><canvas id="chart-iron-men"></canvas></div>
+        </div>
+        <div class="report-insight mb-10" id="insight-iron-men"></div>
       </div>
 
-      <!-- Iron Men: most minutes per team -->
-      <div class="chart-box rounded-lg p-4 sm:p-6 overflow-x-auto">
-        <h3 class="font-heading font-semibold text-lg text-chalk mb-4">Iron Men -- Most Minutes Per Team</h3>
-        <div style="height: 500px;"><canvas id="chart-iron-men"></canvas></div>
+      <!-- Player Leaderboards Fallback -->
+      <div id="players-fallback" class="hidden">
+        <div class="chart-box rounded-lg p-8 text-center">
+          <p class="text-gray-500">Player data not available. Run <code class="text-accent">python scripts/03_fetch_fpl.py</code> to enable player leaderboards.</p>
+        </div>
       </div>
     </section>
 
-    <!-- Player Leaderboards Fallback -->
-    <div id="players-fallback" class="hidden section-border pt-16 mb-20">
-      <div class="chart-box rounded-lg p-8 text-center">
-        <p class="text-gray-500">Player data not available. Run <code class="text-accent">python scripts/03_fetch_fpl.py</code> to enable player leaderboards.</p>
-      </div>
-    </div>
+    <!-- ============================================================ -->
+    <!-- CHAPTER 6: HISTORICAL CONTEXT                                -->
+    <!-- ============================================================ -->
+    <section id="ch-history" class="section-border pt-16 mb-20">
+      <span class="chapter-tag">Chapter 6</span>
+      <h2 class="font-heading font-semibold text-2xl text-chalk mb-8">Historical Context</h2>
 
-    <!-- SECTION 5: THE TAKEAWAY -->
-    <section id="takeaway" class="section-border pt-16 mb-20">
-      <p class="tag mb-3">Section 04</p>
-      <h2 class="font-heading font-semibold text-2xl text-chalk mb-6">The Takeaway</h2>
-      <div class="max-w-3xl space-y-4 text-gray-400 leading-relaxed" id="takeaway-text"></div>
+      <div class="report-context" id="ctx-season-comparison"></div>
+      <div class="chart-box rounded-lg p-4 sm:p-6 mb-2">
+        <h3 class="font-heading font-semibold text-lg text-chalk mb-4">Season Comparison</h3>
+        <div style="height: 300px;"><canvas id="chart-season-comparison"></canvas></div>
+      </div>
+      <div class="report-insight mb-10" id="insight-season-comparison"></div>
+
+      <!-- REFEREE -->
+      <div class="report-context" id="ctx-referee"></div>
+      <div class="chart-box rounded-lg p-4 sm:p-6 mb-2">
+        <h3 class="font-heading font-semibold text-lg text-chalk mb-4">Referee Card Rates</h3>
+        <div style="height: 360px;"><canvas id="chart-referee"></canvas></div>
+      </div>
+      <div class="report-insight mb-10" id="insight-referee"></div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- THE VERDICT                                                  -->
+    <!-- ============================================================ -->
+    <section id="verdict" class="section-border pt-16 mb-20">
+      <span class="chapter-tag">The Verdict</span>
+      <h2 class="font-heading font-semibold text-2xl text-chalk mb-6">So, Does Money Buy Points?</h2>
+      <div class="max-w-3xl space-y-4 text-gray-400 leading-relaxed" id="verdict-text"></div>
 
       <div class="mt-12">
         <h3 class="font-heading font-semibold text-lg text-chalk mb-4">What I Would Do Differently</h3>
@@ -669,22 +776,22 @@ async function init() {
     document.getElementById('dashboard').classList.add('fade-in');
 
     renderLiveState();
-    // Data-driven season label
     if (DATA.season) {
       const parts = DATA.season.split('-');
       document.getElementById('nav-season').textContent = `EPL ${parts[0].slice(2)}/${parts[1]}`;
     }
+    renderExecSummary();
     renderKPIs();
-    renderBrief();
     renderLeagueTable();
     renderPointsRace();
     renderMonthlyGoals();
     renderHomeAway();
-    renderReferee();
     renderScorelines();
     renderSeasonComparison();
+    renderReferee();
     renderConditionalSections();
-    renderTakeaway();
+    renderVerdict();
+    populateAllInsights();
     initScrollSpy();
   } catch (e) {
     document.getElementById('loading').style.display = 'none';
@@ -703,34 +810,59 @@ function renderLiveState() {
   upd.textContent = 'Data as of ' + DATA.season_status.last_match_date;
 }
 
-// -- BRIEF -----------------------------------------------------------------
-function renderBrief() {
+// -- EXECUTIVE SUMMARY -----------------------------------------------------
+function renderExecSummary() {
   const s = DATA.season_status;
+
+  // Progress card
+  if (isLive) {
+    document.getElementById('exec-progress').textContent = `${s.matchdays_played} / 38`;
+    document.getElementById('exec-progress-detail').textContent = `${s.matches_played} of ${s.matches_total} matches played`;
+  } else {
+    document.getElementById('exec-progress').textContent = 'Complete';
+    document.getElementById('exec-progress-detail').textContent = `All ${s.matches_total} matches played`;
+  }
+
+  // Money cards (conditional)
+  if (DATA.money_vs_points) {
+    const reg = DATA.money_vs_points.regression;
+    const best = DATA.money_vs_points.teams[0];
+    const worst = DATA.money_vs_points.teams[DATA.money_vs_points.teams.length - 1];
+
+    document.getElementById('exec-r2').textContent = reg.r_squared.toFixed(3);
+    document.getElementById('exec-r2-detail').textContent = `Spending explains ${(reg.r_squared * 100).toFixed(1)}% of points`;
+    document.getElementById('exec-best').textContent = best.team;
+    document.getElementById('exec-best-detail').textContent = `+${best.over_under.toFixed(1)} pts above expected`;
+    document.getElementById('exec-worst').textContent = worst.team;
+    document.getElementById('exec-worst-detail').textContent = `${worst.over_under.toFixed(1)} pts below expected`;
+  }
+
+  // Headline paragraph
   const matchText = isLive
     ? `${s.matches_played} of ${s.matches_total} matches played so far`
     : `all ${s.matches_total} matches completed`;
 
-  let briefHTML = '';
   if (DATA.money_vs_points) {
-    const r2 = DATA.money_vs_points.regression.r_squared;
-    const best = DATA.money_vs_points.teams[0];
-    const worst = DATA.money_vs_points.teams[DATA.money_vs_points.teams.length - 1];
-    briefHTML =
+    const r2Pct = (DATA.money_vs_points.regression.r_squared * 100).toFixed(1);
+    document.getElementById('exec-headline').textContent =
       `Every summer, Premier League clubs pour hundreds of millions into squad building. ` +
-      `The conventional wisdom says the biggest spenders win titles. But does that hold up? ` +
-      `With ${matchText} in the ${DATA.season} season, I used FPL player prices as a proxy ` +
-      `for squad value and ran a regression against league points. ` +
-      `The answer: spending explains just ${(r2 * 100).toFixed(1)}% of the variance. ` +
-      `${best.team} ${isLive ? 'are' : 'were'} the standout overperformer -- ` +
-      `${best.over_under.toFixed(0)} points above what their budget would predict. ` +
-      `${worst.team}? ${Math.abs(worst.over_under).toFixed(0)} points below.`;
+      `The conventional wisdom says the biggest spenders win titles. With ${matchText} in the ${DATA.season} season, ` +
+      `this analysis tests that assumption using regression analysis across three independent data sources.`;
+    document.getElementById('exec-methodology').textContent =
+      `The pipeline fetches match results from football-data.co.uk, player valuations from the Fantasy Premier League API, ` +
+      `and expected goals data from Understat. After cleaning 133 raw columns down to 29, standardizing team names across ` +
+      `all three sources, and running a linear regression of squad value against league points, the answer emerges: ` +
+      `spending explains just ${r2Pct}% of the variance. The details follow below.`;
   } else {
-    briefHTML =
-      `Four seasons of English Premier League data -- ${matchText} in the current season alone. ` +
-      `Raw CSVs with 120 columns of betting noise, cleaned down to 29 columns of match statistics, ` +
-      `enriched with player prices and expected goals data, and served as an interactive dashboard.`;
+    document.getElementById('exec-headline').textContent =
+      `Four seasons of English Premier League data, ${matchText} in the current campaign. ` +
+      `Raw CSVs with 133 columns of betting noise cleaned down to 29 columns of match statistics, ` +
+      `served as an interactive analytical report.`;
+    document.getElementById('exec-methodology').textContent =
+      `This dashboard reads from a single JSON file generated by a Python ETL pipeline. ` +
+      `Enable the full money-vs-points analysis by running the FPL and Understat enrichment scripts.`;
   }
-  document.getElementById('brief-text').textContent = briefHTML;
+
   const pills = ['Python / Pandas', 'Linear Regression', 'ETL Pipeline', 'Chart.js', 'FPL API', 'Understat API'];
   document.getElementById('tech-pills').innerHTML = pills.map(p =>
     `<span class="px-3 py-1 rounded-full text-xs font-medium bg-surface border border-white/5 text-gray-400">${p}</span>`
@@ -971,7 +1103,6 @@ function renderSeasonComparison() {
 
 // -- CONDITIONAL SECTIONS --------------------------------------------------
 function renderConditionalSections() {
-  // Money vs Points (the thesis)
   if (DATA.money_vs_points && DATA.money_vs_points.teams.length > 0) {
     document.getElementById('money-section').classList.remove('hidden');
     renderMoneyVsPoints();
@@ -979,7 +1110,6 @@ function renderConditionalSections() {
     document.getElementById('money-fallback').classList.remove('hidden');
   }
 
-  // xG analysis
   if (DATA.xg_vs_actual && DATA.xg_vs_actual.length > 0) {
     document.getElementById('xg-section').classList.remove('hidden');
     renderXgScatter();
@@ -989,7 +1119,6 @@ function renderConditionalSections() {
     document.getElementById('xg-fallback').classList.remove('hidden');
   }
 
-  // Player leaderboards
   if (DATA.player_leaderboards) {
     document.getElementById('players-section').classList.remove('hidden');
     renderPlayerLeaderboards();
@@ -998,16 +1127,337 @@ function renderConditionalSections() {
   }
 }
 
+// -- CONTEXT & INSIGHT GENERATORS ------------------------------------------
+// Each function reads DATA and returns an HTML string. Called once after all
+// charts render so the text reflects the actual data in the JSON.
+
+function genCtxLeagueTable() {
+  const s = DATA.season_status;
+  const t = DATA.league_table;
+  const leader = t[0];
+  if (isLive) {
+    return `The standings below reflect ${s.matchdays_played} of 38 matchdays. ` +
+      `${leader.team} sit top with ${leader.points} points from ${leader.played} games. ` +
+      `With ${s.matchdays_total - s.matchdays_played} rounds remaining, the table is still taking shape.`;
+  }
+  return `Final standings for the ${DATA.season} season after all ${s.matches_total} matches. ` +
+    `${leader.team} finished top with ${leader.points} points.`;
+}
+
+function genInsightLeagueTable() {
+  const t = DATA.league_table;
+  const leader = t[0]; const runner = t[1];
+  const gap = leader.points - runner.points;
+  const bestAttack = [...t].sort((a,b) => b.goals_for - a.goals_for)[0];
+  const bestDefense = [...t].sort((a,b) => a.goals_against - b.goals_against)[0];
+  const tense = isLive ? 'hold' : 'held';
+  return `<p><strong>${leader.team}</strong> ${tense} a <strong>${gap}-point</strong> lead over ${runner.team}. ` +
+    `${bestAttack.team} ${isLive ? 'are' : 'were'} the top scorers with ${bestAttack.goals_for} goals, ` +
+    `while ${bestDefense.team} ${isLive ? 'have' : 'had'} the stingiest defense, conceding just ${bestDefense.goals_against} ` +
+    `(${(bestDefense.goals_against / bestDefense.played).toFixed(2)} per game). ` +
+    `${t[t.length-1].team} prop up the table on ${t[t.length-1].points} points.</p>`;
+}
+
+function genCtxPointsRace() {
+  return `The points race tracks cumulative totals for the top 6 and bottom 3 across each matchday. ` +
+    `It reveals momentum shifts, losing streaks, and separation between tiers that a snapshot table cannot.`;
+}
+
+function genInsightPointsRace() {
+  const t = DATA.league_table;
+  const leader = t[0];
+  const relegated = t.slice(-3);
+  const fourthPts = t[3] ? t[3].points : 0;
+  const fifthPts = t[4] ? t[4].points : 0;
+  const cl_gap = fourthPts - fifthPts;
+  let text = `<p><strong>${leader.team}</strong> ${isLive ? 'have been' : 'were'} the most consistent accumulator. `;
+  if (cl_gap <= 3) {
+    text += `The Champions League race is tight -- just <strong>${cl_gap} points</strong> separate 4th and 5th. `;
+  }
+  text += `At the bottom, ${relegated.map(r => r.team).join(', ')} ${isLive ? 'occupy' : 'occupied'} the relegation places.</p>`;
+  return text;
+}
+
+function genCtxMonthlyGoals() {
+  return `Goal output often varies by month. Fixture congestion, winter pitches, and end-of-season dead rubbers ` +
+    `all influence scoring rates. The chart below breaks down average goals per match for each calendar month.`;
+}
+
+function genInsightMonthlyGoals() {
+  const mt = DATA.monthly_trends;
+  if (!mt || mt.length === 0) return '';
+  const peak = [...mt].sort((a,b) => b.avg_goals - a.avg_goals)[0];
+  const low = [...mt].sort((a,b) => a.avg_goals - b.avg_goals)[0];
+  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const peakName = months[parseInt(peak.month.split('-')[1]) - 1];
+  const lowName = months[parseInt(low.month.split('-')[1]) - 1];
+  return `<p><strong>${peakName}</strong> was the most prolific month at <strong>${peak.avg_goals} goals per match</strong> ` +
+    `across ${peak.matches} games, while <strong>${lowName}</strong> was the quietest at ${low.avg_goals}. ` +
+    `The season average sits at ${DATA.goals_per_match.toFixed(2)}.</p>`;
+}
+
+function genCtxHomeAway() {
+  return `Home advantage is one of football's oldest assumptions. The doughnut breaks down results by venue, ` +
+    `revealing whether the home crowd still provides a measurable edge in the modern Premier League.`;
+}
+
+function genInsightHomeAway() {
+  const ha = DATA.home_away;
+  const total = ha.home_wins + ha.draws + ha.away_wins;
+  const homePct = ((ha.home_wins / total) * 100).toFixed(1);
+  const drawPct = ((ha.draws / total) * 100).toFixed(1);
+  return `<p>Home teams ${isLive ? 'have won' : 'won'} <strong>${ha.home_wins} of ${total}</strong> matches (<strong>${homePct}%</strong>), ` +
+    `averaging ${ha.home_goals_avg} goals per game vs ${ha.away_goals_avg} for visitors. ` +
+    `Draws account for ${drawPct}% of results (${ha.draws} matches). ` +
+    `Home advantage ${isLive ? 'is' : 'was'} real but not dominant.</p>`;
+}
+
+function genCtxScorelines() {
+  return `Some scorelines repeat far more than others. This distribution shows the most common final scores, ` +
+    `revealing the Premier League's modal outcome and how often matches produce high-scoring affairs.`;
+}
+
+function genInsightScorelines() {
+  const sf = DATA.scoreline_frequency;
+  if (!sf || sf.length === 0) return '';
+  const top = sf[0];
+  const highScoring = sf.filter(s => {
+    const parts = s.score.split('-'); return (parseInt(parts[0]) + parseInt(parts[1])) >= 4;
+  });
+  const highCount = highScoring.reduce((sum, s) => sum + s.count, 0);
+  return `<p><strong>${top.score}</strong> is the most common scoreline with <strong>${top.count} occurrences</strong>. ` +
+    `The second most frequent is ${sf[1].score} (${sf[1].count} times). ` +
+    `Matches with 4+ goals account for ${highCount} games this dataset.</p>`;
+}
+
+function genCtxMoneyScatter() {
+  return `The scatter plot maps each team's total squad value (sum of FPL player prices, in millions) against their ` +
+    `league points. The dashed line is the linear regression -- teams above it are overperforming their budget, ` +
+    `teams below are underperforming. The bar chart ranks every team by their distance from this expected line.`;
+}
+
+function genInsightMoneyScatter() {
+  if (!DATA.money_vs_points) return '';
+  const m = DATA.money_vs_points;
+  const reg = m.regression;
+  const best = m.teams[0];
+  const worst = m.teams[m.teams.length - 1];
+  const r2Pct = (reg.r_squared * 100).toFixed(1);
+  return `<p>With an R-squared of <strong>${reg.r_squared.toFixed(3)}</strong>, squad spending explains just ` +
+    `<strong>${r2Pct}%</strong> of the variance in points. <strong>${best.team}</strong> ` +
+    `${isLive ? 'are' : 'were'} the standout -- ${best.points} points from a ${best.squad_value}m squad, ` +
+    `<strong>+${best.over_under.toFixed(1)}</strong> above the regression line. ` +
+    `<strong>${worst.team}</strong> ${isLive ? 'sit' : 'sat'} at the other extreme: ` +
+    `${worst.points} points from ${worst.squad_value}m, ${Math.abs(worst.over_under).toFixed(1)} below expectation.</p>`;
+}
+
+function genCtxXgScatter() {
+  return `Expected goals (xG) measures the quality of chances a team creates. Teams above the diagonal scored ` +
+    `more than their chances warranted (clinical finishing or luck); teams below wasted good opportunities. ` +
+    `The top scorers chart compares individual goal tallies against their xG to find over- and under-performers.`;
+}
+
+function genInsightXgScatter() {
+  if (!DATA.xg_vs_actual || DATA.xg_vs_actual.length === 0) return '';
+  const xg = DATA.xg_vs_actual;
+  const over = [...xg].sort((a,b) => b.difference - a.difference)[0];
+  const under = [...xg].sort((a,b) => a.difference - b.difference)[0];
+  return `<p><strong>${over.team}</strong> ${isLive ? 'are' : 'were'} the most clinical side, scoring ` +
+    `${over.actual_goals} goals from ${over.total_xg.toFixed(1)} xG -- <strong>${over.difference.toFixed(1)} ` +
+    `goals above expectation</strong>. At the other end, <strong>${under.team}</strong> ` +
+    `${isLive ? 'have' : 'had'} underperformed by ${Math.abs(under.difference).toFixed(1)} goals, ` +
+    `suggesting wasteful finishing or bad luck in front of goal.</p>`;
+}
+
+function genCtxShotQuality() {
+  return `Not all shots are created equal. xG per shot measures average shot quality -- a team that consistently ` +
+    `shoots from close range will have a higher value than one that relies on long-range efforts.`;
+}
+
+function genInsightShotQuality() {
+  if (!DATA.shot_quality || DATA.shot_quality.length === 0) return '';
+  const sq = DATA.shot_quality;
+  const best = sq[0];
+  const worst = sq[sq.length - 1];
+  return `<p><strong>${best.team}</strong> ${isLive ? 'have' : 'had'} the highest shot quality at ` +
+    `<strong>${best.xg_per_shot.toFixed(3)} xG per shot</strong>, while <strong>${worst.team}</strong> ` +
+    `${isLive ? 'sit' : 'sat'} lowest at ${worst.xg_per_shot.toFixed(3)}. ` +
+    `The gap suggests fundamentally different attacking approaches -- ` +
+    `patient buildup vs speculative shooting.</p>`;
+}
+
+function genCtxScorers() {
+  if (!DATA.player_leaderboards) return '';
+  const top = DATA.player_leaderboards.goal_scorers[0];
+  return `The golden boot race tracks the league's leading marksmen. Minimum 450 minutes filters out ` +
+    `cameo appearances. ${top.player_name} of ${top.team} currently leads with ${top.goals} goals.`;
+}
+
+function genInsightScorers() {
+  if (!DATA.player_leaderboards) return '';
+  const gs = DATA.player_leaderboards.goal_scorers;
+  const top = gs[0]; const second = gs[1];
+  let text = `<p><strong>${top.player_name}</strong> leads the scoring charts with <strong>${top.goals} goals</strong> ` +
+    `at a rate of ${top.goals_per_90} per 90 minutes. `;
+  if (top.xg != null) {
+    const diff = top.goals - top.xg;
+    text += diff > 0
+      ? `That is ${diff.toFixed(1)} more than the ${top.xg.toFixed(1)} xG model predicted -- elite finishing. `
+      : `The xG model expected ${top.xg.toFixed(1)} -- ${Math.abs(diff).toFixed(1)} short, suggesting some bad luck. `;
+  }
+  text += `${second.player_name} (${second.goals}) trails by ${top.goals - second.goals}.</p>`;
+  return text;
+}
+
+function genCtxAssists() {
+  return `Assists highlight the league's best creators. The assist-per-90 rate adjusts for playing time, ` +
+    `so part-time creators with high efficiency can feature alongside high-volume passers.`;
+}
+
+function genInsightAssists() {
+  if (!DATA.player_leaderboards) return '';
+  const al = DATA.player_leaderboards.assist_leaders;
+  const top = al[0];
+  let text = `<p><strong>${top.player_name}</strong> leads with <strong>${top.assists} assists</strong> ` +
+    `(${top.assists_per_90} per 90) from ${top.minutes.toLocaleString()} minutes. `;
+  const mids = al.filter(p => p.position === 'MID');
+  const fwds = al.filter(p => p.position === 'FWD');
+  if (mids.length > fwds.length) {
+    text += `Midfielders dominate the creative leaderboard -- ${mids.length} of the top ${al.length} are midfield players.`;
+  }
+  text += `</p>`;
+  return text;
+}
+
+function genCtxValue() {
+  return `G+A per million (goals plus assists divided by FPL price) finds the players delivering ` +
+    `the most output relative to their cost. Separately, the disciplinary chart identifies ` +
+    `the league's most-carded players -- a risk factor for suspensions.`;
+}
+
+function genInsightValue() {
+  if (!DATA.player_leaderboards) return '';
+  const bv = DATA.player_leaderboards.best_value;
+  const mc = DATA.player_leaderboards.most_cards;
+  const topVal = bv[0];
+  const topCard = mc[0];
+  return `<p><strong>${topVal.player_name}</strong> (${topVal.price}m) offers the best value at ` +
+    `<strong>${topVal.ga_per_million.toFixed(2)} G+A per million</strong> -- ${topVal.goals} goals and ` +
+    `${topVal.assists} assists from ${topVal.minutes.toLocaleString()} minutes. ` +
+    `On the discipline side, <strong>${topCard.player_name}</strong> (${topCard.team}) leads with ` +
+    `${topCard.yellows} yellows and ${topCard.reds} reds.</p>`;
+}
+
+function genCtxIronMen() {
+  return `The iron men chart shows each team's most-used outfield player by minutes. ` +
+    `High minute counts correlate with consistency and fitness but also squad depth -- ` +
+    `teams with thin squads lean heavily on a small core.`;
+}
+
+function genInsightIronMen() {
+  if (!DATA.player_leaderboards) return '';
+  const im = DATA.player_leaderboards.iron_men;
+  const top = im[0];
+  const avg = im.reduce((s, p) => s + p.minutes, 0) / im.length;
+  return `<p><strong>${top.player_name}</strong> (${top.team}) leads all players with ` +
+    `<strong>${top.minutes.toLocaleString()} minutes</strong> -- equivalent to ${top.games_equivalent} full matches. ` +
+    `The average across all teams' top players is ${Math.round(avg).toLocaleString()} minutes.</p>`;
+}
+
+function genCtxSeasonComparison() {
+  const sc = DATA.season_comparison;
+  return `Comparing key metrics across ${sc.length} seasons provides context for whether the current campaign is ` +
+    `an outlier or part of a broader trend. Goals per match, cards per match, and home win percentage ` +
+    `are all included.`;
+}
+
+function genInsightSeasonComparison() {
+  const sc = DATA.season_comparison;
+  if (!sc || sc.length < 2) return '';
+  const current = sc[sc.length - 1];
+  const prev = sc[sc.length - 2];
+  const goalDiff = (current.avg_goals - prev.avg_goals).toFixed(2);
+  const direction = parseFloat(goalDiff) > 0 ? 'up' : 'down';
+  return `<p>The ${current.season} season averages <strong>${current.avg_goals} goals per match</strong>, ` +
+    `${direction} from ${prev.avg_goals} in ${prev.season}. ` +
+    `Home win rate ${isLive ? 'sits' : 'finished'} at ${current.home_win_pct}%, ` +
+    `${current.home_win_pct > prev.home_win_pct ? 'higher' : 'lower'} than last season's ${prev.home_win_pct}%. ` +
+    `Discipline is ${current.avg_cards > prev.avg_cards ? 'worse' : 'improved'} with ${current.avg_cards} ` +
+    `cards per match vs ${prev.avg_cards} previously.</p>`;
+}
+
+function genCtxReferee() {
+  return `Referee tendencies can shape match outcomes. This chart shows average cards and fouls per match ` +
+    `for officials with at least 5 games, revealing which referees run tight ships and which let the game flow.`;
+}
+
+function genInsightReferee() {
+  const refs = DATA.referee_stats.filter(r => r.matches >= 5);
+  if (refs.length === 0) return '';
+  const strictest = [...refs].sort((a,b) => b.avg_cards - a.avg_cards)[0];
+  const lenient = [...refs].sort((a,b) => a.avg_cards - b.avg_cards)[0];
+  return `<p><strong>${strictest.referee}</strong> is the strictest official at <strong>${strictest.avg_cards} ` +
+    `cards per match</strong> across ${strictest.matches} games, while <strong>${lenient.referee}</strong> ` +
+    `is the most lenient at ${lenient.avg_cards}. ` +
+    `That spread of ${(strictest.avg_cards - lenient.avg_cards).toFixed(1)} cards per game shows ` +
+    `significant variation in refereeing standards.</p>`;
+}
+
+// Populate all context + insight boxes in one pass
+function populateAllInsights() {
+  const mapping = [
+    ['ctx-league-table', genCtxLeagueTable],
+    ['insight-league-table', genInsightLeagueTable],
+    ['ctx-points-race', genCtxPointsRace],
+    ['insight-points-race', genInsightPointsRace],
+    ['ctx-monthly-goals', genCtxMonthlyGoals],
+    ['insight-monthly-goals', genInsightMonthlyGoals],
+    ['ctx-home-away', genCtxHomeAway],
+    ['insight-home-away', genInsightHomeAway],
+    ['ctx-scorelines', genCtxScorelines],
+    ['insight-scorelines', genInsightScorelines],
+    ['ctx-money-scatter', genCtxMoneyScatter],
+    ['insight-money-scatter', genInsightMoneyScatter],
+    ['ctx-xg-scatter', genCtxXgScatter],
+    ['insight-xg-scatter', genInsightXgScatter],
+    ['ctx-shot-quality', genCtxShotQuality],
+    ['insight-shot-quality', genInsightShotQuality],
+    ['ctx-scorers', genCtxScorers],
+    ['insight-scorers', genInsightScorers],
+    ['ctx-assists', genCtxAssists],
+    ['insight-assists', genInsightAssists],
+    ['ctx-value', genCtxValue],
+    ['insight-value', genInsightValue],
+    ['ctx-iron-men', genCtxIronMen],
+    ['insight-iron-men', genInsightIronMen],
+    ['ctx-season-comparison', genCtxSeasonComparison],
+    ['insight-season-comparison', genInsightSeasonComparison],
+    ['ctx-referee', genCtxReferee],
+    ['insight-referee', genInsightReferee],
+  ];
+  mapping.forEach(([id, fn]) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    try {
+      const html = fn();
+      if (html) {
+        if (id.startsWith('ctx-')) {
+          el.textContent = html;
+        } else {
+          el.innerHTML = html;
+        }
+      }
+    } catch (e) {
+      // Graceful degradation -- leave context/insight empty if data missing
+    }
+  });
+}
+
 // -- MONEY VS POINTS -------------------------------------------------------
 function renderMoneyVsPoints() {
   const m = DATA.money_vs_points;
   const reg = m.regression;
   const teams = m.teams;
-
-  // Subtitle
-  const r2Pct = (reg.r_squared * 100).toFixed(1);
-  document.getElementById('money-subtitle').textContent =
-    `Using FPL player prices as a proxy for squad market value. R-squared = ${reg.r_squared.toFixed(3)} -- spending explains just ${r2Pct}% of the variance in points.`;
 
   // KPI cards
   document.getElementById('money-r2').textContent = reg.r_squared.toFixed(3);
@@ -1359,90 +1809,42 @@ function renderPlayerLeaderboards() {
   });
 }
 
-// -- TAKEAWAY (data-driven) ------------------------------------------------
-function renderTakeaway() {
-  const t = DATA.league_table;
-  const champ = t[0];
-  const runner = t[1];
-  const bestDefense = [...t].sort((a, b) => a.goals_against - b.goals_against)[0];
-  const ha = DATA.home_away;
-
-  const verb = isLive ? 'lead' : 'won';
+// -- VERDICT (data-driven) -------------------------------------------------
+function renderVerdict() {
   const tense = isLive ? 'are' : 'were';
-  const suffix = isLive ? ` after ${DATA.season_status.matchdays_played} matchdays` : '';
-
   let text = '';
 
-  // Lead with the money thesis
   if (DATA.money_vs_points) {
-    const m = DATA.money_vs_points;
-    const reg = m.regression;
-    const best = m.teams[0];
-    const worst = m.teams[m.teams.length - 1];
+    const reg = DATA.money_vs_points.regression;
     const r2Pct = (reg.r_squared * 100).toFixed(1);
+    text += `<p class="text-lg text-chalk font-medium">The short answer: not really. With an R-squared of ` +
+      `${reg.r_squared.toFixed(3)}, squad spending explains just ${r2Pct}% of the variance in league points. ` +
+      `The regression line ${isLive ? 'is' : 'was'} nearly flat -- money helps, but it is far from deterministic.</p>`;
 
-    text += `<p class="text-lg text-chalk font-medium">The short answer: not really. With an R-squared of ${reg.r_squared.toFixed(3)}, ` +
-      `squad spending explains just ${r2Pct}% of the variance in league points this season. ` +
-      `The regression line ${isLive ? 'is' : 'was'} nearly flat.</p>`;
-
-    text += `<p>${best.team} ${tense} the story of the season from a value perspective -- ` +
-      `${best.points} points from a squad valued at ${best.squad_value}m, a full ${best.over_under.toFixed(1)} points ` +
-      `above what the model predicts for that level of spending. `;
-    if (m.teams.length >= 2) {
-      const second = m.teams[1];
-      text += `${second.team} (+${second.over_under.toFixed(1)}) ${tense} not far behind.`;
-    }
-    text += `</p>`;
-
-    text += `<p>At the other end, ${worst.team} ${tense} the biggest underperformer relative to spend -- ` +
-      `${worst.points} points from a ${worst.squad_value}m squad, ${Math.abs(worst.over_under).toFixed(1)} points ` +
-      `below expectation. Money alone clearly ${isLive ? "isn't" : "wasn't"} buying results.</p>`;
+    text += `<p>The chapters above show this from multiple angles. The spending scatter reveals massive spread ` +
+      `around the trend line. The xG analysis ${DATA.xg_vs_actual ? 'adds' : 'would add'} a second dimension: ` +
+      `teams that overperform their budget often do so through superior finishing efficiency, not just outspending rivals. ` +
+      `Coaching, culture, recruitment strategy, and plain luck still matter far more than the chequebook.</p>`;
+  } else {
+    const t = DATA.league_table;
+    const champ = t[0];
+    const verb = isLive ? 'lead' : 'won';
+    const suffix = isLive ? ` after ${DATA.season_status.matchdays_played} matchdays` : '';
+    text += `<p class="text-lg text-chalk font-medium">${champ.team} ${verb} the league with ${champ.points} points${suffix}.</p>`;
+    text += `<p>Enable the full money-vs-points analysis by running the FPL enrichment script to see whether ` +
+      `spending predicted this outcome.</p>`;
   }
 
-  // Standard league summary
-  text += `<p>${champ.team} ${verb} the league with ${champ.points} points${suffix}, ` +
-    `${isLive ? 'ahead of' : 'finishing ahead of'} ${runner.team} on ${runner.points} points. ` +
-    `${bestDefense.team} ${tense} the meanest defense, conceding just ${bestDefense.goals_against} goals ` +
-    `in ${bestDefense.played} matches (${(bestDefense.goals_against / bestDefense.played).toFixed(2)} per game).</p>`;
+  text += `<p class="text-gray-500 italic">The Premier League remains the league where anyone can beat anyone on their day.</p>`;
 
-  text += `<p>Home advantage ${isLive ? 'remains' : 'was'} real but not overwhelming: ` +
-    `${ha.home_win_pct}% home wins vs ${ha.away_win_pct}% away wins, ` +
-    `with home sides averaging ${ha.home_goals_avg} goals compared to ${ha.away_goals_avg} for visitors.</p>`;
-
-  if (!isLive) {
-    const relegated = t.slice(-3).map(r => r.team);
-    text += `<p>${relegated.join(', ')} ${tense} relegated.</p>`;
-  }
-
-  // xG insights
-  if (DATA.xg_vs_actual && DATA.xg_vs_actual.length > 0) {
-    const overperformers = DATA.xg_vs_actual.filter(x => x.difference > 3).sort((a,b) => b.difference - a.difference);
-    const underperformers = DATA.xg_vs_actual.filter(x => x.difference < -3).sort((a,b) => a.difference - b.difference);
-    if (overperformers.length > 0) {
-      text += `<p>The xG data adds nuance: ${overperformers[0].team} ${tense} the most clinical side, scoring ${overperformers[0].actual_goals} goals from ${overperformers[0].total_xg.toFixed(1)} xG -- ` +
-        `${overperformers[0].difference.toFixed(1)} goals above expectation. `;
-      if (underperformers.length > 0) {
-        text += `${underperformers[0].team} ${isLive ? 'sit' : 'sat'} at the opposite extreme, underperforming by ${Math.abs(underperformers[0].difference).toFixed(1)} goals.`;
-      }
-      text += `</p>`;
-    }
-  }
-
-  // Closing thought
-  if (DATA.money_vs_points) {
-    text += `<p class="text-gray-500 italic">Coaching, culture, recruitment strategy, and plain luck still matter far more than the size of the chequebook. ` +
-      `The Premier League remains the league where anyone can beat anyone on their day.</p>`;
-  }
-
-  document.getElementById('takeaway-text').innerHTML = text;
+  document.getElementById('verdict-text').innerHTML = text;
 }
 
 // -- SCROLL SPY ------------------------------------------------------------
 function initScrollSpy() {
-  const sections = ['brief', 'raw-data', 'pipeline', 'dashboard-section', 'money-section', 'players-section', 'takeaway'];
+  const sections = ['brief', 'raw-data', 'pipeline', 'ch-league', 'ch-attack', 'ch-money', 'ch-xg', 'ch-players', 'ch-history', 'verdict'];
   const links = document.querySelectorAll('.nav-link');
 
-  // Smooth scroll
   links.forEach(link => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
@@ -1451,7 +1853,6 @@ function initScrollSpy() {
     });
   });
 
-  // Active state on scroll
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {

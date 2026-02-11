@@ -34,3 +34,9 @@ desktop.ini
 
 # Jupyter
 .ipynb_checkpoints/
+
+# Playwright MCP artifacts
+.playwright-mcp/
+
+# Screenshots from testing
+screenshots/
