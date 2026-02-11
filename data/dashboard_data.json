@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-11T01:22:34.071537",
+  "generated_at": "2026-02-11T01:33:36.830014",
   "season": "2025-26",
   "source": "football-data.co.uk",
   "total_matches": 250,
@@ -3392,17 +3392,17 @@
       "goals_per_million": 1.32
     },
     {
+      "player_name": "Welbeck",
+      "team": "Brighton",
+      "price": 6.1,
+      "goals": 8,
+      "goals_per_million": 1.31
+    },
+    {
       "player_name": "Bruno G.",
       "team": "Newcastle United",
       "price": 7.0,
       "goals": 9,
-      "goals_per_million": 1.29
-    },
-    {
-      "player_name": "Welbeck",
-      "team": "Brighton",
-      "price": 6.2,
-      "goals": 8,
       "goals_per_million": 1.29
     },
     {
@@ -3528,7 +3528,7 @@
         "assists": 0,
         "minutes": 1364,
         "goals_per_90": 0.53,
-        "price": 6.2,
+        "price": 6.1,
         "xg": null,
         "shots": null
       },
@@ -3567,7 +3567,7 @@
         "assists": 2,
         "minutes": 1826,
         "goals_per_90": 0.39,
-        "price": 8.7,
+        "price": 8.6,
         "xg": null,
         "shots": null
       },
@@ -3593,7 +3593,7 @@
         "assists": 4,
         "minutes": 2329,
         "goals_per_90": 0.31,
-        "price": 7.7,
+        "price": 7.6,
         "xg": null,
         "shots": null
       },
@@ -3740,7 +3740,7 @@
         "assists_per_90": 0.41,
         "xa": null,
         "key_passes": null,
-        "price": 9.9
+        "price": 9.8
       },
       {
         "rank": 6,
@@ -3753,7 +3753,7 @@
         "assists_per_90": 0.31,
         "xa": null,
         "key_passes": null,
-        "price": 7.5
+        "price": 7.6
       },
       {
         "rank": 7,
@@ -3870,7 +3870,7 @@
         "assists_per_90": 0.32,
         "xa": null,
         "key_passes": null,
-        "price": 4.8
+        "price": 4.7
       }
     ],
     "iron_men": [
@@ -4157,10 +4157,10 @@
         "player_name": "Stach",
         "team": "Leeds United",
         "position": "MID",
-        "price": 4.8,
+        "price": 4.7,
         "goals": 3,
         "assists": 6,
-        "ga_per_million": 1.88,
+        "ga_per_million": 1.91,
         "minutes": 1693
       },
       {
@@ -4212,10 +4212,10 @@
         "player_name": "Ra\u00fal",
         "team": "Fulham",
         "position": "FWD",
-        "price": 6.2,
+        "price": 6.1,
         "goals": 6,
         "assists": 5,
-        "ga_per_million": 1.77,
+        "ga_per_million": 1.8,
         "minutes": 1649
       },
       {
@@ -4358,16 +4358,16 @@
       },
       {
         "team": "Manchester City",
-        "squad_value": 218.7,
+        "squad_value": 218.6,
         "points": 50,
         "played": 25,
         "points_per_match": 2.0,
-        "expected_points": 36.65,
-        "over_under": 13.35
+        "expected_points": 36.63,
+        "over_under": 13.37
       },
       {
         "team": "Chelsea",
-        "squad_value": 188.8,
+        "squad_value": 188.7,
         "points": 43,
         "played": 25,
         "points_per_match": 1.72,
@@ -4376,48 +4376,48 @@
       },
       {
         "team": "Aston Villa",
-        "squad_value": 227.1,
+        "squad_value": 227.0,
         "points": 47,
         "played": 25,
         "points_per_match": 1.88,
-        "expected_points": 37.73,
-        "over_under": 9.27
+        "expected_points": 37.71,
+        "over_under": 9.29
       },
       {
         "team": "Manchester United",
-        "squad_value": 216.0,
+        "squad_value": 215.9,
         "points": 44,
         "played": 25,
         "points_per_match": 1.76,
-        "expected_points": 36.3,
-        "over_under": 7.7
+        "expected_points": 36.28,
+        "over_under": 7.72
       },
       {
         "team": "Brentford",
-        "squad_value": 186.1,
+        "squad_value": 186.0,
         "points": 39,
         "played": 25,
         "points_per_match": 1.56,
-        "expected_points": 32.44,
-        "over_under": 6.56
+        "expected_points": 32.45,
+        "over_under": 6.55
       },
       {
         "team": "Fulham",
-        "squad_value": 149.5,
+        "squad_value": 149.4,
         "points": 34,
         "played": 25,
         "points_per_match": 1.36,
-        "expected_points": 27.72,
-        "over_under": 6.28
+        "expected_points": 27.75,
+        "over_under": 6.25
       },
       {
         "team": "Everton",
-        "squad_value": 177.4,
+        "squad_value": 177.3,
         "points": 37,
         "played": 25,
         "points_per_match": 1.48,
-        "expected_points": 31.32,
-        "over_under": 5.68
+        "expected_points": 31.33,
+        "over_under": 5.67
       },
       {
         "team": "Liverpool",
@@ -4430,7 +4430,7 @@
       },
       {
         "team": "Newcastle United",
-        "squad_value": 194.9,
+        "squad_value": 194.8,
         "points": 33,
         "played": 25,
         "points_per_match": 1.32,
@@ -4439,48 +4439,48 @@
       },
       {
         "team": "Leeds United",
-        "squad_value": 165.2,
+        "squad_value": 165.1,
         "points": 29,
         "played": 25,
         "points_per_match": 1.16,
-        "expected_points": 29.75,
-        "over_under": -0.75
+        "expected_points": 29.77,
+        "over_under": -0.77
       },
       {
         "team": "Bournemouth",
-        "squad_value": 208.8,
+        "squad_value": 208.9,
         "points": 34,
         "played": 25,
         "points_per_match": 1.36,
-        "expected_points": 35.37,
-        "over_under": -1.37
+        "expected_points": 35.38,
+        "over_under": -1.38
       },
       {
         "team": "Sunderland",
-        "squad_value": 225.1,
+        "squad_value": 225.0,
         "points": 36,
         "played": 25,
         "points_per_match": 1.44,
-        "expected_points": 37.47,
-        "over_under": -1.47
+        "expected_points": 37.45,
+        "over_under": -1.45
       },
       {
         "team": "Crystal Palace",
-        "squad_value": 211.3,
+        "squad_value": 211.5,
         "points": 32,
         "played": 25,
         "points_per_match": 1.28,
-        "expected_points": 35.69,
-        "over_under": -3.69
+        "expected_points": 35.72,
+        "over_under": -3.72
       },
       {
         "team": "Brighton",
-        "squad_value": 222.8,
+        "squad_value": 222.7,
         "points": 31,
         "played": 25,
         "points_per_match": 1.24,
-        "expected_points": 37.18,
-        "over_under": -6.18
+        "expected_points": 37.15,
+        "over_under": -6.15
       },
       {
         "team": "Nottingham Forest",
@@ -4488,8 +4488,8 @@
         "points": 26,
         "played": 25,
         "points_per_match": 1.04,
-        "expected_points": 33.26,
-        "over_under": -7.26
+        "expected_points": 33.27,
+        "over_under": -7.27
       },
       {
         "team": "Tottenham Hotspur",
@@ -4497,12 +4497,12 @@
         "points": 29,
         "played": 25,
         "points_per_match": 1.16,
-        "expected_points": 37.01,
-        "over_under": -8.01
+        "expected_points": 37.0,
+        "over_under": -8.0
       },
       {
         "team": "West Ham United",
-        "squad_value": 189.5,
+        "squad_value": 189.4,
         "points": 23,
         "played": 25,
         "points_per_match": 0.92,
@@ -4524,14 +4524,14 @@
         "points": 8,
         "played": 25,
         "points_per_match": 0.32,
-        "expected_points": 33.84,
-        "over_under": -25.84
+        "expected_points": 33.85,
+        "over_under": -25.85
       }
     ],
     "regression": {
-      "slope": 0.129,
-      "intercept": 8.45,
-      "r_squared": 0.055
+      "slope": 0.1282,
+      "intercept": 8.6,
+      "r_squared": 0.054
     }
   }
 }
