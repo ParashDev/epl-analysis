@@ -44,7 +44,7 @@ EPL-Analysis/
 Prerequisites: Python 3.11+, pip
 
 ```bash
-git clone https://github.com/yourusername/EPL-Analysis.git
+git clone https://github.com/ParashDev/EPL-Analysis.git
 cd EPL-Analysis
 pip install -r requirements.txt
 
@@ -65,7 +65,7 @@ The dashboard works with only match data. If FPL or xG scripts fail (network iss
 
 1. Push to GitHub
 2. Settings > Pages > Source: main branch, / (root)
-3. Site is live at `https://yourusername.github.io/EPL-Analysis`
+3. Site is live at `https://ParashDev.github.io/EPL-Analysis`
 
 ## What This Demonstrates
 
