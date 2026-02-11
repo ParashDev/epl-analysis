@@ -14,6 +14,7 @@ Run: python scripts/02_transform.py
 import os
 import sys
 import json
+import unicodedata
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
@@ -425,23 +426,82 @@ def main():
 
     if has_fpl and players_df is not None:
         fpl = players_df.copy()
-        # Build xG lookup for enrichment
-        xg_lookup = {}
+
+        def strip_accents(s):
+            """Remove diacritics so Ekitiké matches Ekitike, etc."""
+            nfkd = unicodedata.normalize('NFKD', s)
+            return ''.join(c for c in nfkd if not unicodedata.combining(c))
+
+        # Build multiple xG lookup indexes for robust name matching.
+        # FPL uses short names (Haaland), Understat uses full names (Erling Haaland),
+        # and transferred players have comma-separated teams in Understat.
+        xg_by_name = {}       # (full_name, team) -> data
+        xg_by_last = {}       # (last_name_normalized, team) -> data
+        xg_by_team = {}       # team -> list of (name_normalized, data) for substring search
         if has_xg and xg_players_df is not None:
             for _, xr in xg_players_df.dropna(subset=['player_name']).iterrows():
-                key = (safe_str(xr['player_name']), safe_str(xr['team']))
-                xg_lookup[key] = {
+                name = safe_str(xr['player_name'])
+                teams_raw = safe_str(xr['team'])
+                data = {
                     "xg": safe_float(xr.get('xg', 0)),
                     "xa": safe_float(xr.get('xa', 0)),
                     "shots": safe_int(xr.get('shots', 0)),
                     "key_passes": safe_int(xr.get('key_passes', 0)),
                     "npxg": safe_float(xr.get('npxg', 0)),
                 }
+                name_norm = strip_accents(name).lower()
+                parts = name_norm.split()
+                last = parts[-1] if parts else name_norm
+
+                # Understat uses comma-separated teams for mid-season transfers
+                teams = [t.strip() for t in teams_raw.split(',')]
+                for team in teams:
+                    xg_by_name[(name, team)] = data
+                    xg_by_last[(last, team)] = data
+                    if team not in xg_by_team:
+                        xg_by_team[team] = []
+                    xg_by_team[team].append((name_norm, data))
 
         def enrich(row):
-            """Merge xG data into an FPL player row."""
-            key = (safe_str(row['player_name']), safe_str(row['team']))
-            return xg_lookup.get(key, {})
+            """Match FPL player to Understat xG data using multiple strategies."""
+            pname = safe_str(row['player_name'])
+            fname = safe_str(row.get('full_name', ''))
+            team = safe_str(row['team'])
+
+            # 1. Exact match on (short_name, team) -- covers single-name players
+            result = xg_by_name.get((pname, team))
+            if result:
+                return result
+
+            # 2. Exact match on (full_name, team) -- covers identical full names
+            if fname:
+                result = xg_by_name.get((fname, team))
+                if result:
+                    return result
+
+            # 3. Last name match -- FPL "Haaland" matches last word of "Erling Haaland"
+            pname_norm = strip_accents(pname).lower()
+            result = xg_by_last.get((pname_norm, team))
+            if result:
+                return result
+
+            # 4. Dot-split fallback -- FPL uses "B.Fernandes" or "Kroupi.Jr"
+            # Try each dot-separated part as a last name match
+            if '.' in pname:
+                parts = [strip_accents(p).lower() for p in pname.split('.') if len(p) > 2]
+                for part in parts:
+                    result = xg_by_last.get((part, team))
+                    if result:
+                        return result
+
+            # 5. Substring search -- handles "Enzo" matching "enzo fernandez"
+            candidates = xg_by_team.get(team, [])
+            clean = pname_norm.rstrip('.')
+            for xg_name_norm, data in candidates:
+                if clean in xg_name_norm:
+                    return data
+
+            return {}
 
         def per90(stat, minutes):
             """Calculate per-90-minute rate."""

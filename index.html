@@ -57,7 +57,7 @@
     .report-insight p { color: #d1d5db; font-size: 0.875rem; line-height: 1.7; }
     .report-insight strong { color: #52b788; }
     .chapter-tag { font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: #52b788; display: inline-block; padding: 3px 10px; border: 1px solid rgba(82,183,136,0.25); border-radius: 4px; margin-bottom: 0.75rem; }
-    .exec-card { background: linear-gradient(135deg, #1a1a2e 0%, #252540 100%); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 1.5rem; }
+    .exec-card { background: linear-gradient(135deg, #1a1a2e 0%, #252540 100%); border: 1px solid rgba(255,255,255,0.06); border-radius: 12px; padding: 1.5rem; overflow: hidden; }
     .exec-card .exec-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.06em; color: #6b7280; margin-bottom: 0.5rem; }
     .exec-card .exec-value { font-size: 2rem; font-weight: 700; line-height: 1.2; }
     .exec-card .exec-detail { font-size: 0.75rem; color: #6b7280; margin-top: 0.35rem; }
@@ -110,41 +110,49 @@
     <!-- SECTION 1: THE BRIEF / EXECUTIVE SUMMARY -->
     <section id="brief" class="mb-20">
       <p class="tag mb-3">Case Study 001</p>
-      <h1 class="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-chalk leading-tight mb-6" id="hero-title">
-        Does Money Buy Points<br>in the Premier League?
-      </h1>
 
-      <!-- Executive summary cards -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8" id="exec-cards">
-        <div class="exec-card">
-          <p class="exec-label">Season Progress</p>
-          <p class="exec-value text-chalk" id="exec-progress"></p>
-          <p class="exec-detail" id="exec-progress-detail"></p>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+        <!-- LEFT: title + summary + pills -->
+        <div>
+          <h1 class="font-heading font-bold text-3xl sm:text-4xl lg:text-5xl text-chalk leading-tight mb-6" id="hero-title">
+            Does Money Buy Points<br>in the Premier League?
+          </h1>
+          <p class="text-chalk text-lg leading-relaxed mb-4" id="exec-headline"></p>
+          <p class="text-gray-400 leading-relaxed mb-6" id="exec-methodology"></p>
+          <div class="flex flex-wrap gap-2" id="tech-pills"></div>
         </div>
-        <div class="exec-card">
-          <p class="exec-label">Spend vs Points R-squared</p>
-          <p class="exec-value text-warn" id="exec-r2">--</p>
-          <p class="exec-detail" id="exec-r2-detail">Run FPL script to enable</p>
-        </div>
-        <div class="exec-card">
-          <p class="exec-label">Best Overperformer</p>
-          <p class="exec-value text-accent" id="exec-best">--</p>
-          <p class="exec-detail" id="exec-best-detail"></p>
-        </div>
-        <div class="exec-card">
-          <p class="exec-label">Worst Underperformer</p>
-          <p class="exec-value text-warn" id="exec-worst">--</p>
-          <p class="exec-detail" id="exec-worst-detail"></p>
+
+        <!-- RIGHT: 4 stat cards in 2x2 grid -->
+        <div class="grid grid-cols-2 gap-4" id="exec-cards">
+          <div class="exec-card">
+            <p class="exec-label">Season Progress</p>
+            <p class="exec-value text-chalk" id="exec-progress"></p>
+            <div class="w-full bg-base rounded-full h-1.5 mt-2 mb-2" id="exec-progress-bar-wrap">
+              <div class="bg-accent h-1.5 rounded-full transition-all" id="exec-progress-bar" style="width:0%"></div>
+            </div>
+            <p class="exec-detail" id="exec-progress-detail"></p>
+            <p class="exec-detail mt-1" id="exec-progress-extra"></p>
+          </div>
+          <div class="exec-card">
+            <p class="exec-label">Spend vs Points R-squared</p>
+            <p class="exec-value text-warn" id="exec-r2">--</p>
+            <p class="exec-detail mt-1" id="exec-r2-interpret"></p>
+            <p class="exec-detail mt-1" id="exec-r2-detail">Run FPL script to enable</p>
+          </div>
+          <div class="exec-card">
+            <p class="exec-label">Best Overperformer</p>
+            <p class="exec-value text-accent" id="exec-best">--</p>
+            <p class="exec-detail" id="exec-best-detail"></p>
+            <div class="flex items-center gap-3 mt-2 text-xs text-gray-500" id="exec-best-meta"></div>
+          </div>
+          <div class="exec-card">
+            <p class="exec-label">Worst Underperformer</p>
+            <p class="exec-value text-warn" id="exec-worst">--</p>
+            <p class="exec-detail" id="exec-worst-detail"></p>
+            <div class="flex items-center gap-3 mt-2 text-xs text-gray-500" id="exec-worst-meta"></div>
+          </div>
         </div>
       </div>
-
-      <!-- Two-paragraph executive summary -->
-      <div class="max-w-3xl mb-8">
-        <p class="text-chalk text-lg leading-relaxed mb-4" id="exec-headline"></p>
-        <p class="text-gray-400 leading-relaxed" id="exec-methodology"></p>
-      </div>
-
-      <div class="flex flex-wrap gap-2" id="tech-pills"></div>
     </section>
 
     <!-- SECTION 2: THE RAW DATA -->
@@ -609,7 +617,7 @@ df['home_team'] = df['HomeTeam'].replace(FOOTBALL_DATA_NAME_MAP)</code></pre>
                 <th class="pb-3 pr-2 text-center">Min</th>
                 <th class="pb-3 pr-2 text-center">G/90</th>
                 <th class="pb-3 pr-2 text-center hidden sm:table-cell">xG</th>
-                <th class="pb-3 pr-2 text-center hidden sm:table-cell">Price</th>
+                <th class="pb-3 pr-2 text-center hidden sm:table-cell">FPL Price</th>
               </tr>
             </thead>
             <tbody id="scorers-table-body"></tbody>
@@ -633,7 +641,7 @@ df['home_team'] = df['HomeTeam'].replace(FOOTBALL_DATA_NAME_MAP)</code></pre>
                 <th class="pb-3 pr-2 text-center">Min</th>
                 <th class="pb-3 pr-2 text-center">A/90</th>
                 <th class="pb-3 pr-2 text-center hidden sm:table-cell">xA</th>
-                <th class="pb-3 pr-2 text-center hidden sm:table-cell">Price</th>
+                <th class="pb-3 pr-2 text-center hidden sm:table-cell">FPL Price</th>
               </tr>
             </thead>
             <tbody id="assists-table-body"></tbody>
@@ -704,17 +712,6 @@ df['home_team'] = df['HomeTeam'].replace(FOOTBALL_DATA_NAME_MAP)</code></pre>
       <div class="max-w-3xl space-y-4 text-gray-400 leading-relaxed" id="verdict-text"></div>
 
       <div class="mt-12">
-        <h3 class="font-heading font-semibold text-lg text-chalk mb-4">What I Would Do Differently</h3>
-        <ul class="space-y-2 text-gray-400 text-sm list-disc list-inside">
-          <li>Use Transfermarkt market values instead of FPL prices for a more accurate spending proxy</li>
-          <li>Add wage bill data -- salary spend may correlate with points more than transfer fees</li>
-          <li>Build a multi-season regression to see if money-vs-points R-squared changes over time</li>
-          <li>Factor in net spend (transfer balance) rather than just current squad value</li>
-          <li>Add player-level event data for shot maps and pass networks</li>
-        </ul>
-      </div>
-
-      <div class="mt-12">
         <h3 class="font-heading font-semibold text-lg text-chalk mb-4">Tools Used</h3>
         <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
           <div class="stat-card rounded-lg p-3 text-center text-sm text-gray-400">Python / Pandas</div>
@@ -762,6 +759,19 @@ const TEAM_COLORS = {
 
 let DATA = null;
 let isLive = false;
+
+function ordinal(n) {
+  const s = ['th','st','nd','rd'], v = n % 100;
+  return n + (s[(v - 20) % 10] || s[v] || s[0]);
+}
+
+// Scale down font on exec cards so long team names fit on one line
+function setExecTeamName(id, name) {
+  const el = document.getElementById(id);
+  el.textContent = name;
+  if (name.length > 14) el.style.fontSize = '1.1rem';
+  else if (name.length > 10) el.style.fontSize = '1.4rem';
+}
 
 // -- INIT ------------------------------------------------------------------
 async function init() {
@@ -815,12 +825,18 @@ function renderExecSummary() {
   const s = DATA.season_status;
 
   // Progress card
+  const pct = ((s.matches_played / s.matches_total) * 100).toFixed(0);
+  const leader = DATA.league_table[0];
   if (isLive) {
     document.getElementById('exec-progress').textContent = `${s.matchdays_played} / 38`;
-    document.getElementById('exec-progress-detail').textContent = `${s.matches_played} of ${s.matches_total} matches played`;
+    document.getElementById('exec-progress-bar').style.width = `${pct}%`;
+    document.getElementById('exec-progress-detail').textContent = `${s.matches_played} of ${s.matches_total} matches (${pct}%)`;
+    document.getElementById('exec-progress-extra').textContent = `${DATA.total_goals} goals scored -- ${DATA.goals_per_match} per match`;
   } else {
     document.getElementById('exec-progress').textContent = 'Complete';
+    document.getElementById('exec-progress-bar').style.width = '100%';
     document.getElementById('exec-progress-detail').textContent = `All ${s.matches_total} matches played`;
+    document.getElementById('exec-progress-extra').textContent = `${DATA.total_goals} goals scored -- ${DATA.goals_per_match} per match`;
   }
 
   // Money cards (conditional)
@@ -828,13 +844,27 @@ function renderExecSummary() {
     const reg = DATA.money_vs_points.regression;
     const best = DATA.money_vs_points.teams[0];
     const worst = DATA.money_vs_points.teams[DATA.money_vs_points.teams.length - 1];
+    const r2Pct = (reg.r_squared * 100).toFixed(1);
 
+    // R-squared card
     document.getElementById('exec-r2').textContent = reg.r_squared.toFixed(3);
-    document.getElementById('exec-r2-detail').textContent = `Spending explains ${(reg.r_squared * 100).toFixed(1)}% of points`;
-    document.getElementById('exec-best').textContent = best.team;
+    const strength = reg.r_squared < 0.1 ? 'Very weak' : reg.r_squared < 0.3 ? 'Weak' : reg.r_squared < 0.5 ? 'Moderate' : 'Strong';
+    document.getElementById('exec-r2-interpret').textContent = `${strength} correlation`;
+    document.getElementById('exec-r2-detail').textContent = `Money explains just ${r2Pct}% of point variance`;
+
+    // Best overperformer card
+    setExecTeamName('exec-best', best.team);
     document.getElementById('exec-best-detail').textContent = `+${best.over_under.toFixed(1)} pts above expected`;
-    document.getElementById('exec-worst').textContent = worst.team;
+    const bestPos = DATA.league_table.findIndex(t => t.team === best.team) + 1;
+    document.getElementById('exec-best-meta').innerHTML =
+      `<span>${best.points} pts (${ordinal(bestPos)})</span><span>Squad: ${best.squad_value.toFixed(0)}m</span><span>Expected: ${best.expected_points.toFixed(0)} pts</span>`;
+
+    // Worst underperformer card
+    setExecTeamName('exec-worst', worst.team);
     document.getElementById('exec-worst-detail').textContent = `${worst.over_under.toFixed(1)} pts below expected`;
+    const worstPos = DATA.league_table.findIndex(t => t.team === worst.team) + 1;
+    document.getElementById('exec-worst-meta').innerHTML =
+      `<span>${worst.points} pts (${ordinal(worstPos)})</span><span>Squad: ${worst.squad_value.toFixed(0)}m</span><span>Expected: ${worst.expected_points.toFixed(0)} pts</span>`;
   }
 
   // Headline paragraph
@@ -1356,12 +1386,13 @@ function genCtxIronMen() {
 
 function genInsightIronMen() {
   if (!DATA.player_leaderboards) return '';
-  const im = DATA.player_leaderboards.iron_men;
+  const im = DATA.player_leaderboards.iron_men.filter(p => p.position !== 'GK');
+  if (!im.length) return '';
   const top = im[0];
   const avg = im.reduce((s, p) => s + p.minutes, 0) / im.length;
-  return `<p><strong>${top.player_name}</strong> (${top.team}) leads all players with ` +
+  return `<p><strong>${top.player_name}</strong> (${top.team}) leads all outfield players with ` +
     `<strong>${top.minutes.toLocaleString()} minutes</strong> -- equivalent to ${top.games_equivalent} full matches. ` +
-    `The average across all teams' top players is ${Math.round(avg).toLocaleString()} minutes.</p>`;
+    `The average across all teams' top outfield players is ${Math.round(avg).toLocaleString()} minutes.</p>`;
 }
 
 function genCtxSeasonComparison() {
@@ -1774,8 +1805,8 @@ function renderPlayerLeaderboards() {
     }
   });
 
-  // Iron Men chart (horizontal bar - minutes per team's top player)
-  const im = lb.iron_men;
+  // Iron Men chart (horizontal bar - most-used outfield player per team)
+  const im = lb.iron_men.filter(p => p.position !== 'GK');
   new Chart(document.getElementById('chart-iron-men'), {
     type: 'bar',
     data: {
