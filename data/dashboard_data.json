@@ -1,17 +1,17 @@
 {
-  "generated_at": "2026-02-11T08:34:38.021392",
+  "generated_at": "2026-02-12T08:32:29.675304",
   "season": "2025-26",
   "source": "football-data.co.uk",
-  "total_matches": 250,
-  "total_goals": 698,
-  "goals_per_match": 2.79,
+  "total_matches": 259,
+  "total_goals": 720,
+  "goals_per_match": 2.78,
   "season_status": {
-    "matches_played": 250,
+    "matches_played": 259,
     "matches_total": 380,
-    "matchdays_played": 25,
+    "matchdays_played": 26,
     "matchdays_total": 38,
     "is_complete": false,
-    "last_match_date": "2026-02-08"
+    "last_match_date": "2026-02-11"
   },
   "league_table": [
     {
@@ -39,117 +39,117 @@
     },
     {
       "team": "Manchester City",
-      "played": 25,
-      "won": 15,
+      "played": 26,
+      "won": 16,
       "drawn": 5,
       "lost": 5,
-      "goals_for": 51,
+      "goals_for": 54,
       "goals_against": 24,
-      "goal_difference": 27,
-      "points": 50,
-      "home_won": 9,
+      "goal_difference": 30,
+      "points": 53,
+      "home_won": 10,
       "home_drawn": 2,
       "home_lost": 1,
       "away_won": 6,
       "away_drawn": 3,
       "away_lost": 4,
-      "clean_sheets": 10,
-      "total_shots": 356,
-      "total_shots_on_target": 127,
-      "shot_accuracy": 35.67,
-      "goals_per_game": 2.04,
+      "clean_sheets": 11,
+      "total_shots": 369,
+      "total_shots_on_target": 132,
+      "shot_accuracy": 35.77,
+      "goals_per_game": 2.08,
       "position": 2
     },
     {
       "team": "Aston Villa",
-      "played": 25,
-      "won": 14,
+      "played": 26,
+      "won": 15,
       "drawn": 5,
       "lost": 6,
-      "goals_for": 36,
+      "goals_for": 37,
       "goals_against": 27,
-      "goal_difference": 9,
-      "points": 47,
-      "home_won": 8,
+      "goal_difference": 10,
+      "points": 50,
+      "home_won": 9,
       "home_drawn": 1,
       "home_lost": 3,
       "away_won": 6,
       "away_drawn": 4,
       "away_lost": 3,
-      "clean_sheets": 7,
-      "total_shots": 311,
-      "total_shots_on_target": 112,
-      "shot_accuracy": 36.01,
-      "goals_per_game": 1.44,
+      "clean_sheets": 8,
+      "total_shots": 326,
+      "total_shots_on_target": 113,
+      "shot_accuracy": 34.66,
+      "goals_per_game": 1.42,
       "position": 3
     },
     {
       "team": "Manchester United",
-      "played": 25,
+      "played": 26,
       "won": 12,
-      "drawn": 8,
+      "drawn": 9,
       "lost": 5,
-      "goals_for": 46,
-      "goals_against": 36,
+      "goals_for": 47,
+      "goals_against": 37,
       "goal_difference": 10,
-      "points": 44,
+      "points": 45,
       "home_won": 8,
       "home_drawn": 3,
       "home_lost": 2,
       "away_won": 4,
-      "away_drawn": 5,
+      "away_drawn": 6,
       "away_lost": 3,
       "clean_sheets": 4,
-      "total_shots": 408,
-      "total_shots_on_target": 145,
-      "shot_accuracy": 35.54,
-      "goals_per_game": 1.84,
+      "total_shots": 417,
+      "total_shots_on_target": 148,
+      "shot_accuracy": 35.49,
+      "goals_per_game": 1.81,
       "position": 4
     },
     {
       "team": "Chelsea",
-      "played": 25,
+      "played": 26,
       "won": 12,
-      "drawn": 7,
+      "drawn": 8,
       "lost": 6,
-      "goals_for": 45,
-      "goals_against": 28,
+      "goals_for": 47,
+      "goals_against": 30,
       "goal_difference": 17,
-      "points": 43,
+      "points": 44,
       "home_won": 6,
-      "home_drawn": 3,
+      "home_drawn": 4,
       "home_lost": 3,
       "away_won": 6,
       "away_drawn": 4,
       "away_lost": 3,
       "clean_sheets": 9,
-      "total_shots": 337,
-      "total_shots_on_target": 121,
-      "shot_accuracy": 35.91,
-      "goals_per_game": 1.8,
+      "total_shots": 356,
+      "total_shots_on_target": 125,
+      "shot_accuracy": 35.11,
+      "goals_per_game": 1.81,
       "position": 5
     },
     {
       "team": "Liverpool",
-      "played": 25,
-      "won": 11,
+      "played": 26,
+      "won": 12,
       "drawn": 6,
       "lost": 8,
-      "goals_for": 40,
+      "goals_for": 41,
       "goals_against": 35,
-      "goal_difference": 5,
-      "points": 39,
+      "goal_difference": 6,
+      "points": 42,
       "home_won": 7,
       "home_drawn": 3,
       "home_lost": 3,
-      "away_won": 4,
+      "away_won": 5,
       "away_drawn": 3,
       "away_lost": 5,
-      "clean_sheets": 7,
-      "total_shots": 387,
-      "total_shots_on_target": 110,
-      "shot_accuracy": 28.42,
-      "goals_per_game": 1.6,
+      "clean_sheets": 8,
+      "total_shots": 410,
+      "total_shots_on_target": 113,
+      "shot_accuracy": 27.56,
+      "goals_per_game": 1.58,
       "position": 6
     },
     {
@@ -177,301 +177,301 @@
     },
     {
       "team": "Everton",
-      "played": 25,
+      "played": 26,
       "won": 10,
       "drawn": 7,
-      "lost": 8,
-      "goals_for": 28,
-      "goals_against": 28,
-      "goal_difference": 0,
+      "lost": 9,
+      "goals_for": 29,
+      "goals_against": 30,
+      "goal_difference": -1,
       "points": 37,
       "home_won": 4,
       "home_drawn": 4,
-      "home_lost": 4,
+      "home_lost": 5,
       "away_won": 6,
       "away_drawn": 3,
       "away_lost": 4,
       "clean_sheets": 9,
-      "total_shots": 270,
-      "total_shots_on_target": 79,
-      "shot_accuracy": 29.26,
+      "total_shots": 286,
+      "total_shots_on_target": 85,
+      "shot_accuracy": 29.72,
       "goals_per_game": 1.12,
       "position": 8
     },
     {
+      "team": "Bournemouth",
+      "played": 26,
+      "won": 9,
+      "drawn": 10,
+      "lost": 7,
+      "goals_for": 43,
+      "goals_against": 45,
+      "goal_difference": -2,
+      "points": 37,
+      "home_won": 6,
+      "home_drawn": 5,
+      "home_lost": 2,
+      "away_won": 3,
+      "away_drawn": 5,
+      "away_lost": 5,
+      "clean_sheets": 6,
+      "total_shots": 353,
+      "total_shots_on_target": 129,
+      "shot_accuracy": 36.54,
+      "goals_per_game": 1.65,
+      "position": 9
+    },
+    {
+      "team": "Newcastle United",
+      "played": 26,
+      "won": 10,
+      "drawn": 6,
+      "lost": 10,
+      "goals_for": 37,
+      "goals_against": 37,
+      "goal_difference": 0,
+      "points": 36,
+      "home_won": 7,
+      "home_drawn": 2,
+      "home_lost": 4,
+      "away_won": 3,
+      "away_drawn": 4,
+      "away_lost": 6,
+      "clean_sheets": 7,
+      "total_shots": 344,
+      "total_shots_on_target": 118,
+      "shot_accuracy": 34.3,
+      "goals_per_game": 1.42,
+      "position": 10
+    },
+    {
       "team": "Sunderland",
-      "played": 25,
+      "played": 26,
       "won": 9,
       "drawn": 9,
-      "lost": 7,
+      "lost": 8,
       "goals_for": 27,
-      "goals_against": 29,
-      "goal_difference": -2,
+      "goals_against": 30,
+      "goal_difference": -3,
       "points": 36,
       "home_won": 7,
       "home_drawn": 5,
-      "home_lost": 0,
+      "home_lost": 1,
       "away_won": 2,
       "away_drawn": 4,
       "away_lost": 7,
       "clean_sheets": 8,
-      "total_shots": 241,
-      "total_shots_on_target": 82,
-      "shot_accuracy": 34.02,
-      "goals_per_game": 1.08,
-      "position": 9
+      "total_shots": 252,
+      "total_shots_on_target": 84,
+      "shot_accuracy": 33.33,
+      "goals_per_game": 1.04,
+      "position": 11
     },
     {
       "team": "Fulham",
-      "played": 25,
+      "played": 26,
       "won": 10,
       "drawn": 4,
-      "lost": 11,
+      "lost": 12,
       "goals_for": 35,
-      "goals_against": 37,
-      "goal_difference": -2,
+      "goals_against": 40,
+      "goal_difference": -5,
       "points": 34,
       "home_won": 7,
       "home_drawn": 2,
       "home_lost": 4,
       "away_won": 3,
       "away_drawn": 2,
-      "away_lost": 7,
+      "away_lost": 8,
       "clean_sheets": 5,
-      "total_shots": 296,
-      "total_shots_on_target": 92,
-      "shot_accuracy": 31.08,
-      "goals_per_game": 1.4,
-      "position": 10
-    },
-    {
-      "team": "Bournemouth",
-      "played": 25,
-      "won": 8,
-      "drawn": 10,
-      "lost": 7,
-      "goals_for": 41,
-      "goals_against": 44,
-      "goal_difference": -3,
-      "points": 34,
-      "home_won": 6,
-      "home_drawn": 5,
-      "home_lost": 2,
-      "away_won": 2,
-      "away_drawn": 5,
-      "away_lost": 5,
-      "clean_sheets": 6,
-      "total_shots": 342,
-      "total_shots_on_target": 125,
-      "shot_accuracy": 36.55,
-      "goals_per_game": 1.64,
-      "position": 11
-    },
-    {
-      "team": "Newcastle United",
-      "played": 25,
-      "won": 9,
-      "drawn": 6,
-      "lost": 10,
-      "goals_for": 35,
-      "goals_against": 36,
-      "goal_difference": -1,
-      "points": 33,
-      "home_won": 7,
-      "home_drawn": 2,
-      "home_lost": 4,
-      "away_won": 2,
-      "away_drawn": 4,
-      "away_lost": 6,
-      "clean_sheets": 7,
-      "total_shots": 323,
-      "total_shots_on_target": 113,
-      "shot_accuracy": 34.98,
-      "goals_per_game": 1.4,
+      "total_shots": 310,
+      "total_shots_on_target": 95,
+      "shot_accuracy": 30.65,
+      "goals_per_game": 1.35,
       "position": 12
     },
     {
       "team": "Crystal Palace",
-      "played": 25,
+      "played": 26,
       "won": 8,
       "drawn": 8,
-      "lost": 9,
-      "goals_for": 26,
-      "goals_against": 29,
-      "goal_difference": -3,
+      "lost": 10,
+      "goals_for": 28,
+      "goals_against": 32,
+      "goal_difference": -4,
       "points": 32,
       "home_won": 2,
       "home_drawn": 6,
-      "home_lost": 4,
+      "home_lost": 5,
       "away_won": 6,
       "away_drawn": 2,
       "away_lost": 5,
       "clean_sheets": 9,
-      "total_shots": 286,
-      "total_shots_on_target": 96,
-      "shot_accuracy": 33.57,
-      "goals_per_game": 1.04,
+      "total_shots": 307,
+      "total_shots_on_target": 99,
+      "shot_accuracy": 32.25,
+      "goals_per_game": 1.08,
       "position": 13
     },
     {
       "team": "Brighton",
-      "played": 25,
+      "played": 26,
       "won": 7,
       "drawn": 10,
-      "lost": 8,
+      "lost": 9,
       "goals_for": 34,
-      "goals_against": 33,
-      "goal_difference": 1,
+      "goals_against": 34,
+      "goal_difference": 0,
       "points": 31,
       "home_won": 5,
       "home_drawn": 6,
       "home_lost": 2,
       "away_won": 2,
       "away_drawn": 4,
-      "away_lost": 6,
+      "away_lost": 7,
       "clean_sheets": 5,
-      "total_shots": 325,
-      "total_shots_on_target": 107,
-      "shot_accuracy": 32.92,
-      "goals_per_game": 1.36,
+      "total_shots": 334,
+      "total_shots_on_target": 110,
+      "shot_accuracy": 32.93,
+      "goals_per_game": 1.31,
       "position": 14
     },
     {
-      "team": "Tottenham Hotspur",
-      "played": 25,
-      "won": 7,
-      "drawn": 8,
-      "lost": 10,
-      "goals_for": 35,
-      "goals_against": 35,
-      "goal_difference": 0,
-      "points": 29,
-      "home_won": 2,
-      "home_drawn": 4,
-      "home_lost": 6,
-      "away_won": 5,
-      "away_drawn": 4,
-      "away_lost": 4,
-      "clean_sheets": 7,
-      "total_shots": 271,
-      "total_shots_on_target": 96,
-      "shot_accuracy": 35.42,
-      "goals_per_game": 1.4,
-      "position": 15
-    },
-    {
       "team": "Leeds United",
-      "played": 25,
+      "played": 26,
       "won": 7,
-      "drawn": 8,
+      "drawn": 9,
       "lost": 10,
-      "goals_for": 34,
-      "goals_against": 43,
+      "goals_for": 36,
+      "goals_against": 45,
       "goal_difference": -9,
-      "points": 29,
+      "points": 30,
       "home_won": 6,
       "home_drawn": 4,
       "home_lost": 3,
       "away_won": 1,
-      "away_drawn": 4,
+      "away_drawn": 5,
       "away_lost": 7,
       "clean_sheets": 4,
-      "total_shots": 313,
-      "total_shots_on_target": 101,
-      "shot_accuracy": 32.27,
-      "goals_per_game": 1.36,
+      "total_shots": 317,
+      "total_shots_on_target": 103,
+      "shot_accuracy": 32.49,
+      "goals_per_game": 1.38,
+      "position": 15
+    },
+    {
+      "team": "Tottenham Hotspur",
+      "played": 26,
+      "won": 7,
+      "drawn": 8,
+      "lost": 11,
+      "goals_for": 36,
+      "goals_against": 37,
+      "goal_difference": -1,
+      "points": 29,
+      "home_won": 2,
+      "home_drawn": 4,
+      "home_lost": 7,
+      "away_won": 5,
+      "away_drawn": 4,
+      "away_lost": 4,
+      "clean_sheets": 7,
+      "total_shots": 287,
+      "total_shots_on_target": 98,
+      "shot_accuracy": 34.15,
+      "goals_per_game": 1.38,
       "position": 16
     },
     {
       "team": "Nottingham Forest",
-      "played": 25,
+      "played": 26,
       "won": 7,
-      "drawn": 5,
+      "drawn": 6,
       "lost": 13,
       "goals_for": 25,
       "goals_against": 38,
       "goal_difference": -13,
-      "points": 26,
+      "points": 27,
       "home_won": 3,
-      "home_drawn": 3,
+      "home_drawn": 4,
       "home_lost": 6,
       "away_won": 4,
       "away_drawn": 2,
       "away_lost": 7,
-      "clean_sheets": 5,
-      "total_shots": 298,
-      "total_shots_on_target": 94,
-      "shot_accuracy": 31.54,
-      "goals_per_game": 1.0,
+      "clean_sheets": 6,
+      "total_shots": 333,
+      "total_shots_on_target": 104,
+      "shot_accuracy": 31.23,
+      "goals_per_game": 0.96,
       "position": 17
     },
     {
       "team": "West Ham United",
-      "played": 25,
+      "played": 26,
       "won": 6,
-      "drawn": 5,
+      "drawn": 6,
       "lost": 14,
-      "goals_for": 31,
-      "goals_against": 48,
+      "goals_for": 32,
+      "goals_against": 49,
       "goal_difference": -17,
-      "points": 23,
+      "points": 24,
       "home_won": 3,
-      "home_drawn": 1,
+      "home_drawn": 2,
       "home_lost": 8,
       "away_won": 3,
       "away_drawn": 4,
       "away_lost": 6,
       "clean_sheets": 2,
-      "total_shots": 257,
-      "total_shots_on_target": 89,
-      "shot_accuracy": 34.63,
-      "goals_per_game": 1.24,
+      "total_shots": 264,
+      "total_shots_on_target": 92,
+      "shot_accuracy": 34.85,
+      "goals_per_game": 1.23,
       "position": 18
     },
     {
       "team": "Burnley",
-      "played": 25,
-      "won": 3,
+      "played": 26,
+      "won": 4,
       "drawn": 6,
       "lost": 16,
-      "goals_for": 25,
-      "goals_against": 49,
-      "goal_difference": -24,
-      "points": 15,
+      "goals_for": 28,
+      "goals_against": 51,
+      "goal_difference": -23,
+      "points": 18,
       "home_won": 2,
       "home_drawn": 4,
       "home_lost": 7,
-      "away_won": 1,
+      "away_won": 2,
       "away_drawn": 2,
       "away_lost": 9,
       "clean_sheets": 3,
-      "total_shots": 226,
-      "total_shots_on_target": 73,
-      "shot_accuracy": 32.3,
-      "goals_per_game": 1.0,
+      "total_shots": 234,
+      "total_shots_on_target": 76,
+      "shot_accuracy": 32.48,
+      "goals_per_game": 1.08,
       "position": 19
     },
     {
       "team": "Wolverhampton",
-      "played": 25,
+      "played": 26,
       "won": 1,
-      "drawn": 5,
+      "drawn": 6,
       "lost": 19,
       "goals_for": 16,
       "goals_against": 48,
       "goal_difference": -32,
-      "points": 8,
+      "points": 9,
       "home_won": 1,
       "home_drawn": 2,
       "home_lost": 10,
       "away_won": 0,
-      "away_drawn": 3,
+      "away_drawn": 4,
       "away_lost": 9,
-      "clean_sheets": 2,
-      "total_shots": 236,
-      "total_shots_on_target": 80,
-      "shot_accuracy": 33.9,
-      "goals_per_game": 0.64,
+      "clean_sheets": 3,
+      "total_shots": 243,
+      "total_shots_on_target": 83,
+      "shot_accuracy": 34.16,
+      "goals_per_game": 0.62,
       "position": 20
     }
   ],
@@ -678,6 +678,10 @@
       {
         "matchday": 25,
         "points": 47
+      },
+      {
+        "matchday": 26,
+        "points": 50
       }
     ],
     "Bournemouth": [
@@ -780,6 +784,10 @@
       {
         "matchday": 25,
         "points": 34
+      },
+      {
+        "matchday": 26,
+        "points": 37
       }
     ],
     "Brentford": [
@@ -984,6 +992,10 @@
       {
         "matchday": 25,
         "points": 31
+      },
+      {
+        "matchday": 26,
+        "points": 31
       }
     ],
     "Burnley": [
@@ -1086,6 +1098,10 @@
       {
         "matchday": 25,
         "points": 15
+      },
+      {
+        "matchday": 26,
+        "points": 18
       }
     ],
     "Chelsea": [
@@ -1188,6 +1204,10 @@
       {
         "matchday": 25,
         "points": 43
+      },
+      {
+        "matchday": 26,
+        "points": 44
       }
     ],
     "Crystal Palace": [
@@ -1289,6 +1309,10 @@
       },
       {
         "matchday": 25,
+        "points": 32
+      },
+      {
+        "matchday": 26,
         "points": 32
       }
     ],
@@ -1392,6 +1416,10 @@
       {
         "matchday": 25,
         "points": 37
+      },
+      {
+        "matchday": 26,
+        "points": 37
       }
     ],
     "Fulham": [
@@ -1493,6 +1521,10 @@
       },
       {
         "matchday": 25,
+        "points": 34
+      },
+      {
+        "matchday": 26,
         "points": 34
       }
     ],
@@ -1596,6 +1628,10 @@
       {
         "matchday": 25,
         "points": 29
+      },
+      {
+        "matchday": 26,
+        "points": 30
       }
     ],
     "Liverpool": [
@@ -1698,6 +1734,10 @@
       {
         "matchday": 25,
         "points": 39
+      },
+      {
+        "matchday": 26,
+        "points": 42
       }
     ],
     "Manchester City": [
@@ -1800,6 +1840,10 @@
       {
         "matchday": 25,
         "points": 50
+      },
+      {
+        "matchday": 26,
+        "points": 53
       }
     ],
     "Manchester United": [
@@ -1902,6 +1946,10 @@
       {
         "matchday": 25,
         "points": 44
+      },
+      {
+        "matchday": 26,
+        "points": 45
       }
     ],
     "Newcastle United": [
@@ -2004,6 +2052,10 @@
       {
         "matchday": 25,
         "points": 33
+      },
+      {
+        "matchday": 26,
+        "points": 36
       }
     ],
     "Nottingham Forest": [
@@ -2106,6 +2158,10 @@
       {
         "matchday": 25,
         "points": 26
+      },
+      {
+        "matchday": 26,
+        "points": 27
       }
     ],
     "Sunderland": [
@@ -2207,6 +2263,10 @@
       },
       {
         "matchday": 25,
+        "points": 36
+      },
+      {
+        "matchday": 26,
         "points": 36
       }
     ],
@@ -2310,6 +2370,10 @@
       {
         "matchday": 25,
         "points": 29
+      },
+      {
+        "matchday": 26,
+        "points": 29
       }
     ],
     "West Ham United": [
@@ -2412,6 +2476,10 @@
       {
         "matchday": 25,
         "points": 23
+      },
+      {
+        "matchday": 26,
+        "points": 24
       }
     ],
     "Wolverhampton": [
@@ -2514,6 +2582,10 @@
       {
         "matchday": 25,
         "points": 8
+      },
+      {
+        "matchday": 26,
+        "points": 9
       }
     ]
   },
@@ -2574,40 +2646,40 @@
     },
     {
       "month": "2026-02",
-      "matches": 15,
-      "total_goals": 44,
-      "avg_goals": 2.93,
-      "home_wins": 5,
-      "draws": 3,
-      "away_wins": 7
+      "matches": 24,
+      "total_goals": 66,
+      "avg_goals": 2.75,
+      "home_wins": 7,
+      "draws": 6,
+      "away_wins": 11
     }
   ],
   "home_away": {
-    "home_wins": 110,
-    "draws": 65,
-    "away_wins": 75,
-    "home_goals_avg": 1.56,
+    "home_wins": 112,
+    "draws": 68,
+    "away_wins": 79,
+    "home_goals_avg": 1.54,
     "away_goals_avg": 1.24,
-    "total_matches": 250,
-    "home_win_pct": 44.0,
-    "draw_pct": 26.0,
-    "away_win_pct": 30.0
+    "total_matches": 259,
+    "home_win_pct": 43.24,
+    "draw_pct": 26.25,
+    "away_win_pct": 30.5
   },
   "referee_stats": [
-    {
-      "referee": "T Robinson",
-      "matches": 6,
-      "avg_goals": 1.83,
-      "avg_fouls": 22.67,
-      "avg_cards": 5.0,
-      "total_reds": 1
-    },
     {
       "referee": "S Attwell",
       "matches": 16,
       "avg_goals": 2.88,
       "avg_fouls": 20.5,
       "avg_cards": 4.62,
+      "total_reds": 1
+    },
+    {
+      "referee": "T Robinson",
+      "matches": 7,
+      "avg_goals": 1.57,
+      "avg_fouls": 23.0,
+      "avg_cards": 4.57,
       "total_reds": 1
     },
     {
@@ -2619,28 +2691,36 @@
       "total_reds": 0
     },
     {
-      "referee": "S Hooper",
-      "matches": 14,
-      "avg_goals": 3.36,
-      "avg_fouls": 24.0,
-      "avg_cards": 4.29,
-      "total_reds": 2
+      "referee": "R Jones",
+      "matches": 15,
+      "avg_goals": 3.07,
+      "avg_fouls": 20.67,
+      "avg_cards": 4.2,
+      "total_reds": 0
     },
     {
       "referee": "P Bankes",
-      "matches": 17,
-      "avg_goals": 2.88,
-      "avg_fouls": 22.18,
-      "avg_cards": 4.12,
+      "matches": 18,
+      "avg_goals": 2.78,
+      "avg_fouls": 22.28,
+      "avg_cards": 4.17,
       "total_reds": 3
     },
     {
-      "referee": "C Kavanagh",
-      "matches": 18,
-      "avg_goals": 2.11,
-      "avg_fouls": 22.67,
+      "referee": "S Hooper",
+      "matches": 15,
+      "avg_goals": 3.27,
+      "avg_fouls": 23.33,
+      "avg_cards": 4.13,
+      "total_reds": 2
+    },
+    {
+      "referee": "A Taylor",
+      "matches": 21,
+      "avg_goals": 3.19,
+      "avg_fouls": 20.1,
       "avg_cards": 4.0,
-      "total_reds": 1
+      "total_reds": 2
     },
     {
       "referee": "J Brooks",
@@ -2652,19 +2732,11 @@
     },
     {
       "referee": "P Tierney",
-      "matches": 3,
-      "avg_goals": 2.67,
-      "avg_fouls": 20.33,
+      "matches": 4,
+      "avg_goals": 2.75,
+      "avg_fouls": 19.75,
       "avg_cards": 4.0,
       "total_reds": 0
-    },
-    {
-      "referee": "A Taylor",
-      "matches": 20,
-      "avg_goals": 3.2,
-      "avg_fouls": 19.8,
-      "avg_cards": 3.95,
-      "total_reds": 2
     },
     {
       "referee": "D England",
@@ -2675,12 +2747,12 @@
       "total_reds": 2
     },
     {
-      "referee": "R Jones",
-      "matches": 14,
-      "avg_goals": 3.0,
-      "avg_fouls": 20.57,
-      "avg_cards": 3.93,
-      "total_reds": 0
+      "referee": "C Kavanagh",
+      "matches": 19,
+      "avg_goals": 2.05,
+      "avg_fouls": 22.42,
+      "avg_cards": 3.84,
+      "total_reds": 1
     },
     {
       "referee": "S Barrott",
@@ -2716,11 +2788,11 @@
     },
     {
       "referee": "A Madley",
-      "matches": 12,
+      "matches": 13,
       "avg_goals": 2.92,
-      "avg_fouls": 21.58,
-      "avg_cards": 3.5,
-      "total_reds": 1
+      "avg_fouls": 22.15,
+      "avg_cards": 3.62,
+      "total_reds": 2
     },
     {
       "referee": "T Harrington",
@@ -2750,7 +2822,7 @@
   "scoreline_frequency": [
     {
       "score": "1-1",
-      "count": 30
+      "count": 31
     },
     {
       "score": "2-0",
@@ -2761,31 +2833,31 @@
       "count": 23
     },
     {
+      "score": "1-2",
+      "count": 19
+    },
+    {
       "score": "0-0",
-      "count": 17
+      "count": 18
     },
     {
       "score": "0-1",
-      "count": 17
-    },
-    {
-      "score": "1-2",
-      "count": 17
+      "count": 18
     },
     {
       "score": "3-0",
-      "count": 16
+      "count": 17
     },
     {
       "score": "2-2",
+      "count": 16
+    },
+    {
+      "score": "1-0",
       "count": 15
     },
     {
       "score": "3-1",
-      "count": 14
-    },
-    {
-      "score": "1-0",
       "count": 14
     }
   ],
@@ -2816,10 +2888,10 @@
     },
     {
       "season": "2025-26",
-      "matches": 250,
-      "avg_goals": 2.79,
+      "matches": 259,
+      "avg_goals": 2.78,
       "avg_cards": 3.79,
-      "home_win_pct": 44.0,
+      "home_win_pct": 43.24,
       "avg_fouls": 21.42
     }
   ],
@@ -2840,7 +2912,7 @@
       "goals_for": 51,
       "goals_against": 24,
       "xg_difference": 19.08,
-      "actual_points": 50
+      "actual_points": 53
     },
     {
       "team": "Manchester United",
@@ -2849,7 +2921,7 @@
       "goals_for": 47,
       "goals_against": 37,
       "xg_difference": 15.76,
-      "actual_points": 44
+      "actual_points": 45
     },
     {
       "team": "Chelsea",
@@ -2858,7 +2930,7 @@
       "goals_for": 47,
       "goals_against": 30,
       "xg_difference": 15.24,
-      "actual_points": 43
+      "actual_points": 44
     },
     {
       "team": "Liverpool",
@@ -2867,7 +2939,7 @@
       "goals_for": 40,
       "goals_against": 35,
       "xg_difference": 10.78,
-      "actual_points": 39
+      "actual_points": 42
     },
     {
       "team": "Newcastle United",
@@ -2876,7 +2948,7 @@
       "goals_for": 37,
       "goals_against": 37,
       "xg_difference": 10.5,
-      "actual_points": 33
+      "actual_points": 36
     },
     {
       "team": "Brentford",
@@ -2894,7 +2966,7 @@
       "goals_for": 43,
       "goals_against": 45,
       "xg_difference": 7.0,
-      "actual_points": 34
+      "actual_points": 37
     },
     {
       "team": "Crystal Palace",
@@ -2912,7 +2984,7 @@
       "goals_for": 36,
       "goals_against": 45,
       "xg_difference": 0.08,
-      "actual_points": 29
+      "actual_points": 30
     },
     {
       "team": "Brighton",
@@ -2930,7 +3002,7 @@
       "goals_for": 36,
       "goals_against": 27,
       "xg_difference": -3.38,
-      "actual_points": 47
+      "actual_points": 50
     },
     {
       "team": "Tottenham Hotspur",
@@ -2975,7 +3047,7 @@
       "goals_for": 25,
       "goals_against": 38,
       "xg_difference": -15.06,
-      "actual_points": 26
+      "actual_points": 27
     },
     {
       "team": "Wolverhampton",
@@ -2984,7 +3056,7 @@
       "goals_for": 16,
       "goals_against": 48,
       "xg_difference": -17.68,
-      "actual_points": 8
+      "actual_points": 9
     },
     {
       "team": "West Ham United",
@@ -2993,7 +3065,7 @@
       "goals_for": 32,
       "goals_against": 49,
       "xg_difference": -17.78,
-      "actual_points": 23
+      "actual_points": 24
     },
     {
       "team": "Burnley",
@@ -3002,7 +3074,7 @@
       "goals_for": 25,
       "goals_against": 49,
       "xg_difference": -30.6,
-      "actual_points": 15
+      "actual_points": 18
     }
   ],
   "xg_vs_actual": [
@@ -3247,23 +3319,13 @@
     },
     {
       "team": "Chelsea",
-      "total_shots": 337,
-      "xg_per_shot": 0.161
+      "total_shots": 356,
+      "xg_per_shot": 0.153
     },
     {
       "team": "Crystal Palace",
-      "total_shots": 286,
-      "xg_per_shot": 0.147
-    },
-    {
-      "team": "Manchester City",
-      "total_shots": 356,
-      "xg_per_shot": 0.139
-    },
-    {
-      "team": "Newcastle United",
-      "total_shots": 323,
-      "xg_per_shot": 0.136
+      "total_shots": 307,
+      "xg_per_shot": 0.137
     },
     {
       "team": "Arsenal",
@@ -3271,74 +3333,84 @@
       "xg_per_shot": 0.135
     },
     {
+      "team": "Manchester City",
+      "total_shots": 369,
+      "xg_per_shot": 0.134
+    },
+    {
       "team": "Bournemouth",
-      "total_shots": 342,
-      "xg_per_shot": 0.132
+      "total_shots": 353,
+      "xg_per_shot": 0.128
+    },
+    {
+      "team": "Newcastle United",
+      "total_shots": 344,
+      "xg_per_shot": 0.127
     },
     {
       "team": "Leeds United",
-      "total_shots": 313,
-      "xg_per_shot": 0.129
+      "total_shots": 317,
+      "xg_per_shot": 0.127
     },
     {
       "team": "West Ham United",
-      "total_shots": 257,
-      "xg_per_shot": 0.126
-    },
-    {
-      "team": "Everton",
-      "total_shots": 270,
-      "xg_per_shot": 0.124
+      "total_shots": 264,
+      "xg_per_shot": 0.123
     },
     {
       "team": "Manchester United",
-      "total_shots": 408,
-      "xg_per_shot": 0.122
+      "total_shots": 417,
+      "xg_per_shot": 0.119
     },
     {
-      "team": "Tottenham Hotspur",
-      "total_shots": 271,
+      "team": "Everton",
+      "total_shots": 286,
       "xg_per_shot": 0.117
     },
     {
       "team": "Brighton",
-      "total_shots": 325,
-      "xg_per_shot": 0.117
-    },
-    {
-      "team": "Liverpool",
-      "total_shots": 387,
+      "total_shots": 334,
       "xg_per_shot": 0.114
     },
     {
-      "team": "Aston Villa",
-      "total_shots": 311,
-      "xg_per_shot": 0.112
+      "team": "Tottenham Hotspur",
+      "total_shots": 287,
+      "xg_per_shot": 0.11
     },
     {
-      "team": "Sunderland",
-      "total_shots": 241,
+      "team": "Liverpool",
+      "total_shots": 410,
+      "xg_per_shot": 0.108
+    },
+    {
+      "team": "Aston Villa",
+      "total_shots": 326,
       "xg_per_shot": 0.107
     },
     {
       "team": "Burnley",
-      "total_shots": 226,
-      "xg_per_shot": 0.106
-    },
-    {
-      "team": "Fulham",
-      "total_shots": 296,
+      "total_shots": 234,
       "xg_per_shot": 0.103
     },
     {
+      "team": "Sunderland",
+      "total_shots": 252,
+      "xg_per_shot": 0.102
+    },
+    {
+      "team": "Fulham",
+      "total_shots": 310,
+      "xg_per_shot": 0.098
+    },
+    {
       "team": "Wolverhampton",
-      "total_shots": 236,
-      "xg_per_shot": 0.1
+      "total_shots": 243,
+      "xg_per_shot": 0.097
     },
     {
       "team": "Nottingham Forest",
-      "total_shots": 298,
-      "xg_per_shot": 0.095
+      "total_shots": 333,
+      "xg_per_shot": 0.085
     }
   ],
   "player_value": [
@@ -3367,15 +3439,15 @@
       "player_name": "Semenyo",
       "team": "Manchester City",
       "price": 7.9,
-      "goals": 12,
-      "goals_per_million": 1.52
+      "goals": 13,
+      "goals_per_million": 1.65
     },
     {
       "player_name": "Haaland",
       "team": "Manchester City",
       "price": 14.9,
-      "goals": 21,
-      "goals_per_million": 1.41
+      "goals": 22,
+      "goals_per_million": 1.48
     },
     {
       "player_name": "Wilson",
@@ -3420,10 +3492,10 @@
         "player_name": "Haaland",
         "team": "Manchester City",
         "position": "FWD",
-        "goals": 21,
+        "goals": 22,
         "assists": 6,
-        "minutes": 2098,
-        "goals_per_90": 0.9,
+        "minutes": 2143,
+        "goals_per_90": 0.92,
         "price": 14.9,
         "xg": 21.74,
         "shots": 90
@@ -3446,10 +3518,10 @@
         "player_name": "Semenyo",
         "team": "Manchester City",
         "position": "MID",
-        "goals": 12,
-        "assists": 5,
-        "minutes": 2160,
-        "goals_per_90": 0.5,
+        "goals": 13,
+        "assists": 6,
+        "minutes": 2250,
+        "goals_per_90": 0.52,
         "price": 7.9,
         "xg": 8.89,
         "shots": 58
@@ -3469,6 +3541,19 @@
       },
       {
         "rank": 5,
+        "player_name": "Ekitik\u00e9",
+        "team": "Liverpool",
+        "position": "FWD",
+        "goals": 10,
+        "assists": 2,
+        "minutes": 1509,
+        "goals_per_90": 0.6,
+        "price": 8.9,
+        "xg": 9.74,
+        "shots": 54
+      },
+      {
+        "rank": 6,
         "player_name": "Calvert-Lewin",
         "team": "Leeds United",
         "position": "FWD",
@@ -3481,33 +3566,7 @@
         "shots": 45
       },
       {
-        "rank": 6,
-        "player_name": "Ekitik\u00e9",
-        "team": "Liverpool",
-        "position": "FWD",
-        "goals": 10,
-        "assists": 2,
-        "minutes": 1422,
-        "goals_per_90": 0.63,
-        "price": 8.9,
-        "xg": 9.74,
-        "shots": 54
-      },
-      {
         "rank": 7,
-        "player_name": "Bruno G.",
-        "team": "Newcastle United",
-        "position": "MID",
-        "goals": 9,
-        "assists": 6,
-        "minutes": 2019,
-        "goals_per_90": 0.4,
-        "price": 7.0,
-        "xg": 5.77,
-        "shots": 32
-      },
-      {
-        "rank": 8,
         "player_name": "Mbeumo",
         "team": "Manchester United",
         "position": "MID",
@@ -3520,20 +3579,20 @@
         "shots": 53
       },
       {
-        "rank": 9,
-        "player_name": "Welbeck",
-        "team": "Brighton",
-        "position": "FWD",
-        "goals": 8,
-        "assists": 0,
-        "minutes": 1364,
-        "goals_per_90": 0.53,
-        "price": 6.1,
-        "xg": 8.38,
-        "shots": 33
+        "rank": 8,
+        "player_name": "Bruno G.",
+        "team": "Newcastle United",
+        "position": "MID",
+        "goals": 9,
+        "assists": 6,
+        "minutes": 2019,
+        "goals_per_90": 0.4,
+        "price": 7.0,
+        "xg": 5.77,
+        "shots": 32
       },
       {
-        "rank": 10,
+        "rank": 9,
         "player_name": "Palmer",
         "team": "Chelsea",
         "position": "MID",
@@ -3546,7 +3605,33 @@
         "shots": 34
       },
       {
+        "rank": 10,
+        "player_name": "Welbeck",
+        "team": "Brighton",
+        "position": "FWD",
+        "goals": 8,
+        "assists": 0,
+        "minutes": 1444,
+        "goals_per_90": 0.5,
+        "price": 6.1,
+        "xg": 8.38,
+        "shots": 33
+      },
+      {
         "rank": 11,
+        "player_name": "Watkins",
+        "team": "Aston Villa",
+        "position": "FWD",
+        "goals": 8,
+        "assists": 2,
+        "minutes": 1899,
+        "goals_per_90": 0.38,
+        "price": 8.6,
+        "xg": 10.82,
+        "shots": 50
+      },
+      {
+        "rank": 12,
         "player_name": "Kroupi.Jr",
         "team": "Bournemouth",
         "position": "FWD",
@@ -3559,85 +3644,7 @@
         "shots": 25
       },
       {
-        "rank": 12,
-        "player_name": "Watkins",
-        "team": "Aston Villa",
-        "position": "FWD",
-        "goals": 8,
-        "assists": 2,
-        "minutes": 1826,
-        "goals_per_90": 0.39,
-        "price": 8.6,
-        "xg": 10.82,
-        "shots": 50
-      },
-      {
         "rank": 13,
-        "player_name": "Wilson",
-        "team": "Fulham",
-        "position": "MID",
-        "goals": 8,
-        "assists": 6,
-        "minutes": 1854,
-        "goals_per_90": 0.39,
-        "price": 6.0,
-        "xg": 3.7,
-        "shots": 53
-      },
-      {
-        "rank": 14,
-        "player_name": "Bowen",
-        "team": "West Ham United",
-        "position": "FWD",
-        "goals": 8,
-        "assists": 4,
-        "minutes": 2329,
-        "goals_per_90": 0.31,
-        "price": 7.6,
-        "xg": 7.11,
-        "shots": 61
-      },
-      {
-        "rank": 15,
-        "player_name": "Enzo",
-        "team": "Chelsea",
-        "position": "MID",
-        "goals": 8,
-        "assists": 3,
-        "minutes": 2144,
-        "goals_per_90": 0.34,
-        "price": 6.9,
-        "xg": 9.98,
-        "shots": 52
-      },
-      {
-        "rank": 16,
-        "player_name": "Mateta",
-        "team": "Crystal Palace",
-        "position": "FWD",
-        "goals": 8,
-        "assists": 0,
-        "minutes": 1904,
-        "goals_per_90": 0.38,
-        "price": 7.5,
-        "xg": 12.9,
-        "shots": 54
-      },
-      {
-        "rank": 17,
-        "player_name": "Rogers",
-        "team": "Aston Villa",
-        "position": "MID",
-        "goals": 8,
-        "assists": 5,
-        "minutes": 2227,
-        "goals_per_90": 0.32,
-        "price": 7.6,
-        "xg": 4.32,
-        "shots": 53
-      },
-      {
-        "rank": 18,
         "player_name": "Gy\u00f6keres",
         "team": "Arsenal",
         "position": "FWD",
@@ -3650,7 +3657,85 @@
         "shots": 37
       },
       {
+        "rank": 14,
+        "player_name": "Wilson",
+        "team": "Fulham",
+        "position": "MID",
+        "goals": 8,
+        "assists": 6,
+        "minutes": 1925,
+        "goals_per_90": 0.37,
+        "price": 6.0,
+        "xg": 3.7,
+        "shots": 53
+      },
+      {
+        "rank": 15,
+        "player_name": "Bowen",
+        "team": "West Ham United",
+        "position": "FWD",
+        "goals": 8,
+        "assists": 4,
+        "minutes": 2329,
+        "goals_per_90": 0.31,
+        "price": 7.6,
+        "xg": 7.11,
+        "shots": 61
+      },
+      {
+        "rank": 16,
+        "player_name": "Enzo",
+        "team": "Chelsea",
+        "position": "MID",
+        "goals": 8,
+        "assists": 3,
+        "minutes": 2144,
+        "goals_per_90": 0.34,
+        "price": 6.9,
+        "xg": 9.98,
+        "shots": 52
+      },
+      {
+        "rank": 17,
+        "player_name": "Mateta",
+        "team": "Crystal Palace",
+        "position": "FWD",
+        "goals": 8,
+        "assists": 0,
+        "minutes": 1904,
+        "goals_per_90": 0.38,
+        "price": 7.5,
+        "xg": 12.9,
+        "shots": 54
+      },
+      {
+        "rank": 18,
+        "player_name": "Rogers",
+        "team": "Aston Villa",
+        "position": "MID",
+        "goals": 8,
+        "assists": 5,
+        "minutes": 2317,
+        "goals_per_90": 0.31,
+        "price": 7.6,
+        "xg": 4.32,
+        "shots": 53
+      },
+      {
         "rank": 19,
+        "player_name": "Foden",
+        "team": "Manchester City",
+        "position": "MID",
+        "goals": 7,
+        "assists": 3,
+        "minutes": 1713,
+        "goals_per_90": 0.37,
+        "price": 8.2,
+        "xg": 5.4,
+        "shots": 44
+      },
+      {
+        "rank": 20,
         "player_name": "Richarlison",
         "team": "Tottenham Hotspur",
         "position": "FWD",
@@ -3661,19 +3746,6 @@
         "price": 6.3,
         "xg": 5.44,
         "shots": 36
-      },
-      {
-        "rank": 20,
-        "player_name": "Woltemade",
-        "team": "Newcastle United",
-        "position": "FWD",
-        "goals": 7,
-        "assists": 3,
-        "minutes": 1416,
-        "goals_per_90": 0.44,
-        "price": 6.9,
-        "xg": 7.66,
-        "shots": 30
       }
     ],
     "assist_leaders": [
@@ -3697,8 +3769,8 @@
         "position": "MID",
         "assists": 8,
         "goals": 3,
-        "minutes": 1048,
-        "assists_per_90": 0.69,
+        "minutes": 1067,
+        "assists_per_90": 0.67,
         "xa": 6.71,
         "key_passes": 34,
         "price": 6.5
@@ -3723,7 +3795,7 @@
         "position": "MID",
         "assists": 8,
         "goals": 1,
-        "minutes": 1625,
+        "minutes": 1634,
         "assists_per_90": 0.44,
         "xa": 3.88,
         "key_passes": 30,
@@ -3731,32 +3803,6 @@
       },
       {
         "rank": 5,
-        "player_name": "Saka",
-        "team": "Arsenal",
-        "position": "MID",
-        "assists": 7,
-        "goals": 4,
-        "minutes": 1543,
-        "assists_per_90": 0.41,
-        "xa": 5.95,
-        "key_passes": 44,
-        "price": 9.8
-      },
-      {
-        "rank": 6,
-        "player_name": "Rice",
-        "team": "Arsenal",
-        "position": "MID",
-        "assists": 7,
-        "goals": 4,
-        "minutes": 2055,
-        "assists_per_90": 0.31,
-        "xa": 5.59,
-        "key_passes": 47,
-        "price": 7.6
-      },
-      {
-        "rank": 7,
         "player_name": "Doku",
         "team": "Manchester City",
         "position": "MID",
@@ -3769,59 +3815,46 @@
         "price": 6.4
       },
       {
-        "rank": 8,
+        "rank": 6,
         "player_name": "Matheus N.",
         "team": "Manchester City",
         "position": "DEF",
-        "assists": 6,
+        "assists": 7,
         "goals": 1,
-        "minutes": 1845,
-        "assists_per_90": 0.29,
+        "minutes": 1904,
+        "assists_per_90": 0.33,
         "xa": 1.73,
         "key_passes": 13,
         "price": 5.4
       },
       {
-        "rank": 9,
-        "player_name": "Dalot",
-        "team": "Manchester United",
-        "position": "DEF",
-        "assists": 6,
-        "goals": 1,
-        "minutes": 1840,
-        "assists_per_90": 0.29,
-        "xa": 2.79,
-        "key_passes": 23,
-        "price": 4.5
-      },
-      {
-        "rank": 10,
-        "player_name": "Haaland",
-        "team": "Manchester City",
-        "position": "FWD",
-        "assists": 6,
-        "goals": 21,
-        "minutes": 2098,
-        "assists_per_90": 0.26,
-        "xa": 4.32,
-        "key_passes": 19,
-        "price": 14.9
-      },
-      {
-        "rank": 11,
-        "player_name": "Bruno G.",
-        "team": "Newcastle United",
+        "rank": 7,
+        "player_name": "Rice",
+        "team": "Arsenal",
         "position": "MID",
-        "assists": 6,
-        "goals": 9,
-        "minutes": 2019,
-        "assists_per_90": 0.27,
-        "xa": 3.15,
-        "key_passes": 38,
-        "price": 7.0
+        "assists": 7,
+        "goals": 4,
+        "minutes": 2055,
+        "assists_per_90": 0.31,
+        "xa": 5.59,
+        "key_passes": 47,
+        "price": 7.6
       },
       {
-        "rank": 12,
+        "rank": 8,
+        "player_name": "Saka",
+        "team": "Arsenal",
+        "position": "MID",
+        "assists": 7,
+        "goals": 4,
+        "minutes": 1543,
+        "assists_per_90": 0.41,
+        "xa": 5.95,
+        "key_passes": 44,
+        "price": 9.8
+      },
+      {
+        "rank": 9,
         "player_name": "Grealish",
         "team": "Everton",
         "position": "MID",
@@ -3834,33 +3867,7 @@
         "price": 6.3
       },
       {
-        "rank": 13,
-        "player_name": "Aaronson",
-        "team": "Leeds United",
-        "position": "MID",
-        "assists": 6,
-        "goals": 4,
-        "minutes": 1653,
-        "assists_per_90": 0.33,
-        "xa": 3.9,
-        "key_passes": 23,
-        "price": 5.4
-      },
-      {
-        "rank": 14,
-        "player_name": "Wilson",
-        "team": "Fulham",
-        "position": "MID",
-        "assists": 6,
-        "goals": 8,
-        "minutes": 1854,
-        "assists_per_90": 0.29,
-        "xa": 3.26,
-        "key_passes": 24,
-        "price": 6.0
-      },
-      {
-        "rank": 15,
+        "rank": 10,
         "player_name": "Stach",
         "team": "Leeds United",
         "position": "MID",
@@ -3871,6 +3878,71 @@
         "xa": 4.67,
         "key_passes": 42,
         "price": 4.7
+      },
+      {
+        "rank": 11,
+        "player_name": "M.Salah",
+        "team": "Liverpool",
+        "position": "MID",
+        "assists": 6,
+        "goals": 4,
+        "minutes": 1536,
+        "assists_per_90": 0.35,
+        "xa": 4.27,
+        "key_passes": 40,
+        "price": 14.0
+      },
+      {
+        "rank": 12,
+        "player_name": "Semenyo",
+        "team": "Manchester City",
+        "position": "MID",
+        "assists": 6,
+        "goals": 13,
+        "minutes": 2250,
+        "assists_per_90": 0.24,
+        "xa": 2.65,
+        "key_passes": 28,
+        "price": 7.9
+      },
+      {
+        "rank": 13,
+        "player_name": "Wilson",
+        "team": "Fulham",
+        "position": "MID",
+        "assists": 6,
+        "goals": 8,
+        "minutes": 1925,
+        "assists_per_90": 0.28,
+        "xa": 3.26,
+        "key_passes": 24,
+        "price": 6.0
+      },
+      {
+        "rank": 14,
+        "player_name": "Bruno G.",
+        "team": "Newcastle United",
+        "position": "MID",
+        "assists": 6,
+        "goals": 9,
+        "minutes": 2019,
+        "assists_per_90": 0.27,
+        "xa": 3.15,
+        "key_passes": 38,
+        "price": 7.0
+      },
+      {
+        "rank": 15,
+        "player_name": "Dalot",
+        "team": "Manchester United",
+        "position": "DEF",
+        "assists": 6,
+        "goals": 1,
+        "minutes": 1840,
+        "assists_per_90": 0.29,
+        "xa": 2.79,
+        "key_passes": 23,
+        "price": 4.5
       }
     ],
     "iron_men": [
@@ -3884,8 +3956,71 @@
         "assists": 0
       },
       {
+        "player_name": "Verbruggen",
+        "team": "Brighton",
+        "position": "GK",
+        "minutes": 2340,
+        "games_equivalent": 26.0,
+        "goals": 0,
+        "assists": 0
+      },
+      {
+        "player_name": "D\u00fabravka",
+        "team": "Burnley",
+        "position": "GK",
+        "minutes": 2340,
+        "games_equivalent": 26.0,
+        "goals": 0,
+        "assists": 0
+      },
+      {
+        "player_name": "Henderson",
+        "team": "Crystal Palace",
+        "position": "GK",
+        "minutes": 2340,
+        "games_equivalent": 26.0,
+        "goals": 0,
+        "assists": 0
+      },
+      {
         "player_name": "Pickford",
         "team": "Everton",
+        "position": "GK",
+        "minutes": 2340,
+        "games_equivalent": 26.0,
+        "goals": 0,
+        "assists": 0
+      },
+      {
+        "player_name": "Leno",
+        "team": "Fulham",
+        "position": "GK",
+        "minutes": 2340,
+        "games_equivalent": 26.0,
+        "goals": 0,
+        "assists": 0
+      },
+      {
+        "player_name": "Virgil",
+        "team": "Liverpool",
+        "position": "DEF",
+        "minutes": 2340,
+        "games_equivalent": 26.0,
+        "goals": 2,
+        "assists": 0
+      },
+      {
+        "player_name": "Milenkovi\u0107",
+        "team": "Nottingham Forest",
+        "position": "DEF",
+        "minutes": 2340,
+        "games_equivalent": 26.0,
+        "goals": 0,
+        "assists": 0
+      },
+      {
+        "player_name": "Roefs",
+        "team": "Sunderland",
         "position": "GK",
         "minutes": 2340,
         "games_equivalent": 26.0,
@@ -3909,6 +4044,15 @@
         "games_equivalent": 25.9,
         "goals": 8,
         "assists": 4
+      },
+      {
+        "player_name": "Rogers",
+        "team": "Aston Villa",
+        "position": "MID",
+        "minutes": 2317,
+        "games_equivalent": 25.7,
+        "goals": 8,
+        "assists": 5
       },
       {
         "player_name": "Shaw",
@@ -3938,76 +4082,13 @@
         "assists": 0
       },
       {
-        "player_name": "Verbruggen",
-        "team": "Brighton",
-        "position": "GK",
-        "minutes": 2250,
-        "games_equivalent": 25.0,
-        "goals": 0,
-        "assists": 0
-      },
-      {
-        "player_name": "D\u00fabravka",
-        "team": "Burnley",
-        "position": "GK",
-        "minutes": 2250,
-        "games_equivalent": 25.0,
-        "goals": 0,
-        "assists": 0
-      },
-      {
-        "player_name": "Henderson",
-        "team": "Crystal Palace",
-        "position": "GK",
-        "minutes": 2250,
-        "games_equivalent": 25.0,
-        "goals": 0,
-        "assists": 0
-      },
-      {
-        "player_name": "Leno",
-        "team": "Fulham",
-        "position": "GK",
-        "minutes": 2250,
-        "games_equivalent": 25.0,
-        "goals": 0,
-        "assists": 0
-      },
-      {
-        "player_name": "Virgil",
-        "team": "Liverpool",
-        "position": "DEF",
-        "minutes": 2250,
-        "games_equivalent": 25.0,
-        "goals": 1,
-        "assists": 0
-      },
-      {
-        "player_name": "Milenkovi\u0107",
-        "team": "Nottingham Forest",
-        "position": "DEF",
-        "minutes": 2250,
-        "games_equivalent": 25.0,
-        "goals": 0,
-        "assists": 0
-      },
-      {
-        "player_name": "Roefs",
-        "team": "Sunderland",
-        "position": "GK",
-        "minutes": 2250,
-        "games_equivalent": 25.0,
-        "goals": 0,
-        "assists": 0
-      },
-      {
-        "player_name": "Rogers",
-        "team": "Aston Villa",
+        "player_name": "Semenyo",
+        "team": "Manchester City",
         "position": "MID",
-        "minutes": 2227,
-        "games_equivalent": 24.7,
-        "goals": 8,
-        "assists": 5
+        "minutes": 2250,
+        "games_equivalent": 25.0,
+        "goals": 13,
+        "assists": 6
       },
       {
         "player_name": "Chalobah",
@@ -4019,20 +4100,20 @@
         "assists": 1
       },
       {
-        "player_name": "Semenyo",
-        "team": "Manchester City",
-        "position": "MID",
-        "minutes": 2160,
-        "games_equivalent": 24.0,
-        "goals": 12,
-        "assists": 5
-      },
-      {
         "player_name": "Gudmundsson",
         "team": "Leeds United",
         "position": "DEF",
         "minutes": 2100,
         "games_equivalent": 23.3,
+        "goals": 0,
+        "assists": 0
+      },
+      {
+        "player_name": "J.Gomes",
+        "team": "Wolverhampton",
+        "position": "MID",
+        "minutes": 2024,
+        "games_equivalent": 22.5,
         "goals": 0,
         "assists": 0
       },
@@ -4044,38 +4125,29 @@
         "games_equivalent": 22.4,
         "goals": 9,
         "assists": 6
-      },
-      {
-        "player_name": "J.Gomes",
-        "team": "Wolverhampton",
-        "position": "MID",
-        "minutes": 1934,
-        "games_equivalent": 21.5,
-        "goals": 0,
-        "assists": 0
       }
     ],
     "goals_by_position": [
       {
         "position": "FWD",
-        "total_goals": 215,
+        "total_goals": 218,
         "total_assists": 66,
         "player_count": 62,
-        "avg_goals": 3.47
+        "avg_goals": 3.52
       },
       {
         "position": "MID",
-        "total_goals": 377,
-        "total_assists": 406,
-        "player_count": 237,
-        "avg_goals": 1.59
+        "total_goals": 380,
+        "total_assists": 413,
+        "player_count": 238,
+        "avg_goals": 1.6
       },
       {
         "position": "DEF",
-        "total_goals": 90,
-        "total_assists": 161,
+        "total_goals": 92,
+        "total_assists": 164,
         "player_count": 180,
-        "avg_goals": 0.5
+        "avg_goals": 0.51
       },
       {
         "position": "GK",
@@ -4099,6 +4171,17 @@
       },
       {
         "rank": 2,
+        "player_name": "Semenyo",
+        "team": "Manchester City",
+        "position": "MID",
+        "price": 7.9,
+        "goals": 13,
+        "assists": 6,
+        "ga_per_million": 2.41,
+        "minutes": 2250
+      },
+      {
+        "rank": 3,
         "player_name": "Jo\u00e3o Pedro",
         "team": "Chelsea",
         "position": "FWD",
@@ -4109,7 +4192,7 @@
         "minutes": 1887
       },
       {
-        "rank": 3,
+        "rank": 4,
         "player_name": "Wilson",
         "team": "Fulham",
         "position": "MID",
@@ -4117,18 +4200,7 @@
         "goals": 8,
         "assists": 6,
         "ga_per_million": 2.33,
-        "minutes": 1854
-      },
-      {
-        "rank": 4,
-        "player_name": "Semenyo",
-        "team": "Manchester City",
-        "position": "MID",
-        "price": 7.9,
-        "goals": 12,
-        "assists": 5,
-        "ga_per_million": 2.15,
-        "minutes": 2160
+        "minutes": 1925
       },
       {
         "rank": 5,
@@ -4165,6 +4237,17 @@
       },
       {
         "rank": 8,
+        "player_name": "Haaland",
+        "team": "Manchester City",
+        "position": "FWD",
+        "price": 14.9,
+        "goals": 22,
+        "assists": 6,
+        "ga_per_million": 1.88,
+        "minutes": 2143
+      },
+      {
+        "rank": 9,
         "player_name": "Aaronson",
         "team": "Leeds United",
         "position": "MID",
@@ -4173,17 +4256,6 @@
         "assists": 6,
         "ga_per_million": 1.85,
         "minutes": 1653
-      },
-      {
-        "rank": 9,
-        "player_name": "Dewsbury-Hall",
-        "team": "Everton",
-        "position": "MID",
-        "price": 4.9,
-        "goals": 5,
-        "assists": 4,
-        "ga_per_million": 1.84,
-        "minutes": 1560
       },
       {
         "rank": 10,
@@ -4198,14 +4270,14 @@
       },
       {
         "rank": 11,
-        "player_name": "Haaland",
-        "team": "Manchester City",
-        "position": "FWD",
-        "price": 14.9,
-        "goals": 21,
-        "assists": 6,
-        "ga_per_million": 1.81,
-        "minutes": 2098
+        "player_name": "Dewsbury-Hall",
+        "team": "Everton",
+        "position": "MID",
+        "price": 4.9,
+        "goals": 5,
+        "assists": 4,
+        "ga_per_million": 1.84,
+        "minutes": 1560
       },
       {
         "rank": 12,
@@ -4216,7 +4288,7 @@
         "goals": 6,
         "assists": 5,
         "ga_per_million": 1.8,
-        "minutes": 1649
+        "minutes": 1708
       },
       {
         "rank": 13,
@@ -4238,7 +4310,7 @@
         "goals": 8,
         "assists": 5,
         "ga_per_million": 1.71,
-        "minutes": 2227
+        "minutes": 2317
       },
       {
         "rank": 15,
@@ -4269,7 +4341,7 @@
         "yellows": 9,
         "reds": 0,
         "total_cards": 9,
-        "minutes": 1226
+        "minutes": 1316
       },
       {
         "player_name": "Caicedo",
@@ -4287,7 +4359,7 @@
         "yellows": 8,
         "reds": 0,
         "total_cards": 8,
-        "minutes": 2146
+        "minutes": 2236
       },
       {
         "player_name": "Andr\u00e9",
@@ -4308,24 +4380,6 @@
         "minutes": 1587
       },
       {
-        "player_name": "J.Gomes",
-        "team": "Wolverhampton",
-        "position": "MID",
-        "yellows": 8,
-        "reds": 0,
-        "total_cards": 8,
-        "minutes": 1934
-      },
-      {
-        "player_name": "Dunk",
-        "team": "Brighton",
-        "position": "DEF",
-        "yellows": 8,
-        "reds": 0,
-        "total_cards": 8,
-        "minutes": 2115
-      },
-      {
         "player_name": "Iroegbunam",
         "team": "Everton",
         "position": "MID",
@@ -4335,13 +4389,31 @@
         "minutes": 934
       },
       {
-        "player_name": "Senesi",
-        "team": "Bournemouth",
+        "player_name": "Dunk",
+        "team": "Brighton",
         "position": "DEF",
+        "yellows": 8,
+        "reds": 0,
+        "total_cards": 8,
+        "minutes": 2205
+      },
+      {
+        "player_name": "J.Gomes",
+        "team": "Wolverhampton",
+        "position": "MID",
+        "yellows": 8,
+        "reds": 0,
+        "total_cards": 8,
+        "minutes": 2024
+      },
+      {
+        "player_name": "Brooks",
+        "team": "Bournemouth",
+        "position": "MID",
         "yellows": 7,
         "reds": 0,
         "total_cards": 7,
-        "minutes": 2208
+        "minutes": 945
       }
     ]
   },
@@ -4353,44 +4425,53 @@
         "points": 56,
         "played": 25,
         "points_per_match": 2.24,
-        "expected_points": 34.7,
-        "over_under": 21.3
+        "expected_points": 35.95,
+        "over_under": 20.05
       },
       {
         "team": "Manchester City",
         "squad_value": 218.6,
-        "points": 50,
-        "played": 25,
-        "points_per_match": 2.0,
-        "expected_points": 36.63,
-        "over_under": 13.37
-      },
-      {
-        "team": "Chelsea",
-        "squad_value": 188.7,
-        "points": 43,
-        "played": 25,
-        "points_per_match": 1.72,
-        "expected_points": 32.79,
-        "over_under": 10.21
+        "points": 53,
+        "played": 26,
+        "points_per_match": 2.04,
+        "expected_points": 38.09,
+        "over_under": 14.91
       },
       {
         "team": "Aston Villa",
         "squad_value": 227.0,
-        "points": 47,
-        "played": 25,
-        "points_per_match": 1.88,
-        "expected_points": 37.71,
-        "over_under": 9.29
+        "points": 50,
+        "played": 26,
+        "points_per_match": 1.92,
+        "expected_points": 39.28,
+        "over_under": 10.72
+      },
+      {
+        "team": "Chelsea",
+        "squad_value": 188.7,
+        "points": 44,
+        "played": 26,
+        "points_per_match": 1.69,
+        "expected_points": 33.84,
+        "over_under": 10.16
       },
       {
         "team": "Manchester United",
         "squad_value": 215.9,
-        "points": 44,
-        "played": 25,
-        "points_per_match": 1.76,
-        "expected_points": 36.28,
-        "over_under": 7.72
+        "points": 45,
+        "played": 26,
+        "points_per_match": 1.73,
+        "expected_points": 37.7,
+        "over_under": 7.3
+      },
+      {
+        "team": "Fulham",
+        "squad_value": 149.3,
+        "points": 34,
+        "played": 26,
+        "points_per_match": 1.31,
+        "expected_points": 28.23,
+        "over_under": 5.77
       },
       {
         "team": "Brentford",
@@ -4398,140 +4479,131 @@
         "points": 39,
         "played": 25,
         "points_per_match": 1.56,
-        "expected_points": 32.45,
-        "over_under": 6.55
+        "expected_points": 33.45,
+        "over_under": 5.55
       },
       {
-        "team": "Fulham",
-        "squad_value": 149.4,
-        "points": 34,
-        "played": 25,
-        "points_per_match": 1.36,
-        "expected_points": 27.75,
-        "over_under": 6.25
+        "team": "Liverpool",
+        "squad_value": 209.2,
+        "points": 42,
+        "played": 26,
+        "points_per_match": 1.62,
+        "expected_points": 36.75,
+        "over_under": 5.25
       },
       {
         "team": "Everton",
         "squad_value": 177.3,
         "points": 37,
-        "played": 25,
-        "points_per_match": 1.48,
-        "expected_points": 31.33,
-        "over_under": 5.67
-      },
-      {
-        "team": "Liverpool",
-        "squad_value": 209.2,
-        "points": 39,
-        "played": 25,
-        "points_per_match": 1.56,
-        "expected_points": 35.42,
-        "over_under": 3.58
+        "played": 26,
+        "points_per_match": 1.42,
+        "expected_points": 32.21,
+        "over_under": 4.79
       },
       {
         "team": "Newcastle United",
         "squad_value": 194.8,
-        "points": 33,
-        "played": 25,
-        "points_per_match": 1.32,
-        "expected_points": 33.58,
-        "over_under": -0.58
-      },
-      {
-        "team": "Leeds United",
-        "squad_value": 165.1,
-        "points": 29,
-        "played": 25,
-        "points_per_match": 1.16,
-        "expected_points": 29.77,
-        "over_under": -0.77
+        "points": 36,
+        "played": 26,
+        "points_per_match": 1.38,
+        "expected_points": 34.7,
+        "over_under": 1.3
       },
       {
         "team": "Bournemouth",
         "squad_value": 208.9,
-        "points": 34,
-        "played": 25,
-        "points_per_match": 1.36,
-        "expected_points": 35.38,
-        "over_under": -1.38
+        "points": 37,
+        "played": 26,
+        "points_per_match": 1.42,
+        "expected_points": 36.71,
+        "over_under": 0.29
+      },
+      {
+        "team": "Leeds United",
+        "squad_value": 165.1,
+        "points": 30,
+        "played": 26,
+        "points_per_match": 1.15,
+        "expected_points": 30.48,
+        "over_under": -0.48
       },
       {
         "team": "Sunderland",
         "squad_value": 225.0,
         "points": 36,
-        "played": 25,
-        "points_per_match": 1.44,
-        "expected_points": 37.45,
-        "over_under": -1.45
+        "played": 26,
+        "points_per_match": 1.38,
+        "expected_points": 39.0,
+        "over_under": -3.0
       },
       {
         "team": "Crystal Palace",
         "squad_value": 211.5,
         "points": 32,
-        "played": 25,
-        "points_per_match": 1.28,
-        "expected_points": 35.72,
-        "over_under": -3.72
+        "played": 26,
+        "points_per_match": 1.23,
+        "expected_points": 37.08,
+        "over_under": -5.08
+      },
+      {
+        "team": "Nottingham Forest",
+        "squad_value": 192.4,
+        "points": 27,
+        "played": 26,
+        "points_per_match": 1.04,
+        "expected_points": 34.36,
+        "over_under": -7.36
       },
       {
         "team": "Brighton",
         "squad_value": 222.7,
         "points": 31,
-        "played": 25,
-        "points_per_match": 1.24,
-        "expected_points": 37.15,
-        "over_under": -6.15
-      },
-      {
-        "team": "Nottingham Forest",
-        "squad_value": 192.4,
-        "points": 26,
-        "played": 25,
-        "points_per_match": 1.04,
-        "expected_points": 33.27,
-        "over_under": -7.27
+        "played": 26,
+        "points_per_match": 1.19,
+        "expected_points": 38.67,
+        "over_under": -7.67
       },
       {
         "team": "Tottenham Hotspur",
         "squad_value": 221.5,
         "points": 29,
-        "played": 25,
-        "points_per_match": 1.16,
-        "expected_points": 37.0,
-        "over_under": -8.0
+        "played": 26,
+        "points_per_match": 1.12,
+        "expected_points": 38.5,
+        "over_under": -9.5
       },
       {
         "team": "West Ham United",
         "squad_value": 189.4,
-        "points": 23,
-        "played": 25,
+        "points": 24,
+        "played": 26,
         "points_per_match": 0.92,
-        "expected_points": 32.88,
-        "over_under": -9.88
+        "expected_points": 33.94,
+        "over_under": -9.94
       },
       {
         "team": "Burnley",
         "squad_value": 197.2,
-        "points": 15,
-        "played": 25,
-        "points_per_match": 0.6,
-        "expected_points": 33.88,
-        "over_under": -18.88
+        "points": 18,
+        "played": 26,
+        "points_per_match": 0.69,
+        "expected_points": 35.04,
+        "over_under": -17.04
       },
       {
         "team": "Wolverhampton",
         "squad_value": 196.9,
-        "points": 8,
-        "played": 25,
-        "points_per_match": 0.32,
-        "expected_points": 33.85,
-        "over_under": -25.85
+        "points": 9,
+        "played": 26,
+        "points_per_match": 0.35,
+        "expected_points": 35.0,
+        "over_under": -26.0
       }
     ],
     "regression": {
-      "slope": 0.1282,
-      "intercept": 8.6,
-      "r_squared": 0.054
+      "slope": 0.1422,
+      "intercept": 7.0,
+      "r_squared": 0.066
     }
   }
 }

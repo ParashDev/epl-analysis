@@ -1389,3 +1389,12 @@ match_id,season,date,time,home_team,away_team,home_goals,away_goals,result,ht_ho
 1388,2025-26,2026-02-07,17:30,Newcastle United,Brentford,2,3,A,1,2,A,A Madley,16,11,4,5,14,18,9,3,2,2,0,0,5,27,32,4
 1389,2025-26,2026-02-08,14:00,Brighton,Crystal Palace,0,1,A,0,0,D,T Bramall,7,7,2,4,12,9,3,4,1,3,0,0,1,14,21,4
 1390,2025-26,2026-02-08,16:30,Liverpool,Manchester City,1,2,A,0,0,D,C Pawson,15,17,4,7,13,16,5,4,2,4,1,0,3,32,29,7
+1391,2025-26,2026-02-10,19:30,Chelsea,Leeds United,2,2,D,1,0,H,R Jones,19,4,4,2,9,13,4,1,4,4,0,0,4,23,22,8
+1392,2025-26,2026-02-10,19:30,Everton,Bournemouth,1,2,A,1,0,H,A Madley,16,11,6,4,14,15,7,2,1,3,1,0,3,27,29,5
+1393,2025-26,2026-02-10,19:30,Tottenham Hotspur,Newcastle United,1,2,A,0,1,A,A Taylor,16,21,2,5,15,11,2,12,3,2,0,0,3,37,26,5
+1394,2025-26,2026-02-10,20:15,West Ham United,Manchester United,1,1,D,0,0,D,S Hooper,7,9,3,3,10,4,5,3,1,1,0,0,2,16,14,2
+1395,2025-26,2026-02-11,19:30,Aston Villa,Brighton,1,0,H,0,0,D,P Bankes,15,9,1,3,9,15,7,5,2,3,0,0,1,24,24,5
+1396,2025-26,2026-02-11,19:30,Crystal Palace,Burnley,2,3,A,2,3,A,F Hallam,21,8,3,3,11,8,8,2,2,1,0,0,5,29,19,3
+1397,2025-26,2026-02-11,19:30,Manchester City,Fulham,3,0,H,3,0,H,P Tierney,13,14,5,3,8,10,4,4,3,1,0,0,3,27,18,4
+1398,2025-26,2026-02-11,19:30,Nottingham Forest,Wolverhampton,0,0,D,0,0,D,T Robinson,35,7,10,3,12,13,8,2,0,2,0,0,0,42,25,2
+1399,2025-26,2026-02-11,20:15,Sunderland,Liverpool,0,1,A,0,0,D,C Kavanagh,11,23,2,3,8,10,3,11,1,0,0,0,1,34,18,1
