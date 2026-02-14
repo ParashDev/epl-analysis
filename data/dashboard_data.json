@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-13T08:30:28.225140",
+  "generated_at": "2026-02-14T08:17:51.273281",
   "season": "2025-26",
   "source": "football-data.co.uk",
   "total_matches": 260,
@@ -4487,8 +4487,8 @@
         "points": 34,
         "played": 26,
         "points_per_match": 1.31,
-        "expected_points": 28.38,
-        "over_under": 5.62
+        "expected_points": 28.37,
+        "over_under": 5.63
       },
       {
         "team": "Liverpool",
@@ -4528,12 +4528,12 @@
       },
       {
         "team": "Leeds United",
-        "squad_value": 165.1,
+        "squad_value": 165.0,
         "points": 30,
         "played": 26,
         "points_per_match": 1.15,
-        "expected_points": 30.61,
-        "over_under": -0.61
+        "expected_points": 30.59,
+        "over_under": -0.59
       },
       {
         "team": "Sunderland",
@@ -4573,12 +4573,12 @@
       },
       {
         "team": "Tottenham Hotspur",
-        "squad_value": 221.5,
+        "squad_value": 221.4,
         "points": 29,
         "played": 26,
         "points_per_match": 1.12,
-        "expected_points": 38.58,
-        "over_under": -9.58
+        "expected_points": 38.57,
+        "over_under": -9.57
       },
       {
         "team": "West Ham United",
@@ -4604,13 +4604,13 @@
         "points": 9,
         "played": 26,
         "points_per_match": 0.35,
-        "expected_points": 35.1,
-        "over_under": -26.1
+        "expected_points": 35.11,
+        "over_under": -26.11
       }
     ],
     "regression": {
-      "slope": 0.1413,
-      "intercept": 7.27,
+      "slope": 0.1414,
+      "intercept": 7.25,
       "r_squared": 0.064
     }
   }
