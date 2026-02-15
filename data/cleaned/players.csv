@@ -1,5 +1,5 @@
 player_name,full_name,team,position,goals,assists,clean_sheets,minutes,yellow_cards,red_cards,total_points,price,bonus
-Raya,David Raya Martín,Arsenal,GK,0,0,13,2340,1,0,108,5.9,5
+Raya,David Raya Martín,Arsenal,GK,0,0,13,2340,1,0,108,6.0,5
 Arrizabalaga,Kepa Arrizabalaga Revuelta,Arsenal,GK,0,0,0,0,0,0,0,4.1,0
 Hein,Karl Hein,Arsenal,GK,0,0,0,0,0,0,0,4.0,0
 Setford,Tommy Setford,Arsenal,GK,0,0,0,0,0,0,0,3.9,0
@@ -692,7 +692,7 @@ Angulo,Nilson Angulo,Sunderland,MID,0,0,0,84,0,0,3,5.0,0
 Vicario,Guglielmo Vicario,Tottenham Hotspur,GK,0,0,7,2340,1,0,83,4.7,6
 Austin,Brandon Austin,Tottenham Hotspur,GK,0,0,0,0,0,0,0,3.9,0
 Kinsky,Antonín Kinský,Tottenham Hotspur,GK,0,0,0,0,0,0,0,3.9,0
-Pedro Porro,Pedro Porro Sauceda,Tottenham Hotspur,DEF,0,3,7,1820,5,0,79,5.2,4
+Pedro Porro,Pedro Porro Sauceda,Tottenham Hotspur,DEF,0,3,7,1820,5,0,79,5.1,4
 Romero,Cristian Romero,Tottenham Hotspur,DEF,4,1,5,1710,8,2,89,5.0,10
 Danso,Kevin Danso,Tottenham Hotspur,DEF,0,0,2,658,4,0,27,4.2,1
 Davies,Ben Davies,Tottenham Hotspur,DEF,1,0,0,136,1,0,10,4.3,1

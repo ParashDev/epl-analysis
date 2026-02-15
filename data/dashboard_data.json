@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-14T08:17:51.273281",
+  "generated_at": "2026-02-15T08:19:06.896449",
   "season": "2025-26",
   "source": "football-data.co.uk",
   "total_matches": 260,
@@ -4429,12 +4429,12 @@
     "teams": [
       {
         "team": "Arsenal",
-        "squad_value": 203.6,
+        "squad_value": 203.7,
         "points": 57,
         "played": 26,
         "points_per_match": 2.19,
-        "expected_points": 36.05,
-        "over_under": 20.95
+        "expected_points": 36.07,
+        "over_under": 20.93
       },
       {
         "team": "Manchester City",
@@ -4442,8 +4442,8 @@
         "points": 53,
         "played": 26,
         "points_per_match": 2.04,
-        "expected_points": 38.17,
-        "over_under": 14.83
+        "expected_points": 38.18,
+        "over_under": 14.82
       },
       {
         "team": "Aston Villa",
@@ -4451,8 +4451,8 @@
         "points": 50,
         "played": 26,
         "points_per_match": 1.92,
-        "expected_points": 39.36,
-        "over_under": 10.64
+        "expected_points": 39.37,
+        "over_under": 10.63
       },
       {
         "team": "Chelsea",
@@ -4469,8 +4469,8 @@
         "points": 45,
         "played": 26,
         "points_per_match": 1.73,
-        "expected_points": 37.79,
-        "over_under": 7.21
+        "expected_points": 37.8,
+        "over_under": 7.2
       },
       {
         "team": "Brentford",
@@ -4487,8 +4487,8 @@
         "points": 34,
         "played": 26,
         "points_per_match": 1.31,
-        "expected_points": 28.37,
-        "over_under": 5.63
+        "expected_points": 28.35,
+        "over_under": 5.65
       },
       {
         "team": "Liverpool",
@@ -4496,8 +4496,8 @@
         "points": 42,
         "played": 26,
         "points_per_match": 1.62,
-        "expected_points": 36.84,
-        "over_under": 5.16
+        "expected_points": 36.85,
+        "over_under": 5.15
       },
       {
         "team": "Everton",
@@ -4505,8 +4505,8 @@
         "points": 37,
         "played": 26,
         "points_per_match": 1.42,
-        "expected_points": 32.33,
-        "over_under": 4.67
+        "expected_points": 32.32,
+        "over_under": 4.68
       },
       {
         "team": "Newcastle United",
@@ -4523,8 +4523,8 @@
         "points": 37,
         "played": 26,
         "points_per_match": 1.42,
-        "expected_points": 36.8,
-        "over_under": 0.2
+        "expected_points": 36.81,
+        "over_under": 0.19
       },
       {
         "team": "Leeds United",
@@ -4532,8 +4532,8 @@
         "points": 30,
         "played": 26,
         "points_per_match": 1.15,
-        "expected_points": 30.59,
-        "over_under": -0.59
+        "expected_points": 30.58,
+        "over_under": -0.58
       },
       {
         "team": "Sunderland",
@@ -4541,8 +4541,8 @@
         "points": 36,
         "played": 26,
         "points_per_match": 1.38,
-        "expected_points": 39.08,
-        "over_under": -3.08
+        "expected_points": 39.09,
+        "over_under": -3.09
       },
       {
         "team": "Crystal Palace",
@@ -4568,12 +4568,12 @@
         "points": 31,
         "played": 26,
         "points_per_match": 1.19,
-        "expected_points": 38.74,
-        "over_under": -7.74
+        "expected_points": 38.75,
+        "over_under": -7.75
       },
       {
         "team": "Tottenham Hotspur",
-        "squad_value": 221.4,
+        "squad_value": 221.3,
         "points": 29,
         "played": 26,
         "points_per_match": 1.12,
@@ -4604,13 +4604,13 @@
         "points": 9,
         "played": 26,
         "points_per_match": 0.35,
-        "expected_points": 35.11,
-        "over_under": -26.11
+        "expected_points": 35.1,
+        "over_under": -26.1
       }
     ],
     "regression": {
-      "slope": 0.1414,
-      "intercept": 7.25,
+      "slope": 0.1419,
+      "intercept": 7.17,
       "r_squared": 0.064
     }
   }
