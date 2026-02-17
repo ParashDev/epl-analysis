@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-16T08:33:29.031164",
+  "generated_at": "2026-02-17T08:31:25.275213",
   "season": "2025-26",
   "source": "football-data.co.uk",
   "total_matches": 260,
@@ -4442,8 +4442,8 @@
         "points": 53,
         "played": 26,
         "points_per_match": 2.04,
-        "expected_points": 38.18,
-        "over_under": 14.82
+        "expected_points": 38.19,
+        "over_under": 14.81
       },
       {
         "team": "Aston Villa",
@@ -4451,8 +4451,8 @@
         "points": 50,
         "played": 26,
         "points_per_match": 1.92,
-        "expected_points": 39.37,
-        "over_under": 10.63
+        "expected_points": 39.38,
+        "over_under": 10.62
       },
       {
         "team": "Chelsea",
@@ -4478,8 +4478,8 @@
         "points": 40,
         "played": 26,
         "points_per_match": 1.54,
-        "expected_points": 33.56,
-        "over_under": 6.44
+        "expected_points": 33.55,
+        "over_under": 6.45
       },
       {
         "team": "Fulham",
@@ -4487,8 +4487,8 @@
         "points": 34,
         "played": 26,
         "points_per_match": 1.31,
-        "expected_points": 28.35,
-        "over_under": 5.65
+        "expected_points": 28.34,
+        "over_under": 5.66
       },
       {
         "team": "Liverpool",
@@ -4532,8 +4532,8 @@
         "points": 30,
         "played": 26,
         "points_per_match": 1.15,
-        "expected_points": 30.58,
-        "over_under": -0.58
+        "expected_points": 30.57,
+        "over_under": -0.57
       },
       {
         "team": "Sunderland",
@@ -4541,8 +4541,8 @@
         "points": 36,
         "played": 26,
         "points_per_match": 1.38,
-        "expected_points": 39.09,
-        "over_under": -3.09
+        "expected_points": 39.1,
+        "over_under": -3.1
       },
       {
         "team": "Crystal Palace",
@@ -4550,8 +4550,8 @@
         "points": 32,
         "played": 26,
         "points_per_match": 1.23,
-        "expected_points": 37.17,
-        "over_under": -5.17
+        "expected_points": 37.18,
+        "over_under": -5.18
       },
       {
         "team": "Nottingham Forest",
@@ -4559,8 +4559,8 @@
         "points": 27,
         "played": 26,
         "points_per_match": 1.04,
-        "expected_points": 34.47,
-        "over_under": -7.47
+        "expected_points": 34.46,
+        "over_under": -7.46
       },
       {
         "team": "Brighton",
@@ -4568,8 +4568,8 @@
         "points": 31,
         "played": 26,
         "points_per_match": 1.19,
-        "expected_points": 38.75,
-        "over_under": -7.75
+        "expected_points": 38.76,
+        "over_under": -7.76
       },
       {
         "team": "Tottenham Hotspur",
@@ -4600,18 +4600,18 @@
       },
       {
         "team": "Wolverhampton",
-        "squad_value": 196.9,
+        "squad_value": 196.8,
         "points": 9,
         "played": 26,
         "points_per_match": 0.35,
-        "expected_points": 35.1,
-        "over_under": -26.1
+        "expected_points": 35.09,
+        "over_under": -26.09
       }
     ],
     "regression": {
-      "slope": 0.1419,
-      "intercept": 7.17,
-      "r_squared": 0.064
+      "slope": 0.1422,
+      "intercept": 7.11,
+      "r_squared": 0.065
     }
   }
 }
