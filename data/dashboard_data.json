@@ -1,40 +1,40 @@
 {
-  "generated_at": "2026-02-19T08:30:10.499178",
+  "generated_at": "2026-02-20T08:28:10.632162",
   "season": "2025-26",
   "source": "football-data.co.uk",
-  "total_matches": 260,
-  "total_goals": 722,
+  "total_matches": 261,
+  "total_goals": 726,
   "goals_per_match": 2.78,
   "season_status": {
-    "matches_played": 260,
+    "matches_played": 261,
     "matches_total": 380,
-    "matchdays_played": 26,
+    "matchdays_played": 27,
     "matchdays_total": 38,
     "is_complete": false,
-    "last_match_date": "2026-02-12"
+    "last_match_date": "2026-02-18"
   },
   "league_table": [
     {
       "team": "Arsenal",
-      "played": 26,
+      "played": 27,
       "won": 17,
-      "drawn": 6,
+      "drawn": 7,
       "lost": 3,
-      "goals_for": 50,
-      "goals_against": 18,
+      "goals_for": 52,
+      "goals_against": 20,
       "goal_difference": 32,
-      "points": 57,
+      "points": 58,
       "home_won": 10,
       "home_drawn": 2,
       "home_lost": 1,
       "away_won": 7,
-      "away_drawn": 4,
+      "away_drawn": 5,
       "away_lost": 2,
       "clean_sheets": 13,
-      "total_shots": 380,
-      "total_shots_on_target": 128,
-      "shot_accuracy": 33.68,
-      "goals_per_game": 1.92,
+      "total_shots": 390,
+      "total_shots_on_target": 132,
+      "shot_accuracy": 33.85,
+      "goals_per_game": 1.93,
       "position": 1
     },
     {
@@ -453,25 +453,25 @@
     },
     {
       "team": "Wolverhampton",
-      "played": 26,
+      "played": 27,
       "won": 1,
-      "drawn": 6,
+      "drawn": 7,
       "lost": 19,
-      "goals_for": 16,
-      "goals_against": 48,
+      "goals_for": 18,
+      "goals_against": 50,
       "goal_difference": -32,
-      "points": 9,
+      "points": 10,
       "home_won": 1,
-      "home_drawn": 2,
+      "home_drawn": 3,
       "home_lost": 10,
       "away_won": 0,
       "away_drawn": 4,
       "away_lost": 9,
       "clean_sheets": 3,
-      "total_shots": 243,
-      "total_shots_on_target": 83,
-      "shot_accuracy": 34.16,
-      "goals_per_game": 0.62,
+      "total_shots": 248,
+      "total_shots_on_target": 85,
+      "shot_accuracy": 34.27,
+      "goals_per_game": 0.67,
       "position": 20
     }
   ],
@@ -580,6 +580,10 @@
       {
         "matchday": 26,
         "points": 57
+      },
+      {
+        "matchday": 27,
+        "points": 58
       }
     ],
     "Aston Villa": [
@@ -2594,6 +2598,10 @@
       {
         "matchday": 26,
         "points": 9
+      },
+      {
+        "matchday": 27,
+        "points": 10
       }
     ]
   },
@@ -2654,24 +2662,24 @@
     },
     {
       "month": "2026-02",
-      "matches": 25,
-      "total_goals": 68,
-      "avg_goals": 2.72,
+      "matches": 26,
+      "total_goals": 72,
+      "avg_goals": 2.77,
       "home_wins": 7,
-      "draws": 7,
+      "draws": 8,
       "away_wins": 11
     }
   ],
   "home_away": {
     "home_wins": 112,
-    "draws": 69,
+    "draws": 70,
     "away_wins": 79,
     "home_goals_avg": 1.54,
-    "away_goals_avg": 1.23,
-    "total_matches": 260,
-    "home_win_pct": 43.08,
-    "draw_pct": 26.54,
-    "away_win_pct": 30.38
+    "away_goals_avg": 1.24,
+    "total_matches": 261,
+    "home_win_pct": 42.91,
+    "draw_pct": 26.82,
+    "away_win_pct": 30.27
   },
   "referee_stats": [
     {
@@ -2739,14 +2747,6 @@
       "total_reds": 2
     },
     {
-      "referee": "P Tierney",
-      "matches": 4,
-      "avg_goals": 2.75,
-      "avg_fouls": 19.75,
-      "avg_cards": 4.0,
-      "total_reds": 0
-    },
-    {
       "referee": "D England",
       "matches": 15,
       "avg_goals": 2.67,
@@ -2761,6 +2761,14 @@
       "avg_fouls": 22.42,
       "avg_cards": 3.84,
       "total_reds": 1
+    },
+    {
+      "referee": "P Tierney",
+      "matches": 5,
+      "avg_goals": 3.0,
+      "avg_fouls": 18.6,
+      "avg_cards": 3.8,
+      "total_reds": 0
     },
     {
       "referee": "S Barrott",
@@ -2858,7 +2866,7 @@
     },
     {
       "score": "2-2",
-      "count": 16
+      "count": 17
     },
     {
       "score": "1-0",
@@ -2896,11 +2904,11 @@
     },
     {
       "season": "2025-26",
-      "matches": 260,
+      "matches": 261,
       "avg_goals": 2.78,
-      "avg_cards": 3.8,
-      "home_win_pct": 43.08,
-      "avg_fouls": 21.43
+      "avg_cards": 3.79,
+      "home_win_pct": 42.91,
+      "avg_fouls": 21.4
     }
   ],
   "xg_table": [
@@ -2911,7 +2919,7 @@
       "goals_for": 49,
       "goals_against": 17,
       "xg_difference": 31.27,
-      "actual_points": 57
+      "actual_points": 58
     },
     {
       "team": "Manchester City",
@@ -3064,7 +3072,7 @@
       "goals_for": 16,
       "goals_against": 48,
       "xg_difference": -17.68,
-      "actual_points": 9
+      "actual_points": 10
     },
     {
       "team": "West Ham United",
@@ -3342,8 +3350,8 @@
     },
     {
       "team": "Arsenal",
-      "total_shots": 380,
-      "xg_per_shot": 0.133
+      "total_shots": 390,
+      "xg_per_shot": 0.129
     },
     {
       "team": "Bournemouth",
@@ -3412,8 +3420,8 @@
     },
     {
       "team": "Wolverhampton",
-      "total_shots": 243,
-      "xg_per_shot": 0.097
+      "total_shots": 248,
+      "xg_per_shot": 0.095
     },
     {
       "team": "Nottingham Forest",
@@ -4430,11 +4438,11 @@
       {
         "team": "Arsenal",
         "squad_value": 203.7,
-        "points": 57,
-        "played": 26,
-        "points_per_match": 2.19,
-        "expected_points": 36.07,
-        "over_under": 20.93
+        "points": 58,
+        "played": 27,
+        "points_per_match": 2.15,
+        "expected_points": 36.17,
+        "over_under": 21.83
       },
       {
         "team": "Manchester City",
@@ -4442,8 +4450,8 @@
         "points": 53,
         "played": 26,
         "points_per_match": 2.04,
-        "expected_points": 38.21,
-        "over_under": 14.79
+        "expected_points": 38.3,
+        "over_under": 14.7
       },
       {
         "team": "Aston Villa",
@@ -4451,8 +4459,8 @@
         "points": 50,
         "played": 26,
         "points_per_match": 1.92,
-        "expected_points": 39.39,
-        "over_under": 10.61
+        "expected_points": 39.48,
+        "over_under": 10.52
       },
       {
         "team": "Chelsea",
@@ -4460,8 +4468,8 @@
         "points": 44,
         "played": 26,
         "points_per_match": 1.69,
-        "expected_points": 33.96,
-        "over_under": 10.04
+        "expected_points": 34.06,
+        "over_under": 9.94
       },
       {
         "team": "Manchester United",
@@ -4469,8 +4477,8 @@
         "points": 45,
         "played": 26,
         "points_per_match": 1.73,
-        "expected_points": 37.81,
-        "over_under": 7.19
+        "expected_points": 37.91,
+        "over_under": 7.09
       },
       {
         "team": "Brentford",
@@ -4478,8 +4486,8 @@
         "points": 40,
         "played": 26,
         "points_per_match": 1.54,
-        "expected_points": 33.55,
-        "over_under": 6.45
+        "expected_points": 33.65,
+        "over_under": 6.35
       },
       {
         "team": "Fulham",
@@ -4487,8 +4495,8 @@
         "points": 34,
         "played": 26,
         "points_per_match": 1.31,
-        "expected_points": 28.33,
-        "over_under": 5.67
+        "expected_points": 28.43,
+        "over_under": 5.57
       },
       {
         "team": "Liverpool",
@@ -4496,8 +4504,8 @@
         "points": 42,
         "played": 26,
         "points_per_match": 1.62,
-        "expected_points": 36.85,
-        "over_under": 5.15
+        "expected_points": 36.95,
+        "over_under": 5.05
       },
       {
         "team": "Everton",
@@ -4505,8 +4513,8 @@
         "points": 37,
         "played": 26,
         "points_per_match": 1.42,
-        "expected_points": 32.31,
-        "over_under": 4.69
+        "expected_points": 32.41,
+        "over_under": 4.59
       },
       {
         "team": "Newcastle United",
@@ -4514,8 +4522,8 @@
         "points": 36,
         "played": 26,
         "points_per_match": 1.38,
-        "expected_points": 34.8,
-        "over_under": 1.2
+        "expected_points": 34.9,
+        "over_under": 1.1
       },
       {
         "team": "Bournemouth",
@@ -4523,8 +4531,8 @@
         "points": 37,
         "played": 26,
         "points_per_match": 1.42,
-        "expected_points": 36.81,
-        "over_under": 0.19
+        "expected_points": 36.91,
+        "over_under": 0.09
       },
       {
         "team": "Leeds United",
@@ -4532,8 +4540,8 @@
         "points": 30,
         "played": 26,
         "points_per_match": 1.15,
-        "expected_points": 30.56,
-        "over_under": -0.56
+        "expected_points": 30.66,
+        "over_under": -0.66
       },
       {
         "team": "Sunderland",
@@ -4541,17 +4549,17 @@
         "points": 36,
         "played": 26,
         "points_per_match": 1.38,
-        "expected_points": 39.1,
-        "over_under": -3.1
+        "expected_points": 39.2,
+        "over_under": -3.2
       },
       {
         "team": "Crystal Palace",
-        "squad_value": 211.5,
+        "squad_value": 211.6,
         "points": 32,
         "played": 26,
         "points_per_match": 1.23,
-        "expected_points": 37.18,
-        "over_under": -5.18
+        "expected_points": 37.29,
+        "over_under": -5.29
       },
       {
         "team": "Nottingham Forest",
@@ -4559,8 +4567,8 @@
         "points": 27,
         "played": 26,
         "points_per_match": 1.04,
-        "expected_points": 34.46,
-        "over_under": -7.46
+        "expected_points": 34.56,
+        "over_under": -7.56
       },
       {
         "team": "Brighton",
@@ -4568,8 +4576,8 @@
         "points": 31,
         "played": 26,
         "points_per_match": 1.19,
-        "expected_points": 38.76,
-        "over_under": -7.76
+        "expected_points": 38.86,
+        "over_under": -7.86
       },
       {
         "team": "Tottenham Hotspur",
@@ -4577,8 +4585,8 @@
         "points": 29,
         "played": 26,
         "points_per_match": 1.12,
-        "expected_points": 38.58,
-        "over_under": -9.58
+        "expected_points": 38.67,
+        "over_under": -9.67
       },
       {
         "team": "West Ham United",
@@ -4586,8 +4594,8 @@
         "points": 24,
         "played": 26,
         "points_per_match": 0.92,
-        "expected_points": 34.03,
-        "over_under": -10.03
+        "expected_points": 34.13,
+        "over_under": -10.13
       },
       {
         "team": "Burnley",
@@ -4595,22 +4603,22 @@
         "points": 18,
         "played": 26,
         "points_per_match": 0.69,
-        "expected_points": 35.15,
-        "over_under": -17.15
+        "expected_points": 35.24,
+        "over_under": -17.24
       },
       {
         "team": "Wolverhampton",
         "squad_value": 196.8,
-        "points": 9,
-        "played": 26,
-        "points_per_match": 0.35,
-        "expected_points": 35.09,
-        "over_under": -26.09
+        "points": 10,
+        "played": 27,
+        "points_per_match": 0.37,
+        "expected_points": 35.19,
+        "over_under": -25.19
       }
     ],
     "regression": {
       "slope": 0.1423,
-      "intercept": 7.08,
+      "intercept": 7.18,
       "r_squared": 0.065
     }
   }
