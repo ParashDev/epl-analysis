@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-02-26T08:32:39.922095",
+  "generated_at": "2026-02-27T08:28:26.739191",
   "season": "2025-26",
   "source": "football-data.co.uk",
   "total_matches": 271,
@@ -4552,12 +4552,12 @@
       },
       {
         "team": "Chelsea",
-        "squad_value": 188.6,
+        "squad_value": 188.5,
         "points": 45,
         "played": 27,
         "points_per_match": 1.67,
-        "expected_points": 35.34,
-        "over_under": 9.66
+        "expected_points": 35.33,
+        "over_under": 9.67
       },
       {
         "team": "Manchester United",
@@ -4574,8 +4574,8 @@
         "points": 37,
         "played": 27,
         "points_per_match": 1.37,
-        "expected_points": 29.73,
-        "over_under": 7.27
+        "expected_points": 29.74,
+        "over_under": 7.26
       },
       {
         "team": "Liverpool",
@@ -4592,8 +4592,8 @@
         "points": 40,
         "played": 27,
         "points_per_match": 1.48,
-        "expected_points": 35.01,
-        "over_under": 4.99
+        "expected_points": 35.02,
+        "over_under": 4.98
       },
       {
         "team": "Everton",
@@ -4601,8 +4601,8 @@
         "points": 37,
         "played": 27,
         "points_per_match": 1.37,
-        "expected_points": 33.73,
-        "over_under": 3.27
+        "expected_points": 33.74,
+        "over_under": 3.26
       },
       {
         "team": "Newcastle United",
@@ -4610,8 +4610,8 @@
         "points": 36,
         "played": 27,
         "points_per_match": 1.33,
-        "expected_points": 36.19,
-        "over_under": -0.19
+        "expected_points": 36.2,
+        "over_under": -0.2
       },
       {
         "team": "Bournemouth",
@@ -4705,8 +4705,8 @@
       }
     ],
     "regression": {
-      "slope": 0.1423,
-      "intercept": 8.5,
+      "slope": 0.1422,
+      "intercept": 8.53,
       "r_squared": 0.06
     }
   }
