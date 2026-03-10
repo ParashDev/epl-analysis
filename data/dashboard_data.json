@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-09T08:31:02.122986",
+  "generated_at": "2026-03-10T08:27:33.148827",
   "season": "2025-26",
   "source": "football-data.co.uk",
   "total_matches": 291,
@@ -4041,7 +4041,7 @@
         "assists_per_90": 0.56,
         "xa": 10.13,
         "key_passes": 79,
-        "price": 10.0
+        "price": 10.1
       },
       {
         "rank": 2,
@@ -4529,17 +4529,6 @@
       },
       {
         "rank": 9,
-        "player_name": "B.Fernandes",
-        "team": "Manchester United",
-        "position": "MID",
-        "price": 10.0,
-        "goals": 7,
-        "assists": 14,
-        "ga_per_million": 2.1,
-        "minutes": 2255
-      },
-      {
-        "rank": 10,
         "player_name": "Ra\u00fal",
         "team": "Fulham",
         "position": "FWD",
@@ -4548,6 +4537,17 @@
         "assists": 5,
         "ga_per_million": 2.1,
         "minutes": 1903
+      },
+      {
+        "rank": 10,
+        "player_name": "B.Fernandes",
+        "team": "Manchester United",
+        "position": "MID",
+        "price": 10.1,
+        "goals": 7,
+        "assists": 14,
+        "ga_per_million": 2.08,
+        "minutes": 2255
       },
       {
         "rank": 11,
@@ -4724,17 +4724,17 @@
         "points": 48,
         "played": 29,
         "points_per_match": 1.66,
-        "expected_points": 38.28,
-        "over_under": 9.72
+        "expected_points": 38.27,
+        "over_under": 9.73
       },
       {
         "team": "Manchester United",
-        "squad_value": 216.3,
+        "squad_value": 216.4,
         "points": 51,
         "played": 29,
         "points_per_match": 1.76,
-        "expected_points": 41.86,
-        "over_under": 9.14
+        "expected_points": 41.87,
+        "over_under": 9.13
       },
       {
         "team": "Aston Villa",
@@ -4882,8 +4882,8 @@
       }
     ],
     "regression": {
-      "slope": 0.1279,
-      "intercept": 14.19,
+      "slope": 0.128,
+      "intercept": 14.17,
       "r_squared": 0.044
     }
   }
