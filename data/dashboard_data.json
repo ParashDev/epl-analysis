@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-10T08:27:33.148827",
+  "generated_at": "2026-03-11T08:27:06.724045",
   "season": "2025-26",
   "source": "football-data.co.uk",
   "total_matches": 291,
@@ -4706,8 +4706,8 @@
         "points": 67,
         "played": 30,
         "points_per_match": 2.23,
-        "expected_points": 40.19,
-        "over_under": 26.81
+        "expected_points": 40.2,
+        "over_under": 26.8
       },
       {
         "team": "Manchester City",
@@ -4724,17 +4724,17 @@
         "points": 48,
         "played": 29,
         "points_per_match": 1.66,
-        "expected_points": 38.27,
-        "over_under": 9.73
+        "expected_points": 38.28,
+        "over_under": 9.72
       },
       {
         "team": "Manchester United",
-        "squad_value": 216.4,
+        "squad_value": 216.3,
         "points": 51,
         "played": 29,
         "points_per_match": 1.76,
-        "expected_points": 41.87,
-        "over_under": 9.13
+        "expected_points": 41.86,
+        "over_under": 9.14
       },
       {
         "team": "Aston Villa",
@@ -4819,12 +4819,12 @@
       },
       {
         "team": "Leeds United",
-        "squad_value": 164.8,
+        "squad_value": 164.7,
         "points": 31,
         "played": 29,
         "points_per_match": 1.07,
-        "expected_points": 35.27,
-        "over_under": -4.27
+        "expected_points": 35.25,
+        "over_under": -4.25
       },
       {
         "team": "Brighton",
@@ -4846,12 +4846,12 @@
       },
       {
         "team": "Nottingham Forest",
-        "squad_value": 192.5,
+        "squad_value": 192.4,
         "points": 28,
         "played": 29,
         "points_per_match": 0.97,
-        "expected_points": 38.81,
-        "over_under": -10.81
+        "expected_points": 38.8,
+        "over_under": -10.8
       },
       {
         "team": "Tottenham Hotspur",
@@ -4859,8 +4859,8 @@
         "points": 29,
         "played": 29,
         "points_per_match": 1.0,
-        "expected_points": 43.02,
-        "over_under": -14.02
+        "expected_points": 43.03,
+        "over_under": -14.03
       },
       {
         "team": "Burnley",
