@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-11T08:27:06.724045",
+  "generated_at": "2026-03-12T08:29:34.308557",
   "season": "2025-26",
   "source": "football-data.co.uk",
   "total_matches": 291,
@@ -4801,12 +4801,12 @@
       },
       {
         "team": "Sunderland",
-        "squad_value": 224.9,
+        "squad_value": 224.8,
         "points": 40,
         "played": 29,
         "points_per_match": 1.38,
-        "expected_points": 42.96,
-        "over_under": -2.96
+        "expected_points": 42.95,
+        "over_under": -2.95
       },
       {
         "team": "Crystal Palace",
@@ -4832,8 +4832,8 @@
         "points": 37,
         "played": 29,
         "points_per_match": 1.28,
-        "expected_points": 42.65,
-        "over_under": -5.65
+        "expected_points": 42.66,
+        "over_under": -5.66
       },
       {
         "team": "West Ham United",
@@ -4882,8 +4882,8 @@
       }
     ],
     "regression": {
-      "slope": 0.128,
-      "intercept": 14.17,
+      "slope": 0.1281,
+      "intercept": 14.15,
       "r_squared": 0.044
     }
   }
