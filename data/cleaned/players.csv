@@ -1,45 +1,45 @@
 player_name,full_name,team,position,goals,assists,clean_sheets,minutes,yellow_cards,red_cards,total_points,price,bonus
-Raya,David Raya Martín,Arsenal,GK,0,0,14,2700,1,0,122,6.0,6
+Raya,David Raya Martín,Arsenal,GK,0,0,15,2790,1,0,129,6.0,6
 Arrizabalaga,Kepa Arrizabalaga Revuelta,Arsenal,GK,0,0,0,0,0,0,0,4.1,0
 Hein,Karl Hein,Arsenal,GK,0,0,0,0,0,0,0,4.0,0
 Setford,Tommy Setford,Arsenal,GK,0,0,0,0,0,0,0,3.9,0
-Gabriel,Gabriel dos Santos Magalhães,Arsenal,DEF,3,4,13,2075,3,0,164,7.2,24
-Saliba,William Saliba,Arsenal,DEF,1,0,10,1984,1,0,96,6.1,6
-Calafiori,Riccardo Calafiori,Arsenal,DEF,1,2,10,1373,5,0,87,5.6,4
-J.Timber,Jurriën Timber,Arsenal,DEF,3,6,13,2415,5,0,148,6.3,9
+Gabriel,Gabriel dos Santos Magalhães,Arsenal,DEF,3,4,14,2165,3,0,173,7.2,25
+Saliba,William Saliba,Arsenal,DEF,1,0,11,2074,1,0,107,6.1,9
+Calafiori,Riccardo Calafiori,Arsenal,DEF,1,2,11,1446,5,0,93,5.6,4
+J.Timber,Jurriën Timber,Arsenal,DEF,3,6,13,2452,5,0,149,6.3,9
 Kiwior,Jakub Kiwior,Arsenal,DEF,0,0,0,0,0,0,0,5.4,0
 Lewis-Skelly,Myles Lewis-Skelly,Arsenal,DEF,0,0,0,311,3,0,12,5.1,0
 White,Benjamin White,Arsenal,DEF,0,1,3,409,0,0,30,5.1,3
 Clarke,Brayden Clarke,Arsenal,DEF,0,0,0,0,0,0,0,3.8,0
 Kacurri,Maldini Kacurri,Arsenal,DEF,0,0,0,0,0,0,0,3.9,0
 Nichols,Josh Nichols,Arsenal,DEF,0,0,0,0,0,0,0,3.7,0
-Saka,Bukayo Saka,Arsenal,MID,6,8,9,1905,1,0,130,9.8,14
+Saka,Bukayo Saka,Arsenal,MID,6,8,10,1995,1,0,133,9.8,14
 Ødegaard,Martin Ødegaard,Arsenal,MID,1,6,4,1070,0,0,62,7.8,5
-Madueke,Noni Madueke,Arsenal,MID,2,1,5,829,0,0,51,6.8,6
-Martinelli,Gabriel Martinelli Silva,Arsenal,MID,1,3,2,810,2,0,43,6.8,1
+Madueke,Noni Madueke,Arsenal,MID,2,1,6,889,0,0,54,6.8,6
+Martinelli,Gabriel Martinelli Silva,Arsenal,MID,1,4,2,839,2,0,47,6.8,1
 Trossard,Leandro Trossard,Arsenal,MID,5,5,8,1675,1,0,99,6.6,9
-Rice,Declan Rice,Arsenal,MID,4,9,13,2490,2,0,160,7.4,21
+Rice,Declan Rice,Arsenal,MID,4,9,14,2580,2,0,163,7.4,21
 Merino,Mikel Merino Zazón,Arsenal,MID,4,3,4,996,1,0,66,5.4,5
 Fábio Vieira,Fábio Ferreira Vieira,Arsenal,MID,0,0,0,0,0,0,0,5.4,0
 Nørgaard,Christian Nørgaard,Arsenal,MID,0,0,0,56,0,0,6,5.1,0
 Nwaneri,Ethan Nwaneri,Arsenal,MID,0,0,1,165,0,0,8,5.0,0
-Zubimendi,Martín Zubimendi Ibáñez,Arsenal,MID,5,1,14,2524,4,0,114,5.2,9
+Zubimendi,Martín Zubimendi Ibáñez,Arsenal,MID,5,1,15,2597,4,0,117,5.1,9
 Kabia,Ismeal Kabia,Arsenal,MID,0,0,0,0,0,0,0,4.5,0
 Sambi,Albert Sambi Lokonga,Arsenal,MID,0,0,0,0,0,0,0,4.5,0
-Havertz,Kai Havertz,Arsenal,FWD,0,1,2,201,0,0,10,7.3,0
+Havertz,Kai Havertz,Arsenal,FWD,0,1,3,261,0,0,12,7.3,0
 G.Jesus,Gabriel Fernando de Jesus,Arsenal,FWD,2,0,0,304,2,0,17,6.4,0
-Eze,Eberechi Eze,Arsenal,MID,6,3,7,1404,1,0,91,7.2,8
-Mosquera,Cristhian Mosquera,Arsenal,DEF,0,0,2,615,2,0,27,5.3,1
-Gyökeres,Viktor Gyökeres,Arsenal,FWD,10,0,10,1859,4,0,94,8.8,11
-Dowman,Max Dowman,Arsenal,MID,0,1,0,27,0,0,5,4.2,0
+Eze,Eberechi Eze,Arsenal,MID,6,3,8,1494,1,0,94,7.2,8
+Mosquera,Cristhian Mosquera,Arsenal,DEF,0,0,2,667,2,0,28,5.3,1
+Gyökeres,Viktor Gyökeres,Arsenal,FWD,11,0,10,1888,4,0,101,8.8,13
+Dowman,Max Dowman,Arsenal,MID,1,1,0,43,0,0,11,4.2,0
 Harriman-Annous,Andre Harriman-Annous,Arsenal,MID,0,0,0,0,0,0,0,4.4,0
-Hincapie,Piero Hincapié,Arsenal,DEF,1,1,4,1483,2,0,70,5.1,6
+Hincapie,Piero Hincapié,Arsenal,DEF,1,2,4,1499,2,0,74,5.1,6
 Salmon,Marli Salmon,Arsenal,DEF,0,0,0,0,0,0,0,4.0,0
 Martinez,Emiliano Martínez Romero,Aston Villa,GK,0,0,6,2205,2,0,97,5.1,10
 M.Bizot,Marco Bizot,Aston Villa,GK,0,0,1,405,2,0,11,4.2,0
 Gauci,Joe Gauci,Aston Villa,GK,0,0,0,0,0,0,0,4.0,0
 Marschall,Filip Marschall,Aston Villa,GK,0,0,0,0,0,0,0,4.0,0
-Cash,Matty Cash,Aston Villa,DEF,3,2,7,2352,7,0,100,4.8,6
+Cash,Matty Cash,Aston Villa,DEF,3,2,7,2352,7,0,100,4.7,6
 Digne,Lucas Digne,Aston Villa,DEF,0,4,6,1378,3,0,74,4.5,4
 Konsa,Ezri Konsa Ngoyo,Aston Villa,DEF,0,1,8,2495,0,1,88,4.4,3
 Maatsen,Ian Maatsen,Aston Villa,DEF,0,0,2,1243,2,0,39,4.2,0
@@ -87,92 +87,92 @@ Weiss,Max Weiß,Burnley,GK,0,0,0,0,0,0,0,4.3,0
 Green,Etienne Green,Burnley,GK,0,0,0,0,0,0,0,4.0,0
 Hladký,Václav Hladký,Burnley,GK,0,0,0,0,0,0,0,3.9,0
 Roberts,Connor Roberts,Burnley,DEF,0,0,0,0,0,0,0,4.3,0
-Walker,Kyle Walker,Burnley,DEF,0,2,3,2371,8,0,55,4.4,3
+Walker,Kyle Walker,Burnley,DEF,0,2,4,2461,8,0,61,4.4,3
 Delcroix,Hannes Delcroix,Burnley,DEF,0,0,0,0,0,0,0,3.8,0
 Dodgson,Owen Dodgson,Burnley,DEF,0,0,0,0,0,0,0,4.0,0
 Ekdal,Hjalmar Ekdal,Burnley,DEF,0,0,2,1179,0,0,44,3.8,2
-Estève,Maxime Estève,Burnley,DEF,0,0,2,2239,0,0,60,3.9,0
-Hartman,Quilindschy Hartman,Burnley,DEF,0,5,2,1337,1,0,46,4.0,0
-Humphreys,Bashir Humphreys,Burnley,DEF,0,2,1,1059,5,0,33,3.9,1
+Estève,Maxime Estève,Burnley,DEF,0,0,3,2312,0,0,66,3.9,0
+Hartman,Quilindschy Hartman,Burnley,DEF,0,5,3,1410,1,0,52,4.0,0
+Humphreys,Bashir Humphreys,Burnley,DEF,0,2,2,1149,5,0,39,3.9,1
 Jordan,Jordan Beyer,Burnley,DEF,0,0,0,0,0,0,0,3.9,0
-Lucas Pires,Lucas Pires Silva,Burnley,DEF,0,0,1,1086,0,1,18,3.8,0
+Lucas Pires,Lucas Pires Silva,Burnley,DEF,0,0,1,1102,0,1,19,3.8,0
 Sambo,Shurandy Sambo,Burnley,DEF,0,0,0,0,0,0,0,4.0,0
 Sonne,Oliver Sonne,Burnley,DEF,1,0,0,164,0,0,13,3.8,0
 Tuanzebe,Axel Tuanzebe,Burnley,DEF,1,0,1,931,1,0,27,3.9,0
-Worrall,Joe Worrall,Burnley,DEF,0,0,0,480,0,0,19,3.8,0
-Anthony,Jaidon Anthony,Burnley,MID,7,3,3,1928,4,0,100,5.0,6
+Worrall,Joe Worrall,Burnley,DEF,0,0,0,496,0,0,20,3.8,0
+Anthony,Jaidon Anthony,Burnley,MID,7,3,4,2018,4,0,103,5.0,6
 Benson,Manuel Benson Hedilazio,Burnley,MID,0,0,0,0,0,0,0,5.4,0
 Bruun Larsen,Jacob Bruun Larsen,Burnley,MID,0,1,3,961,0,0,36,5.3,0
 Boateng,Enock Agyei,Burnley,MID,0,0,0,0,0,0,0,4.7,0
 Churlinov,Darko Churlinov,Burnley,MID,0,0,0,0,0,0,0,4.9,0
 Cullen,Josh Cullen,Burnley,MID,2,2,3,1513,2,0,70,4.9,8
-Edwards,Marcus Edwards,Burnley,MID,1,3,1,867,0,0,43,4.7,2
-Hannibal,Hannibal Mejbri,Burnley,MID,1,4,1,874,6,0,49,4.7,4
+Edwards,Marcus Edwards,Burnley,MID,1,3,1,891,0,0,44,4.7,2
+Hannibal,Hannibal Mejbri,Burnley,MID,1,4,2,964,7,0,51,4.7,4
 Koleosho,Luca Koleosho,Burnley,MID,0,0,0,0,0,0,0,5.0,0
-Laurent,Josh Laurent,Burnley,MID,1,0,1,1399,6,0,48,4.8,1
+Laurent,Josh Laurent,Burnley,MID,1,0,2,1486,6,0,51,4.8,1
 Tchaouna,Loum Tchaouna,Burnley,MID,1,1,2,843,1,0,38,4.9,0
 A.Ramsey,Aaron Ramsey,Burnley,MID,0,0,0,0,0,0,0,4.4,0
 Adewumi,Oluwaseun Adewumi,Burnley,MID,0,0,0,0,0,0,0,4.5,0
 Banel,Jaydon Banel,Burnley,MID,0,0,0,9,0,0,1,4.5,0
 Trésor,Mike Trésor Ndayishimiye,Burnley,MID,0,0,0,19,0,0,4,4.3,0
-Flemming,Zian Flemming,Burnley,FWD,7,0,2,1005,3,0,62,5.3,6
+Flemming,Zian Flemming,Burnley,FWD,7,0,3,1092,3,0,64,5.3,6
 Amdouni,Zeki Amdouni,Burnley,FWD,0,0,0,0,0,0,0,4.8,0
-Foster,Lyle Foster,Burnley,FWD,3,1,3,1154,4,0,48,4.9,4
+Foster,Lyle Foster,Burnley,FWD,3,1,4,1219,4,0,50,4.9,4
 Barnes,Ashley Barnes,Burnley,FWD,0,0,0,23,1,0,4,4.2,0
 Obafemi,Michael Obafemi,Burnley,FWD,0,0,0,0,0,0,0,4.4,0
-Dúbravka,Martin Dúbravka,Burnley,GK,0,0,3,2610,1,0,80,4.0,7
-Ward-Prowse,James Ward-Prowse,Burnley,MID,0,1,1,561,0,0,19,5.6,0
-Ugochukwu,Lesley Ugochukwu,Burnley,MID,3,2,3,1893,1,1,81,5.0,5
-Broja,Armando Broja,Burnley,FWD,1,1,1,805,0,0,38,5.2,2
+Dúbravka,Martin Dúbravka,Burnley,GK,0,0,4,2700,1,0,86,4.0,7
+Ward-Prowse,James Ward-Prowse,Burnley,MID,0,1,2,651,0,0,24,5.6,0
+Ugochukwu,Lesley Ugochukwu,Burnley,MID,3,2,3,1895,1,1,82,5.0,5
+Broja,Armando Broja,Burnley,FWD,1,1,1,807,0,0,39,5.2,2
 Florentino,Florentino Ibrain Morris Luís,Burnley,MID,0,2,2,1651,4,0,66,5.0,0
 Pimlott,Oliver Pimlott,Burnley,MID,0,0,0,0,0,0,0,4.5,0
 Brierley,George Brierley,Burnley,MID,0,0,0,0,0,0,0,4.5,0
 McMahon-Brown,Kian McMahon-Brown,Burnley,MID,0,0,0,0,0,0,0,4.5,0
 Neto,Norberto Murara Neto,Bournemouth,GK,0,0,0,0,0,0,0,4.5,0
-Petrović,Đorđe Petrović,Bournemouth,GK,0,0,8,2610,2,0,94,4.5,5
+Petrović,Đorđe Petrović,Bournemouth,GK,0,0,9,2700,2,0,100,4.5,5
 Dennis,Will Dennis,Bournemouth,GK,0,0,0,0,0,0,0,4.0,0
 McKenna,Callan McKenna,Bournemouth,GK,0,0,0,0,0,0,0,3.9,0
 Paulsen,Alex Paulsen,Bournemouth,GK,0,0,0,0,0,0,0,4.0,0
 Zabarnyi,Illia Zabarnyi,Bournemouth,DEF,0,0,0,0,0,0,0,5.0,0
-Senesi,Marcos Senesi Barón,Bournemouth,DEF,0,4,8,2478,8,0,126,5.0,9
-Smith,Adam Smith,Bournemouth,DEF,0,1,3,727,2,0,30,4.4,0
-Truffert,Adrien Truffert,Bournemouth,DEF,0,2,8,2568,3,0,107,4.6,9
+Senesi,Marcos Senesi Barón,Bournemouth,DEF,0,4,9,2568,8,0,136,5.0,11
+Smith,Adam Smith,Bournemouth,DEF,0,1,4,787,2,0,38,4.4,2
+Truffert,Adrien Truffert,Bournemouth,DEF,0,2,9,2658,3,0,118,4.6,12
 Akinmboni,Matai Akinmboni,Bournemouth,DEF,0,0,0,0,0,0,0,3.8,0
 Bevan,Owen Bevan,Bournemouth,DEF,0,0,0,0,0,0,0,3.8,0
-Hill,James Hill,Bournemouth,DEF,0,3,5,1292,2,0,75,4.2,2
+Hill,James Hill,Bournemouth,DEF,0,3,6,1382,2,0,83,4.2,2
 J.Araujo,Julián Araujo Zúñiga,Bournemouth,DEF,0,0,0,0,0,0,0,3.8,0
 Mepham,Chris Mepham,Bournemouth,DEF,0,0,0,0,0,0,0,4.0,0
 Soler,Julio Soler Barreto,Bournemouth,DEF,0,0,0,34,0,0,3,4.0,0
 Kluivert,Justin Kluivert,Bournemouth,MID,2,0,4,914,4,0,40,6.9,3
-Tavernier,Marcus Tavernier,Bournemouth,MID,5,4,8,1942,4,0,104,5.3,10
+Tavernier,Marcus Tavernier,Bournemouth,MID,5,4,9,2032,4,0,107,5.4,10
 Adams,Tyler Adams,Bournemouth,MID,2,1,6,1412,7,0,60,4.9,3
-Brooks,David Brooks,Bournemouth,MID,1,2,4,1014,7,0,46,5.0,4
-Christie,Ryan Christie,Bournemouth,MID,1,1,1,579,2,0,28,4.9,0
+Brooks,David Brooks,Bournemouth,MID,1,2,4,1024,7,0,47,5.0,4
+Christie,Ryan Christie,Bournemouth,MID,1,1,2,639,2,0,33,4.9,0
 Cook,Lewis Cook,Bournemouth,MID,0,1,1,870,1,1,38,4.9,0
 Philip,Philip Billing,Bournemouth,MID,0,0,0,0,0,0,0,4.9,0
-Scott,Alex Scott,Bournemouth,MID,2,2,8,2128,3,0,101,5.1,6
+Scott,Alex Scott,Bournemouth,MID,2,2,9,2218,3,0,106,5.1,6
 Sinisterra,Luis Sinisterra Lucumí,Bournemouth,MID,0,0,0,0,0,0,0,5.0,0
 Faivre,Romain Faivre,Bournemouth,MID,0,0,0,0,0,0,0,4.5,0
 H.Traorè,Hamed Traorè,Bournemouth,MID,0,1,0,16,0,0,4,4.5,0
 Sadi,Dominic Sadi,Bournemouth,MID,0,0,0,0,0,0,0,4.5,0
 Silcott-Duberry,Zain Silcott-Duberry,Bournemouth,MID,0,0,0,0,0,0,0,4.4,0
 Winterburn,Ben Winterburn,Bournemouth,MID,0,0,0,6,0,0,1,4.5,0
-Evanilson,Francisco Evanilson de Lima Barbosa,Bournemouth,FWD,6,3,8,2013,1,0,87,6.8,6
-Enes Ünal,Enes Ünal,Bournemouth,FWD,1,0,0,170,1,0,20,5.4,1
+Evanilson,Francisco Evanilson de Lima Barbosa,Bournemouth,FWD,6,3,9,2103,1,0,89,6.8,6
+Enes Ünal,Enes Ünal,Bournemouth,FWD,1,0,0,173,1,0,21,5.4,1
 Adu-Adjei,Daniel Adu-Adjei,Bournemouth,FWD,0,0,0,0,0,0,0,4.4,0
-Kroupi.Jr,Junior Kroupi,Bournemouth,FWD,8,0,5,1052,3,0,72,4.7,7
+Kroupi.Jr,Junior Kroupi,Bournemouth,FWD,8,0,6,1131,3,0,74,4.7,7
 Gannon-Doak,Ben Gannon-Doak,Bournemouth,MID,0,1,0,53,0,0,7,4.8,0
 Diakité,Bafodé Diakité,Bournemouth,DEF,0,0,4,1275,1,0,46,4.2,2
 Rees-Dottin,Remy Rees-Dottin,Bournemouth,MID,0,0,0,0,0,0,0,4.3,0
-Adli,Amine Adli,Bournemouth,MID,3,2,3,923,2,0,60,5.4,4
-A.Jimenez,Álex Jiménez Sánchez,Bournemouth,DEF,1,2,5,1855,8,0,63,4.5,2
+Adli,Amine Adli,Bournemouth,MID,3,2,3,952,2,0,61,5.4,4
+A.Jimenez,Álex Jiménez Sánchez,Bournemouth,DEF,1,2,5,1884,8,0,64,4.5,2
 Milosavljević,Veljko Milosavljevic,Bournemouth,DEF,0,0,1,367,0,0,19,4.4,0
 DaCosta,Malcom DaCosta,Bournemouth,MID,0,0,0,0,0,0,0,4.5,0
 Forster,Fraser Forster,Bournemouth,GK,0,0,0,0,0,0,0,4.0,0
 Stevens,Charlie Stevens,Bournemouth,MID,0,0,0,0,0,0,0,4.5,0
 Tóth.A,Alex Tóth,Bournemouth,MID,0,0,0,71,1,0,3,4.9,0
 Mandas,Christos Mandas,Bournemouth,GK,0,0,0,0,0,0,0,4.0,0
-Rayan,Rayan Vitor Simplício Rocha,Bournemouth,MID,2,1,2,451,1,0,27,5.6,2
+Rayan,Rayan Vitor Simplício Rocha,Bournemouth,MID,2,1,3,537,1,0,30,5.6,2
 Nelson,Reiss Nelson,Brentford,MID,0,0,0,50,0,0,6,4.8,0
 O.Dango,Dango Ouattara,Brentford,MID,5,6,4,1613,4,0,97,6.0,10
 Kelleher,Caoimhín Kelleher,Brentford,GK,0,0,7,2520,1,0,104,4.8,6
@@ -215,20 +215,20 @@ Furo,Kaye Furo,Brentford,FWD,0,0,0,0,0,0,0,4.5,0
 Bentt,Luka Bentt,Brentford,MID,0,0,0,0,0,0,0,4.5,0
 Shield,Ollie Shield,Brentford,DEF,0,0,0,0,0,0,0,4.0,0
 Steele,Jason Steele,Brighton,GK,0,0,0,0,0,0,0,4.2,0
-Verbruggen,Bart Verbruggen,Brighton,GK,0,0,6,2610,3,0,91,4.5,4
+Verbruggen,Bart Verbruggen,Brighton,GK,0,0,7,2700,3,0,98,4.5,4
 McGill,Tom McGill,Brighton,GK,0,0,0,0,0,0,0,3.9,0
 Rushworth,Carl Rushworth,Brighton,GK,0,0,0,0,0,0,0,4.0,0
 Scherpen,Kjell Scherpen,Brighton,GK,0,0,0,0,0,0,0,4.0,0
 Boscagli,Olivier Boscagli,Brighton,DEF,0,1,1,439,2,0,21,4.2,2
 Coppola,Diego Coppola,Brighton,DEF,0,0,1,193,2,0,10,4.2,0
-De Cuyper,Maxim De Cuyper,Brighton,DEF,2,0,4,1131,2,0,60,4.3,6
-Dunk,Lewis Dunk,Brighton,DEF,0,1,5,2385,9,0,70,4.5,0
+De Cuyper,Maxim De Cuyper,Brighton,DEF,2,0,4,1145,2,0,61,4.3,6
+Dunk,Lewis Dunk,Brighton,DEF,0,1,6,2475,9,0,81,4.5,3
 Estupiñan,Pervis Estupiñán Tenorio,Brighton,DEF,0,0,0,0,0,0,0,4.5,0
-F.Kadıoğlu,Ferdi Kadıoğlu,Brighton,DEF,0,2,6,2320,6,0,76,4.4,4
+F.Kadıoğlu,Ferdi Kadıoğlu,Brighton,DEF,0,2,7,2410,6,0,84,4.4,4
 Igor,Igor Julio dos Santos de Paulo,Brighton,DEF,0,0,0,103,0,0,6,4.5,0
 Lamptey,Tariq Lamptey,Brighton,DEF,0,0,0,0,0,0,0,4.4,0
-Van Hecke,Jan Paul van Hecke,Brighton,DEF,3,2,6,2400,7,0,107,4.4,7
-Veltman,Joël Veltman,Brighton,DEF,1,0,1,840,4,0,34,4.3,1
+Van Hecke,Jan Paul van Hecke,Brighton,DEF,3,2,7,2490,7,0,116,4.4,8
+Veltman,Joël Veltman,Brighton,DEF,1,0,1,841,4,0,35,4.3,1
 Webster,Adam Webster,Brighton,DEF,0,0,0,0,0,0,0,4.4,0
 Cashin,Eiran Cashin,Brighton,DEF,0,0,0,0,0,0,0,4.0,0
 Slater,Jacob Slater,Brighton,DEF,0,0,0,0,0,0,0,4.0,0
@@ -236,64 +236,64 @@ Tasker,Charlie Tasker,Brighton,DEF,0,0,0,0,0,0,0,3.8,0
 Mitoma,Mitoma Kaoru,Brighton,MID,2,1,4,1408,3,0,50,6.1,2
 Georginio,Georginio Rutter,Brighton,MID,2,4,6,1592,2,0,69,5.6,2
 March,Solly March,Brighton,MID,0,0,0,4,0,0,1,5.8,0
-Minteh,Yankuba Minteh,Brighton,MID,1,8,6,1679,0,0,85,5.5,6
+Minteh,Yankuba Minteh,Brighton,MID,2,8,7,1754,1,0,94,5.5,8
 Enciso,Julio Enciso Espínola,Brighton,MID,0,0,0,0,0,0,0,5.4,0
 Gruda,Brajan Gruda,Brighton,MID,1,1,2,708,2,0,35,5.4,2
-Hinshelwood,Jack Hinshelwood,Brighton,MID,1,4,2,1001,0,0,50,5.1,2
-O'Riley,Matt O'Riley,Brighton,MID,1,0,1,185,0,0,13,5.5,2
+Hinshelwood,Jack Hinshelwood,Brighton,MID,1,4,3,1088,0,0,53,5.1,2
+O'Riley,Matt O'Riley,Brighton,MID,1,0,1,186,0,0,14,5.5,2
 Sima,Abdallah Sima,Brighton,MID,0,0,0,0,0,0,0,5.4,0
-Ayari,Yasin Ayari,Brighton,MID,3,3,5,1711,1,0,83,4.8,7
+Ayari,Yasin Ayari,Brighton,MID,3,3,5,1713,1,0,84,4.8,7
 Baleba,Carlos Baleba,Brighton,MID,0,0,4,1261,5,0,40,4.5,0
-Gomez,Diego Gómez Amarilla,Brighton,MID,5,0,6,1748,7,0,79,4.9,9
-Milner,James Milner,Brighton,MID,1,1,1,549,2,0,29,4.9,0
+Gomez,Diego Gómez Amarilla,Brighton,MID,5,0,7,1838,8,0,83,4.9,9
+Milner,James Milner,Brighton,MID,1,1,2,639,2,0,32,4.9,0
 Sarmiento,Jeremy Sarmiento Morante,Brighton,MID,0,0,0,0,0,0,0,4.9,0
 Watson,Tom Watson,Brighton,MID,0,0,0,57,1,0,5,4.8,0
-Wieffer,Mats Wieffer,Brighton,MID,0,4,4,1389,6,0,65,4.9,3
+Wieffer,Mats Wieffer,Brighton,MID,0,4,5,1479,6,0,70,4.9,3
 Yalcouye,Malick Yalcouyé,Brighton,MID,0,0,0,0,0,0,0,5.0,0
 Knight,Joe Knight,Brighton,MID,0,0,0,1,0,0,1,4.4,0
 Mazilu,Adrian Mazilu,Brighton,MID,0,0,0,0,0,0,0,4.5,0
 Moran,Andrew Moran,Brighton,MID,0,0,0,0,0,0,0,4.5,0
-Welbeck,Danny Welbeck,Brighton,FWD,10,0,6,1645,4,0,92,6.1,14
+Welbeck,Danny Welbeck,Brighton,FWD,10,0,7,1735,4,0,94,6.1,14
 Ferguson,Evan Ferguson,Brighton,FWD,0,0,0,0,0,0,0,5.5,0
 Tzimas,Stefanos Tzimas,Brighton,FWD,1,1,0,132,0,0,16,5.2,0
 Kostoulas,Charalampos Kostoulas,Brighton,FWD,2,1,1,292,2,0,30,4.8,3
 Oriola,Nehemiah Oriola,Brighton,MID,0,0,0,1,0,0,1,4.5,0
 Simmonds,Freddie Simmonds,Brighton,DEF,0,0,0,0,0,0,0,4.0,0
-Groß,Pascal Groß,Brighton,MID,1,1,2,826,2,0,33,5.5,4
+Groß,Pascal Groß,Brighton,MID,1,2,3,916,2,0,41,5.5,4
 Howell,Harry Howell,Brighton,MID,0,0,0,92,0,0,4,4.5,0
-Sánchez,Robert Lynch Sánchez,Chelsea,GK,0,1,9,2344,3,1,97,4.8,7
+Sánchez,Robert Lynch Sánchez,Chelsea,GK,0,1,9,2434,3,1,100,4.8,7
 Jörgensen,Filip Jörgensen,Chelsea,GK,0,0,0,264,0,0,6,4.3,0
 Penders,Mike Penders,Chelsea,GK,0,0,0,0,0,0,0,4.0,0
 Slonina,Gabriel Słonina,Chelsea,GK,0,0,0,0,0,0,0,3.9,0
-Cucurella,Marc Cucurella Saseta,Chelsea,DEF,1,3,9,1896,5,1,91,6.0,5
-James,Reece James,Chelsea,DEF,2,6,8,1802,4,0,111,5.6,11
-Chalobah,Trevoh Chalobah,Chelsea,DEF,3,1,9,2460,3,1,129,5.6,7
+Cucurella,Marc Cucurella Saseta,Chelsea,DEF,1,3,9,1986,5,1,93,6.0,5
+James,Reece James,Chelsea,DEF,2,6,8,1892,4,0,113,5.6,11
+Chalobah,Trevoh Chalobah,Chelsea,DEF,3,1,9,2550,3,1,131,5.5,7
 Colwill,Levi Samuels Colwill,Chelsea,DEF,0,0,0,0,0,0,0,4.7,0
-Gusto,Malo Gusto,Chelsea,DEF,2,3,7,1644,2,1,89,4.9,7
+Gusto,Malo Gusto,Chelsea,DEF,2,3,7,1689,2,1,90,4.9,7
 B.Badiashile,Benoît Badiashile Mukinayi,Chelsea,DEF,0,0,0,470,2,0,7,4.4,0
-Fofana,Wesley Fofana,Chelsea,DEF,0,1,4,1101,2,1,50,4.4,3
+Fofana,Wesley Fofana,Chelsea,DEF,0,1,4,1182,3,1,53,4.4,3
 M.Sarr,Mamadou Sarr,Chelsea,DEF,0,0,0,91,0,0,2,4.5,0
 Tosin,Tosin Adarabioyo,Chelsea,DEF,0,0,2,731,2,0,33,4.0,2
 Acheampong,Josh Acheampong,Chelsea,DEF,1,0,2,567,1,0,33,3.7,5
 Anselmino,Aarón Anselmino,Chelsea,DEF,0,0,0,0,0,0,0,4.0,0
-Palmer,Cole Palmer,Chelsea,MID,9,2,3,1236,4,0,92,10.6,9
+Palmer,Cole Palmer,Chelsea,MID,9,2,3,1326,4,0,94,10.6,9
 Neto,Pedro Lomba Neto,Chelsea,MID,5,5,11,2138,2,1,106,7.0,8
-Enzo,Enzo Fernández,Chelsea,MID,8,4,8,2397,8,0,125,6.6,14
+Enzo,Enzo Fernández,Chelsea,MID,8,4,8,2487,8,0,127,6.6,14
 Estêvão,Estêvão Almeida de Oliveira Gonçalves,Chelsea,MID,2,5,4,738,3,0,55,6.4,4
 Gittens,Jamie Bynoe-Gittens,Chelsea,MID,0,2,1,486,0,0,25,6.0,0
 Nkunku,Christopher Nkunku,Chelsea,MID,0,0,0,0,0,0,0,5.9,0
-Caicedo,Moisés Caicedo Corozo,Chelsea,MID,3,1,6,2044,8,1,93,5.7,10
-Lavia,Roméo Lavia,Chelsea,MID,0,0,0,135,0,0,6,4.9,0
+Caicedo,Moisés Caicedo Corozo,Chelsea,MID,3,1,6,2104,9,1,94,5.7,10
+Lavia,Roméo Lavia,Chelsea,MID,0,0,0,164,0,0,7,4.9,0
 Mudryk,Mykhailo Mudryk,Chelsea,MID,0,0,0,0,0,0,0,4.9,0
 Andrey Santos,Andrey Nascimento dos Santos,Chelsea,MID,0,0,1,964,4,0,31,4.5,0
 D.Essugo,Dário Luís Essugo,Chelsea,MID,0,0,0,0,0,0,0,4.3,0
 Paez,Kendry Páez Andrade,Chelsea,MID,0,0,0,0,0,0,0,4.5,0
-João Pedro,João Pedro Junqueira de Jesus,Chelsea,FWD,14,9,10,2140,4,0,160,7.7,28
-Delap,Liam Delap,Chelsea,FWD,1,2,2,727,2,0,36,6.2,1
+João Pedro,João Pedro Junqueira de Jesus,Chelsea,FWD,14,9,10,2230,4,0,162,7.7,28
+Delap,Liam Delap,Chelsea,FWD,1,2,2,772,2,0,37,6.2,1
 N.Jackson,Nicolas Jackson,Chelsea,FWD,0,0,0,0,0,0,0,6.5,0
 Marc Guiu,Marc Guiu Paz,Chelsea,FWD,0,1,0,247,1,0,12,4.1,0
-Garnacho,Alejandro Garnacho Ferreyra,Chelsea,MID,1,4,4,983,1,0,49,6.4,3
-Hato,Jorrel Hato,Chelsea,DEF,0,0,0,540,4,0,10,4.6,0
+Garnacho,Alejandro Garnacho Ferreyra,Chelsea,MID,1,4,4,1073,1,0,51,6.4,3
+Hato,Jorrel Hato,Chelsea,DEF,0,0,0,548,4,0,11,4.6,0
 Emenalo,Landon Emenalo,Chelsea,MID,0,0,0,0,0,0,0,4.5,0
 Merrick,Max Merrick,Chelsea,GK,0,0,0,0,0,0,0,4.0,0
 Sharman-Lowe,Teddy Sharman-Lowe,Chelsea,GK,0,0,0,0,0,0,0,4.0,0
@@ -341,33 +341,33 @@ Benamar,Dean Benamar,Crystal Palace,DEF,0,0,0,0,0,0,0,4.0,0
 Casey,Ben Casey,Crystal Palace,FWD,0,0,0,0,0,0,0,4.5,0
 King,George King,Crystal Palace,DEF,0,0,0,0,0,0,0,4.0,0
 Imray,Danny Imray,Crystal Palace,DEF,0,0,0,0,0,0,0,4.0,0
-Dewsbury-Hall,Kiernan Dewsbury-Hall,Everton,MID,6,5,7,1828,6,0,112,5.1,14
-George,Tyrique George,Everton,MID,0,0,1,244,2,0,9,4.8,0
-Pickford,Jordan Pickford,Everton,GK,0,0,10,2610,2,0,117,5.6,11
+Dewsbury-Hall,Kiernan Dewsbury-Hall,Everton,MID,6,5,7,1918,6,0,114,5.1,14
+George,Tyrique George,Everton,MID,0,0,1,245,2,0,10,4.8,0
+Pickford,Jordan Pickford,Everton,GK,0,0,10,2700,2,0,119,5.6,11
 Travers,Mark Travers,Everton,GK,0,0,0,0,0,0,0,4.3,0
 Tyrer,Harry Tyrer,Everton,GK,0,0,0,0,0,0,0,3.9,0
 Branthwaite,Jarrad Branthwaite,Everton,DEF,1,1,1,490,1,0,24,5.3,0
 Tarkowski,James Tarkowski,Everton,DEF,1,1,10,2610,5,0,136,5.7,9
-Mykolenko,Vitalii Mykolenko,Everton,DEF,0,1,8,2149,5,0,76,4.9,1
-O'Brien,Jake O'Brien,Everton,DEF,0,2,9,2366,2,1,93,4.9,2
+Mykolenko,Vitalii Mykolenko,Everton,DEF,0,1,8,2239,5,0,77,4.9,1
+O'Brien,Jake O'Brien,Everton,DEF,0,2,9,2456,2,1,96,4.9,2
 Coleman,Séamus Coleman,Everton,DEF,0,0,0,11,0,0,3,4.2,0
-Keane,Michael Keane,Everton,DEF,3,0,6,1955,0,1,107,4.6,8
+Keane,Michael Keane,Everton,DEF,3,0,6,2045,0,1,110,4.6,8
 Patterson,Nathan Patterson,Everton,DEF,0,0,2,237,0,0,21,4.4,0
 Dixon,Roman Dixon,Everton,DEF,0,0,0,0,0,0,0,3.8,0
 Welch,Reece Welch,Everton,DEF,0,0,0,0,0,0,0,3.8,0
-Ndiaye,Iliman Ndiaye,Everton,MID,5,3,7,1973,2,0,100,6.2,5
-McNeil,Dwight McNeil,Everton,MID,0,3,4,781,1,0,40,5.5,1
+Ndiaye,Iliman Ndiaye,Everton,MID,5,3,7,2063,2,0,102,6.2,5
+McNeil,Dwight McNeil,Everton,MID,0,3,5,866,1,0,43,5.5,1
 Alcaraz,Carlos Alcaraz Durán,Everton,MID,0,1,3,667,3,0,26,5.2,0
-Gana,Idrissa Gana Gueye,Everton,MID,2,1,4,1666,1,1,62,5.4,4
-Garner,James Garner,Everton,MID,2,5,10,2603,7,0,129,5.2,13
-Iroegbunam,Tim Iroegbunam,Everton,MID,0,3,7,1015,8,0,53,4.8,1
-Armstrong,Harrison Armstrong,Everton,MID,0,0,1,491,0,0,18,4.5,0
+Gana,Idrissa Gana Gueye,Everton,MID,2,1,4,1756,1,1,66,5.4,4
+Garner,James Garner,Everton,MID,2,5,10,2693,7,0,133,5.2,13
+Iroegbunam,Tim Iroegbunam,Everton,MID,0,3,8,1100,8,0,56,4.8,1
+Armstrong,Harrison Armstrong,Everton,MID,0,0,1,495,0,0,19,4.5,0
 Bates,Callum Bates,Everton,MID,0,0,0,0,0,0,0,4.3,0
 Ebere,Coby Ebere,Everton,MID,0,0,0,0,0,0,0,4.4,0
 Heath,Isaac Heath,Everton,MID,0,0,0,0,0,0,0,4.5,0
 Metcalfe,Jenson Metcalfe,Everton,MID,0,0,0,0,0,0,0,4.5,0
-Barry,Thierno Barry,Everton,FWD,6,0,7,1599,3,0,74,5.7,7
-Beto,Norberto Bercique Gomes Betuncal,Everton,FWD,4,0,3,1047,2,0,58,5.0,6
+Barry,Thierno Barry,Everton,FWD,6,0,7,1620,3,0,75,5.7,7
+Beto,Norberto Bercique Gomes Betuncal,Everton,FWD,4,0,4,1115,2,0,60,5.0,6
 Y.Chermiti,Youssef Ramalho Chermiti,Everton,FWD,0,0,0,0,0,0,0,4.9,0
 Sherif,Martin Sherif,Everton,FWD,0,0,0,0,0,0,0,4.4,0
 Grealish,Jack Grealish,Everton,MID,2,6,7,1627,3,1,79,6.3,12
@@ -376,7 +376,7 @@ Aznou,Adam Aznou,Everton,DEF,0,0,0,0,0,0,0,4.2,0
 Onyango,Tyler Onyango,Everton,MID,0,0,0,0,0,0,0,4.5,0
 Campbell,Elijah Campbell,Everton,DEF,0,0,0,0,0,0,0,3.9,0
 Dibling,Tyler Dibling,Everton,MID,0,0,2,349,2,0,18,5.3,0
-Röhl,Merlin Röhl,Everton,MID,0,0,2,353,0,0,16,5.0,0
+Röhl,Merlin Röhl,Everton,MID,0,0,2,357,0,0,17,5.0,0
 Graham,Braiden Graham,Everton,FWD,0,0,0,0,0,0,0,4.5,0
 Leno,Bernd Leno,Fulham,GK,0,0,5,2610,3,0,79,4.9,3
 Benda,Steven Benda,Fulham,GK,0,0,0,0,0,0,0,4.0,0
@@ -439,7 +439,7 @@ Mateo Joseph,Mateo Joseph Fernández-Regatillo,Leeds United,FWD,0,0,0,0,0,0,0,5.
 Nmecha,Lukas Nmecha,Leeds United,FWD,6,1,2,753,0,0,63,5.0,8
 Longstaff,Sean Longstaff,Leeds United,MID,1,2,1,943,2,0,44,4.8,4
 Stach,Anton Stach,Leeds United,MID,4,6,4,1955,3,0,114,4.7,11
-Perri,Lucas Estella Perri,Leeds United,GK,0,0,3,1440,2,0,43,4.5,3
+Perri,Lucas Estella Perri,Leeds United,GK,0,0,3,1440,2,0,43,4.4,3
 Calvert-Lewin,Dominic Calvert-Lewin,Leeds United,FWD,10,2,4,1933,1,0,108,5.7,16
 Okafor,Noah Okafor,Leeds United,MID,4,2,4,1266,3,0,67,5.5,3
 Justin,James Justin,Leeds United,DEF,1,1,2,1083,2,0,49,3.9,6
@@ -466,7 +466,7 @@ Luis Díaz,Luis Díaz Marulanda,Liverpool,MID,0,0,0,0,0,0,0,8.0,0
 Gakpo,Cody Gakpo,Liverpool,MID,6,3,8,1972,2,0,101,7.3,5
 Chiesa,Federico Chiesa,Liverpool,MID,2,1,0,263,2,0,33,6.3,0
 Mac Allister,Alexis Mac Allister,Liverpool,MID,2,2,7,1996,4,0,76,6.3,5
-Szoboszlai,Dominik Szoboszlai,Liverpool,MID,4,3,8,2422,6,1,109,6.9,15
+Szoboszlai,Dominik Szoboszlai,Liverpool,MID,4,3,8,2422,6,1,109,7.0,15
 C.Jones,Curtis Jones,Liverpool,MID,0,2,3,1234,1,0,47,5.4,1
 Gravenberch,Ryan Gravenberch,Liverpool,MID,4,5,9,2338,5,0,119,5.5,13
 Endo,Endo Wataru,Liverpool,MID,0,1,1,170,1,0,12,4.9,0
@@ -482,38 +482,38 @@ Ngumoha,Rio Ngumoha,Liverpool,MID,1,0,0,128,0,0,16,4.3,0
 Leoni,Giovanni Leoni,Liverpool,DEF,0,0,0,0,0,0,0,4.9,0
 Morrison,Kieran Morrison,Liverpool,MID,0,0,0,0,0,0,0,4.5,0
 Lucky,Wellity Lucky,Liverpool,DEF,0,0,0,0,0,0,0,4.0,0
-Semenyo,Antoine Semenyo,Manchester City,MID,15,6,8,2516,6,0,172,8.3,17
+Semenyo,Antoine Semenyo,Manchester City,MID,15,6,8,2590,6,0,174,8.3,17
 Trafford,James Trafford,Manchester City,GK,0,0,1,270,0,0,11,4.5,0
-Guéhi,Marc Guéhi,Manchester City,DEF,2,4,10,2430,5,0,133,5.2,9
+Guéhi,Marc Guéhi,Manchester City,DEF,2,4,10,2520,5,0,135,5.2,9
 Ederson M.,Ederson Santana de Moraes,Manchester City,GK,0,0,0,0,0,0,0,5.3,0
 Bettinelli,Marcus Bettinelli,Manchester City,GK,0,0,0,0,0,0,0,3.8,0
-Aït-Nouri,Rayan Aït-Nouri,Manchester City,DEF,0,2,3,719,2,0,43,5.7,7
+Aït-Nouri,Rayan Aït-Nouri,Manchester City,DEF,0,2,3,778,2,0,44,5.7,7
 Gvardiol,Joško Gvardiol,Manchester City,DEF,2,2,6,1301,2,0,77,5.9,5
 Akanji,Manuel Akanji,Manchester City,DEF,0,0,0,0,0,0,0,5.4,0
 Aké,Nathan Aké,Manchester City,DEF,0,0,2,487,1,0,27,5.2,1
-Khusanov,Abdukodir Khusanov,Manchester City,DEF,0,0,3,797,2,0,33,5.4,0
-Matheus N.,Matheus Nunes,Manchester City,DEF,1,7,9,2174,4,0,126,5.4,16
+Khusanov,Abdukodir Khusanov,Manchester City,DEF,0,0,3,887,2,0,35,5.4,0
+Matheus N.,Matheus Nunes,Manchester City,DEF,1,7,9,2264,4,0,128,5.4,16
 Rúben,Rúben dos Santos Gato Alves Dias,Manchester City,DEF,2,0,12,2049,3,0,112,5.5,4
 Stones,John Stones,Manchester City,DEF,0,0,1,351,0,0,12,5.4,0
 Lewis,Rico Lewis,Manchester City,DEF,0,1,1,311,1,0,19,4.6,2
-O'Reilly,Nico O'Reilly,Manchester City,DEF,4,3,11,2040,4,0,123,5.1,6
+O'Reilly,Nico O'Reilly,Manchester City,DEF,4,3,11,2130,4,0,125,5.1,6
 Vitor Reis,Vitor de Oliveira Nunes dos Reis,Manchester City,DEF,0,0,0,0,0,0,0,5.0,0
-Marmoush,Omar Marmoush,Manchester City,MID,1,2,3,507,1,0,37,8.3,4
-Foden,Phil Foden,Manchester City,MID,7,3,10,1792,4,0,111,8.1,10
+Marmoush,Omar Marmoush,Manchester City,MID,1,3,3,566,2,0,40,8.3,4
+Foden,Phil Foden,Manchester City,MID,7,3,10,1807,4,0,112,8.0,10
 Savinho,Sávio Moreira de Oliveira,Manchester City,MID,0,2,2,561,2,0,27,6.9,0
-Bernardo,Bernardo Mota Veiga de Carvalho e Silva,Manchester City,MID,1,4,9,2168,8,0,72,6.2,1
-Cherki,Rayan Cherki,Manchester City,MID,3,9,6,1267,1,0,99,6.4,12
-Doku,Jérémy Doku,Manchester City,MID,1,7,5,1192,0,0,73,6.4,9
+Bernardo,Bernardo Mota Veiga de Carvalho e Silva,Manchester City,MID,2,4,9,2242,9,0,81,6.2,4
+Cherki,Rayan Cherki,Manchester City,MID,3,9,6,1297,1,0,100,6.4,12
+Doku,Jérémy Doku,Manchester City,MID,1,7,5,1222,0,0,74,6.4,9
 Gündoğan,İlkay Gündoğan,Manchester City,MID,0,0,0,0,0,0,0,6.3,0
-Rodrigo,Rodrigo 'Rodri' Hernandez Cascante,Manchester City,MID,1,0,4,1153,2,0,53,6.3,5
+Rodrigo,Rodrigo 'Rodri' Hernandez Cascante,Manchester City,MID,1,0,4,1243,2,0,57,6.3,5
 Kovačić,Mateo Kovačić,Manchester City,MID,0,0,0,4,0,0,1,5.8,0
 N.Gonzalez,Nico González Iglesias,Manchester City,MID,1,0,7,1370,6,0,55,5.9,1
 Echeverri,Claudio Echeverri,Manchester City,MID,0,0,0,0,0,0,0,5.4,0
-Reijnders,Tijjani Reijnders,Manchester City,MID,5,2,7,1473,2,0,85,5.0,6
+Reijnders,Tijjani Reijnders,Manchester City,MID,5,2,7,1488,2,0,86,5.0,6
 Nypan,Sverre Nypan,Manchester City,MID,0,0,0,0,0,0,0,5.0,0
 Phillips,Kalvin Phillips,Manchester City,MID,0,0,0,0,0,0,0,4.7,0
-Haaland,Erling Haaland,Manchester City,FWD,22,7,10,2323,1,0,195,14.6,35
-Donnarumma,Gianluigi Donnarumma,Manchester City,GK,0,0,11,2340,6,0,102,5.6,3
+Haaland,Erling Haaland,Manchester City,FWD,22,7,10,2413,1,0,197,14.6,35
+Donnarumma,Gianluigi Donnarumma,Manchester City,GK,0,0,11,2430,6,0,104,5.6,3
 Mukasa,Divine Mukasa,Manchester City,MID,0,0,0,25,0,0,2,4.4,0
 Mfuni,Stephen Mfuni,Manchester City,DEF,0,0,0,0,0,0,0,3.9,0
 McAidoo,Ryan McAidoo,Manchester City,MID,0,0,0,0,0,0,0,4.5,0
@@ -545,7 +545,7 @@ Rashford,Marcus Rashford,Manchester United,MID,0,0,0,0,0,0,0,7.0,0
 Amad,Amad Diallo,Manchester United,MID,2,4,4,1736,2,0,70,6.2,6
 Antony,Antony dos Santos,Manchester United,MID,0,0,0,0,0,0,0,5.9,0
 Mount,Mason Mount,Manchester United,MID,3,0,3,812,0,0,46,5.9,3
-Casemiro,Carlos Henrique Casimiro,Manchester United,MID,6,4,8,1964,6,1,127,5.6,15
+Casemiro,Carlos Henrique Casimiro,Manchester United,MID,6,4,8,1964,6,1,127,5.7,15
 Mainoo,Kobbie Mainoo,Manchester United,MID,0,2,3,933,0,0,39,4.6,0
 Ugarte,Manuel Ugarte Ribeiro,Manchester United,MID,0,0,1,777,1,0,32,4.7,0
 Collyer,Toby Collyer,Manchester United,MID,0,0,0,0,0,0,0,4.5,0
@@ -563,16 +563,16 @@ Lacey,Shea Lacey,Manchester United,MID,0,0,0,12,0,0,2,4.5,0
 Bendito Mantato,Bendito Mantato,Manchester United,MID,0,0,0,15,0,0,1,4.5,0
 Fletcher,Tyler Fletcher,Manchester United,MID,0,0,0,1,0,0,1,4.4,0
 Kukonki,Godwill Kukonki,Manchester United,DEF,0,0,0,0,0,0,0,4.0,0
-J.Ramsey,Jacob Ramsey,Newcastle United,MID,2,1,0,894,3,1,34,5.3,1
+J.Ramsey,Jacob Ramsey,Newcastle United,MID,2,1,1,984,3,1,37,5.3,1
 Wissa,Yoane Wissa,Newcastle United,FWD,1,0,1,421,1,0,19,7.3,0
 Pope,Nick Pope,Newcastle United,GK,0,1,7,1966,1,0,82,5.1,3
 Gillespie,Mark Gillespie,Newcastle United,GK,0,0,0,0,0,0,0,3.9,0
 Odysseas,Odysseas Vlachodimos,Newcastle United,GK,0,0,0,0,0,0,0,4.0,0
-Hall,Lewis Hall,Newcastle United,DEF,1,2,3,1569,2,0,66,5.3,4
+Hall,Lewis Hall,Newcastle United,DEF,1,2,4,1659,3,0,72,5.3,5
 Schär,Fabian Schär,Newcastle United,DEF,0,0,4,1089,1,0,51,5.2,0
-Botman,Sven Botman,Newcastle United,DEF,1,1,4,1061,1,0,54,4.9,4
-Burn,Dan Burn,Newcastle United,DEF,0,3,6,1708,7,1,74,5.0,5
-Livramento,Tino Livramento,Newcastle United,DEF,0,1,5,1048,1,0,49,4.9,3
+Botman,Sven Botman,Newcastle United,DEF,1,1,5,1151,1,0,64,4.9,6
+Burn,Dan Burn,Newcastle United,DEF,0,3,6,1721,7,1,75,5.0,5
+Livramento,Tino Livramento,Newcastle United,DEF,0,1,6,1138,1,0,55,4.9,3
 Trippier,Kieran Trippier,Newcastle United,DEF,0,1,5,1392,3,0,48,4.9,2
 Krafth,Emil Krafth,Newcastle United,DEF,0,0,0,45,0,0,0,4.3,0
 Lascelles,Jamaal Lascelles,Newcastle United,DEF,0,0,0,19,0,0,1,4.3,0
@@ -580,25 +580,25 @@ A.Murphy,Alex Murphy,Newcastle United,DEF,0,0,0,1,0,0,1,3.8,0
 Ashby,Harrison Ashby,Newcastle United,DEF,0,0,0,0,0,0,0,3.9,0
 Pivas,Miodrag Pivaš,Newcastle United,DEF,0,0,0,0,0,0,0,3.8,0
 Targett,Matt Targett,Newcastle United,DEF,0,0,0,0,0,0,0,4.0,0
-Gordon,Anthony Gordon,Newcastle United,MID,4,4,6,1550,3,1,77,7.2,4
-Elanga,Anthony Elanga,Newcastle United,MID,0,1,2,1131,0,0,39,6.5,0
-Barnes,Harvey Barnes,Newcastle United,MID,5,0,4,1483,1,0,78,6.1,8
+Gordon,Anthony Gordon,Newcastle United,MID,5,4,7,1640,3,1,88,7.2,7
+Elanga,Anthony Elanga,Newcastle United,MID,0,1,2,1143,0,0,40,6.5,0
+Barnes,Harvey Barnes,Newcastle United,MID,5,0,5,1573,1,0,81,6.1,8
 Bruno G.,Bruno Guimarães Rodriguez Moura,Newcastle United,MID,9,6,6,2019,5,0,134,6.8,19
-J.Murphy,Jacob Murphy,Newcastle United,MID,3,1,6,1134,1,0,61,5.9,2
-Joelinton,Joelinton Cássio Apolinário de Lira,Newcastle United,MID,2,1,5,1574,8,0,62,5.9,2
+J.Murphy,Jacob Murphy,Newcastle United,MID,3,1,7,1211,1,0,64,5.9,2
+Joelinton,Joelinton Cássio Apolinário de Lira,Newcastle United,MID,2,1,5,1597,8,0,63,5.9,2
 Tonali,Sandro Tonali,Newcastle United,MID,0,2,7,2037,3,0,71,5.3,2
 Antoñito C.,Antoñito Cordero Campillo,Newcastle United,MID,0,0,0,0,0,0,0,4.9,0
-Willock,Joe Willock,Newcastle United,MID,0,0,2,592,3,0,21,5.0,0
+Willock,Joe Willock,Newcastle United,MID,0,1,3,668,3,0,27,5.0,0
 Hayden,Isaac Hayden,Newcastle United,MID,0,0,0,0,0,0,0,4.5,0
 Kuol,Garang Kuol,Newcastle United,MID,0,0,0,0,0,0,0,4.4,0
 L.Miley,Lewis Miley,Newcastle United,MID,1,3,2,1133,0,0,58,4.4,4
 White,Joe White,Newcastle United,MID,0,0,0,0,0,0,0,4.5,0
 Osula,William Osula,Newcastle United,FWD,2,1,1,267,0,0,30,5.4,2
 Neave,Sean Neave,Newcastle United,FWD,0,0,0,0,0,0,0,4.3,0
-Ramsdale,Aaron Ramsdale,Newcastle United,GK,0,0,0,643,0,0,14,4.8,0
-Thiaw,Malick Thiaw,Newcastle United,DEF,4,0,4,2207,3,0,105,5.0,11
+Ramsdale,Aaron Ramsdale,Newcastle United,GK,0,0,1,733,1,0,21,4.8,1
+Thiaw,Malick Thiaw,Newcastle United,DEF,4,0,5,2297,3,0,113,5.0,11
 Seung soo,Seung-Soo Park,Newcastle United,MID,0,0,0,0,0,0,0,4.3,0
-Woltemade,Nick Woltemade,Newcastle United,FWD,7,3,6,1530,0,0,86,6.7,10
+Woltemade,Nick Woltemade,Newcastle United,FWD,7,3,7,1596,0,0,88,6.7,10
 Ruddy,John Ruddy,Newcastle United,GK,0,0,0,0,0,0,0,4.0,0
 Shahar,Leo Shahar,Newcastle United,DEF,0,0,0,0,0,0,0,4.0,0
 Alabi,Sam Alabi,Newcastle United,MID,0,0,0,0,0,0,0,4.5,0
@@ -618,7 +618,7 @@ Morato,Felipe Rodrigues da Silva,Nottingham Forest,DEF,0,0,2,938,4,0,35,4.3,1
 O.Richards,Omar Richards,Nottingham Forest,DEF,0,0,0,0,0,0,0,4.5,0
 Abbott,Zach Abbott,Nottingham Forest,DEF,0,0,0,120,0,0,2,3.8,0
 Boly,Willy Boly,Nottingham Forest,DEF,0,0,0,0,0,0,0,3.8,0
-Gibbs-White,Morgan Gibbs-White,Nottingham Forest,MID,8,2,7,2477,1,0,122,7.3,11
+Gibbs-White,Morgan Gibbs-White,Nottingham Forest,MID,8,2,7,2477,1,0,122,7.4,11
 Hudson-Odoi,Callum Hudson-Odoi,Nottingham Forest,MID,3,2,5,1634,0,0,74,5.7,6
 Anderson,Elliot Anderson,Nottingham Forest,MID,2,3,7,2596,5,0,131,5.5,10
 Jota,João Pedro Ferreira da Silva,Nottingham Forest,MID,0,0,0,11,0,0,1,5.4,0
@@ -644,29 +644,29 @@ Netz,Luca Netz,Nottingham Forest,DEF,0,0,0,48,0,0,2,4.5,0
 Patterson,Anthony Patterson,Sunderland,GK,0,0,0,0,0,0,0,4.2,0
 Moore,Simon Moore,Sunderland,GK,0,0,0,0,0,0,0,3.9,0
 Nna Noukeu,Blondy Nna Noukeu,Sunderland,GK,0,0,0,0,0,0,0,3.9,0
-Ballard,Daniel Ballard,Sunderland,DEF,2,2,6,1941,3,0,114,4.7,9
-Hume,Trai Hume,Sunderland,DEF,0,1,8,2399,7,0,85,4.5,6
+Ballard,Daniel Ballard,Sunderland,DEF,2,2,6,2004,3,0,118,4.7,9
+Hume,Trai Hume,Sunderland,DEF,0,1,8,2489,7,0,87,4.5,6
 Alese,Aji Alese,Sunderland,DEF,0,0,0,0,0,0,0,4.0,0
 Anderson,Joe Anderson,Sunderland,DEF,0,0,0,0,0,0,0,3.8,0
-Cirkin,Dennis Cirkin,Sunderland,DEF,0,0,1,296,1,0,13,4.0,0
+Cirkin,Dennis Cirkin,Sunderland,DEF,0,0,1,301,1,0,14,4.0,0
 Hjelde,Leo Fuhr Hjelde,Sunderland,DEF,0,0,0,0,0,0,0,4.0,0
 Huggins,Niall Huggins,Sunderland,DEF,0,0,0,0,0,0,0,4.0,0
 Johnson,Zak Johnson,Sunderland,DEF,0,0,0,0,0,0,0,3.8,0
-O'Nien,Luke O'Nien,Sunderland,DEF,0,0,1,112,1,1,7,4.0,0
+O'Nien,Luke O'Nien,Sunderland,DEF,0,0,1,138,1,1,8,4.0,0
 Pembele,Timothée Pembélé,Sunderland,DEF,0,0,0,0,0,0,0,3.9,0
 Reinildo,Reinildo Mandava,Sunderland,DEF,0,2,4,1427,6,1,51,3.8,5
 Seelt,Jenson Seelt,Sunderland,DEF,0,0,0,133,0,0,2,4.0,0
 Adingra,Simon Adingra,Sunderland,MID,1,1,4,649,2,0,34,4.9,3
-Diarra,Habib Diarra,Sunderland,MID,2,3,4,925,4,0,44,5.3,3
+Diarra,Habib Diarra,Sunderland,MID,2,3,4,1015,4,0,46,5.3,3
 Roberts,Patrick Roberts,Sunderland,MID,0,0,0,27,0,0,1,5.4,0
 Aleksić,Milan Aleksić,Sunderland,MID,0,0,0,0,0,0,0,4.9,0
 E.Le Fée,Enzo Le Fée,Sunderland,MID,4,4,8,2295,5,0,107,5.0,8
 Mundle,Romaine Mundle,Sunderland,MID,0,0,0,399,1,0,14,4.9,0
 Neil,Dan Neil,Sunderland,MID,0,0,0,13,0,0,3,4.8,0
 Poveda,Ian Poveda-Ocampo,Sunderland,MID,0,0,0,0,0,0,0,4.8,0
-Rigg,Chris Rigg,Sunderland,MID,0,0,2,376,0,0,16,4.7,0
-Sadiki,Noah Sadiki,Sunderland,MID,0,1,7,2114,6,0,58,4.9,0
-Talbi,Chemsdine Talbi,Sunderland,MID,3,2,6,1146,0,0,65,4.9,5
+Rigg,Chris Rigg,Sunderland,MID,0,0,2,466,0,0,18,4.7,0
+Sadiki,Noah Sadiki,Sunderland,MID,0,1,7,2204,6,0,60,4.9,0
+Talbi,Chemsdine Talbi,Sunderland,MID,3,2,6,1230,0,0,67,4.9,5
 Ba,Abdoullah Ba,Sunderland,MID,0,0,0,0,0,0,0,4.3,0
 Browne,Alan Browne,Sunderland,MID,0,0,0,0,0,0,0,4.5,0
 Ekwah,Pierre Ekwah Elimby,Sunderland,MID,0,0,0,0,0,0,0,4.5,0
@@ -674,23 +674,25 @@ H.Jones,Harrison Jones,Sunderland,MID,0,0,0,0,0,0,0,4.3,0
 Matete,Jay Matete,Sunderland,MID,0,0,0,0,0,0,0,4.3,0
 Triantis,Nectarios Triantis,Sunderland,MID,0,0,0,0,0,0,0,4.4,0
 Isidor,Wilson Isidor,Sunderland,FWD,4,1,4,1056,1,0,60,5.1,7
-Mayenda,Eliezer Mayenda Dossou,Sunderland,FWD,2,0,3,737,0,0,37,5.2,5
+Mayenda,Eliezer Mayenda Dossou,Sunderland,FWD,2,0,3,749,0,0,38,5.2,5
 Abdullahi,Ahmed Abdullahi,Sunderland,FWD,0,0,0,0,0,0,0,4.2,0
 Luís Hemir,Luís Hemir Silva Semedo,Sunderland,FWD,0,0,0,0,0,0,0,4.4,0
 Rusyn,Nazarii Rusyn,Sunderland,FWD,0,0,0,0,0,0,0,4.4,0
-Xhaka,Granit Xhaka,Sunderland,MID,1,5,7,2091,4,0,94,5.1,5
+Xhaka,Granit Xhaka,Sunderland,MID,1,5,7,2181,5,0,95,5.1,5
 Roefs,Robin Roefs,Sunderland,GK,0,0,8,2520,3,0,110,4.8,9
 Masuaku,Arthur Masuaku,Sunderland,DEF,0,0,0,125,1,0,1,3.9,0
-Alderete,Omar Alderete,Sunderland,DEF,1,1,8,2173,5,0,100,4.1,5
+Alderete,Omar Alderete,Sunderland,DEF,1,1,8,2263,5,0,102,4.1,5
 Mukiele,Nordi Mukiele,Sunderland,DEF,1,5,7,2163,4,0,115,4.5,8
-Geertruida,Lutsharel Geertruida,Sunderland,DEF,0,0,2,1231,0,0,41,4.5,0
-Brobbey,Brian Brobbey,Sunderland,FWD,5,1,4,1193,3,0,62,5.4,8
+Geertruida,Lutsharel Geertruida,Sunderland,DEF,0,0,2,1321,0,0,43,4.5,0
+Brobbey,Brian Brobbey,Sunderland,FWD,5,1,4,1270,3,0,64,5.4,8
 Traoré,Bertrand Traoré,Sunderland,MID,1,1,3,634,1,0,30,5.5,1
 Jenson Jones,Jenson Jones,Sunderland,DEF,0,0,0,0,0,0,0,4.0,0
 Tutierov,Tymur Tutierov,Sunderland,MID,0,0,0,0,0,0,0,4.5,0
 Jocelin.T,Djiamgone Jocelin Ta Bi,Sunderland,MID,0,0,0,38,0,0,1,5.0,0
-Ellborg,Melker Ellborg,Sunderland,GK,0,0,1,90,0,0,10,4.0,3
+Ellborg,Melker Ellborg,Sunderland,GK,0,0,1,180,0,0,13,4.0,3
 Angulo,Nilson Angulo,Sunderland,MID,0,0,1,254,0,0,9,5.0,0
+Whittaker,Jack Whittaker,Sunderland,MID,0,0,0,0,0,0,0,4.5,0
+Jones,Jaydon Jones,Sunderland,MID,0,0,0,0,0,0,0,4.5,0
 Vicario,Guglielmo Vicario,Tottenham Hotspur,GK,0,0,7,2610,1,0,85,4.7,6
 Austin,Brandon Austin,Tottenham Hotspur,GK,0,0,0,0,0,0,0,3.9,0
 Kinsky,Antonín Kinský,Tottenham Hotspur,GK,0,0,0,0,0,0,0,3.9,0
@@ -736,22 +738,22 @@ Gallagher,Conor Gallagher,Tottenham Hotspur,MID,0,1,0,577,0,0,19,5.2,0
 Souza,João Victor de Souza Menezes,Tottenham Hotspur,DEF,0,0,0,87,1,0,2,4.0,0
 Kyerematen,Rio Kyerematen,Tottenham Hotspur,MID,0,0,0,0,0,0,0,4.5,0
 Wilson,James Wilson,Tottenham Hotspur,FWD,0,0,0,0,0,0,0,4.5,0
-Adama,Adama Traoré Diarra,West Ham United,MID,0,0,0,288,1,0,21,5.1,0
+Adama,Adama Traoré Diarra,West Ham United,MID,0,0,0,303,1,0,22,5.1,0
 Areola,Alphonse Areola,West Ham United,GK,0,1,0,1800,0,0,51,4.3,2
 Foderingham,Wes Foderingham,West Ham United,GK,0,0,0,0,0,0,0,4.0,0
 Hegyi,Krisztián Hegyi,West Ham United,GK,0,0,0,0,0,0,0,3.9,0
-Diouf,El Hadji Malick Diouf,West Ham United,DEF,0,6,6,1913,4,0,79,4.0,3
+Diouf,El Hadji Malick Diouf,West Ham United,DEF,0,6,6,2003,4,0,81,4.0,3
 Emerson,Emerson Palmieri dos Santos,West Ham United,DEF,0,0,0,0,0,0,0,4.4,0
 Kilman,Maximilian Kilman,West Ham United,DEF,0,0,1,1559,4,0,36,4.1,0
-Mavropanos,Konstantinos Mavropanos,West Ham United,DEF,0,0,3,1722,2,0,62,4.4,0
+Mavropanos,Konstantinos Mavropanos,West Ham United,DEF,1,0,3,1812,2,0,74,4.4,2
 N.Aguerd,Nayef Aguerd,West Ham United,DEF,0,0,0,180,0,0,3,4.4,0
 Scarles,Ollie Scarles,West Ham United,DEF,0,1,0,654,1,0,21,4.3,0
-Todibo,Jean-Clair Todibo,West Ham United,DEF,0,1,1,1611,4,1,40,4.3,1
-Wan-Bissaka,Aaron Wan-Bissaka,West Ham United,DEF,0,3,3,1731,3,0,61,4.1,0
+Todibo,Jean-Clair Todibo,West Ham United,DEF,0,1,1,1701,4,1,44,4.3,1
+Wan-Bissaka,Aaron Wan-Bissaka,West Ham United,DEF,0,3,3,1821,3,0,63,4.1,0
 Casey,Kaelan Casey,West Ham United,DEF,0,0,0,0,0,0,0,4.0,0
 L.Paquetá,Lucas Tolentino Coelho de Lima,West Ham United,MID,4,2,3,1513,5,1,69,5.9,8
-Souček,Tomáš Souček,West Ham United,MID,4,2,4,1416,2,1,73,5.7,6
-Summerville,Crysencio Summerville,West Ham United,MID,5,3,5,1856,4,0,92,5.7,10
+Souček,Tomáš Souček,West Ham United,MID,4,2,4,1506,2,1,77,5.7,6
+Summerville,Crysencio Summerville,West Ham United,MID,5,3,5,1856,4,0,92,5.6,10
 Álvarez,Edson Álvarez Velázquez,West Ham United,MID,0,0,0,0,0,0,0,4.9,0
 Cornet,Maxwel Cornet,West Ham United,MID,0,0,0,0,0,0,0,4.9,0
 G.Rodriguez,Guido Rodríguez,West Ham United,MID,0,0,1,175,1,0,8,4.8,0
@@ -760,22 +762,22 @@ Earthy,George Earthy,West Ham United,MID,0,0,0,8,0,0,1,4.5,0
 Irving,Andy Irving,West Ham United,MID,0,0,0,156,0,0,9,4.3,0
 Orford,Lewis Orford,West Ham United,MID,0,0,0,0,0,0,0,4.4,0
 Potts,Freddie Potts,West Ham United,MID,0,1,1,1094,1,0,34,4.4,0
-Bowen,Jarrod Bowen,West Ham United,FWD,8,6,5,2599,4,0,135,7.5,21
+Bowen,Jarrod Bowen,West Ham United,FWD,8,7,5,2689,4,0,141,7.5,22
 Füllkrug,Niclas Füllkrug,West Ham United,FWD,0,0,1,407,0,0,12,5.6,0
 Marshall,Callum Marshall,West Ham United,FWD,0,0,0,58,0,0,2,4.3,0
 Walker-Peters,Kyle Walker-Peters,West Ham United,DEF,1,0,1,954,2,0,32,4.2,0
 Wilson,Callum Wilson,West Ham United,FWD,5,2,1,992,0,0,64,5.8,7
-Hermansen,Mads Hermansen,West Ham United,GK,0,0,4,810,0,0,40,4.2,8
-M.Fernandes,Mateus Gonçalo Espanha Fernandes,West Ham United,MID,3,3,5,2213,5,0,104,5.5,6
-S.Magassa,Soungoutou Magassa,West Ham United,MID,1,0,2,931,3,0,39,5.0,2
+Hermansen,Mads Hermansen,West Ham United,GK,0,0,4,900,0,0,43,4.2,8
+M.Fernandes,Mateus Gonçalo Espanha Fernandes,West Ham United,MID,3,3,5,2303,6,0,105,5.5,6
+S.Magassa,Soungoutou Magassa,West Ham United,MID,1,0,2,957,4,0,39,5.0,2
 Fabianski,Lukasz Fabianski,West Ham United,GK,0,0,0,0,0,0,0,4.5,0
 Mayers,Ezra Mayers,West Ham United,DEF,0,0,0,113,0,0,6,4.0,0
 Golambeckis,Airidas Golambeckis,West Ham United,DEF,0,0,0,0,0,0,0,4.0,0
-Mohamadou Kanté,Mohamadou Kanté,West Ham United,MID,0,0,0,24,1,0,5,4.5,0
-Pablo,Pablo Felipe Pereira de Jesus,West Ham United,FWD,0,0,0,250,0,0,8,5.4,0
-Taty,Valentín Castellanos,West Ham United,FWD,2,1,4,742,2,0,28,5.5,1
+Mohamadou Kanté,Mohamadou Kanté,West Ham United,MID,0,0,0,25,1,0,6,4.5,0
+Pablo,Pablo Felipe Pereira de Jesus,West Ham United,FWD,0,0,0,313,0,0,10,5.4,0
+Taty,Valentín Castellanos,West Ham United,FWD,2,1,4,816,2,0,30,5.5,1
 Lamadrid,Keiber Lamadrid,West Ham United,MID,0,0,0,0,0,0,0,5.0,0
-Disasi,Axel Disasi,West Ham United,DEF,0,0,3,450,0,0,18,4.5,0
+Disasi,Axel Disasi,West Ham United,DEF,0,0,3,540,0,0,20,4.5,0
 Johnstone,Sam Johnstone,Wolverhampton,GK,0,0,0,1080,0,0,21,4.4,0
 José Sá,José Malheiro de Sá,Wolverhampton,GK,0,0,4,1620,1,0,56,4.2,6
 Bentley,Daniel Bentley,Wolverhampton,GK,0,0,0,0,0,0,0,3.9,0
@@ -817,5 +819,5 @@ Rawlings,Luke Rawlings,Wolverhampton,MID,0,0,0,0,0,0,0,4.5,0
 Ojinnaka,Temple Ojinnaka,Wolverhampton,MID,0,0,0,0,0,0,0,4.5,0
 Sutherland,Ethan Sutherland,Wolverhampton,MID,0,0,0,0,0,0,0,4.5,0
 Abbey,Jerome Abbey,Wolverhampton,MID,0,0,0,0,0,0,0,4.5,0
-Angel,Angel Gomes,Wolverhampton,MID,0,0,1,237,0,0,9,4.8,0
+Angel,Angel Gomes,Wolverhampton,MID,0,0,1,237,0,0,9,4.7,0
 Armstrong,Adam Armstrong,Wolverhampton,FWD,0,2,3,481,2,0,15,5.3,0
