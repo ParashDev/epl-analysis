@@ -495,10 +495,12 @@ def main():
                         return result
 
             # 5. Substring search -- handles "Enzo" matching "enzo fernandez"
+            # Normalize hyphens to spaces so "Smith Rowe" matches "Smith-Rowe"
             candidates = xg_by_team.get(team, [])
-            clean = pname_norm.rstrip('.')
+            clean = pname_norm.rstrip('.').replace('-', ' ')
             for xg_name_norm, data in candidates:
-                if clean in xg_name_norm:
+                xg_clean = xg_name_norm.replace('-', ' ')
+                if clean in xg_clean or xg_clean in clean:
                     return data
 
             return {}
