@@ -725,7 +725,8 @@ def main():
         # -- (c) xG underperformers -- due a breakout --
         # Uses combined G+A vs xG+xA so creators like Bruno Fernandes
         # don't falsely show as underperformers when they assist heavily.
-        attackers = active[active['position'].isin(['MID', 'FWD'])].copy()
+        # Exclude players with 0 xG+xA -- that means xG data is missing, not that they have no expected output.
+        attackers = active[(active['position'].isin(['MID', 'FWD'])) & (active['expected_ga'] > 0)].copy()
         under = attackers[attackers['involvement_diff'] > 0].sort_values('involvement_diff', ascending=False).head(8)
         xg_underperformers = []
         for _, r in under.iterrows():
