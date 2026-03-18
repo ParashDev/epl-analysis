@@ -1,6 +1,6 @@
 # Does Money Buy Points in the Premier League?
 
-Four seasons of English Premier League match data cleaned, enriched with player prices and expected goals, and visualized as an interactive dashboard to answer a simple question: does spending predict success?
+Four seasons of English Premier League match data cleaned, enriched with player prices and expected goals, and visualized as an interactive dashboard. Answers whether spending predicts success, and provides data-driven FPL fantasy transfer recommendations powered by xG analytics.
 
 [Live Demo](https://parashdev.github.io/epl-analysis) | [Data Sources](https://www.football-data.co.uk/)
 
@@ -8,7 +8,7 @@ Four seasons of English Premier League match data cleaned, enriched with player 
 
 Every summer, Premier League clubs pour hundreds of millions into squad building. The conventional wisdom says the biggest spenders win titles. I wanted to test that. Using FPL player prices as a proxy for squad market value, I ran a linear regression against league points for the 2025-26 season. The answer: spending explains just 5.5% of the variance (R-squared = 0.055). Arsenal are 21 points above what their budget predicts. Wolverhampton are 26 points below.
 
-Along the way, I built a full ETL pipeline that handles 4 seasons of match data, player statistics, and expected goals -- robust enough to run against a live, in-progress season without breaking.
+Along the way, I built a full ETL pipeline that handles 4 seasons of match data, player statistics, and expected goals -- robust enough to run against a live, in-progress season without breaking. The same data powers an FPL Fantasy Picks section that identifies value picks, breakout candidates, regression risks, and budget differentials using combined G+A vs xG+xA analysis.
 
 ## Project Structure
 
@@ -73,7 +73,7 @@ The dashboard works with only match data. If FPL or xG scripts fail (network iss
 |---|---|
 | Data Cleansing | Stripped BOM encoding, dropped 96+ betting columns from 133, standardized dates across 4 formats, unified team names across 3 sources with different abbreviation conventions |
 | ETL Pipeline | 4-script pipeline with config-driven seasons, graceful degradation when enrichment sources fail, NaN sanitization for JSON serialization, live season support |
-| Statistical Analysis | Linear regression of squad value vs league points, R-squared calculation, over/underperformance residuals, per-90-minute rate statistics |
+| Statistical Analysis | Linear regression of squad value vs league points, R-squared calculation, over/underperformance residuals, per-90-minute rate statistics, FPL recommendation scoring |
 | API Integration | FPL live API for player stats and prices, Understat via package + scraping fallback, rate limiting, 24-hour cache |
 | Data Visualization | 14+ interactive charts and tables (league standings, points race, xG scatter, money scatter, player leaderboards, scoreline heatmap), responsive dark theme, conditional rendering |
 | Documentation | Cleaning decision log with WHY not WHAT, ASCII architecture diagrams, "Why Not Tool X" justifications |
@@ -87,7 +87,8 @@ The dashboard works with only match data. If FPL or xG scripts fail (network iss
 5. **Money vs Points** -- Squad value scatter plot with regression line, over/underperformance bar chart, R-squared KPI
 6. **xG Analysis** -- Expected vs actual goals, top scorers vs xG, shot quality by team
 7. **Player Leaderboards** -- Top scorers, assist leaders, best value (G+A per million), most booked, iron men (most minutes per team), goals by position breakdown
-8. **The Takeaway** -- Summary, "What I Would Do Differently", tools used
+8. **FPL Fantasy Picks** -- Best XI pitch visualization with formation selector (4-3-3, 3-5-2, 4-4-2, 3-4-3, 5-3-2, 5-4-1), value picks (points per million), xG breakout candidates, regression risks, budget differentials
+9. **The Takeaway** -- Summary, "What I Would Do Differently", tools used
 
 ## Data Sources
 

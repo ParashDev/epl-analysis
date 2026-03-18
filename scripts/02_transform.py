@@ -627,6 +627,172 @@ def main():
         }
         print(f"Player leaderboards: {len(goal_scorers)} scorers, {len(assist_leaders)} assisters, {len(iron_men)} iron men")
 
+    # -- CONDITIONAL: FPL FANTASY RECOMMENDATIONS ----------------------------
+    # Merges FPL player data with Understat xG to produce actionable
+    # fantasy transfer recommendations. Requires both data sources.
+    fpl_picks = None
+
+    if has_fpl and has_xg and players_df is not None and xg_players_df is not None:
+        fpl = players_df.copy()
+        active = fpl[(fpl['minutes'] >= 450) & (fpl['price'] > 0)].copy()
+
+        # Enrich each player with xG data using the name-matching logic above
+        for idx, row in active.iterrows():
+            xg_data = enrich(row)
+            active.at[idx, 'xg'] = xg_data.get('xg', 0) or 0
+            active.at[idx, 'xa'] = xg_data.get('xa', 0) or 0
+            active.at[idx, 'shots'] = xg_data.get('shots', 0) or 0
+            active.at[idx, 'key_passes'] = xg_data.get('key_passes', 0) or 0
+
+        active['points_per_million'] = (active['total_points'] / active['price']).round(2)
+        active['points_per_90'] = active.apply(
+            lambda r: safe_float(r['total_points'] / r['minutes'] * 90) if r['minutes'] >= 90 else 0, axis=1
+        )
+        active['ga'] = active['goals'] + active['assists']
+        active['expected_ga'] = (active['xg'] + active['xa']).round(2)
+        # Combined involvement gap: (xG+xA) - (G+A). Positive = underperforming overall.
+        active['involvement_diff'] = (active['expected_ga'] - active['ga']).round(2)
+
+        # Clean sheet rate for DEF/GK (per game based on minutes)
+        active['cs_rate'] = active.apply(
+            lambda r: safe_float(r['clean_sheets'] / (r['minutes'] / 90)) if r['minutes'] >= 90 else 0, axis=1
+        )
+
+        # -- (a) Top picks by position --
+        def normalize_series_fpl(series):
+            if series.max() == series.min():
+                return pd.Series([50.0] * len(series), index=series.index)
+            return ((series - series.min()) / (series.max() - series.min()) * 100).round(2)
+
+        top_picks_by_position = {}
+        for pos in ['GK', 'DEF', 'MID', 'FWD']:
+            pos_df = active[active['position'] == pos].copy()
+            if pos_df.empty:
+                top_picks_by_position[pos] = []
+                continue
+
+            ppm_norm = normalize_series_fpl(pos_df['points_per_million'])
+            pp90_norm = normalize_series_fpl(pos_df['points_per_90'])
+
+            if pos in ('GK', 'DEF'):
+                # Value clean sheets for defensive positions
+                extra_norm = normalize_series_fpl(pos_df['cs_rate'])
+            else:
+                # Value xG outperformance for attacking positions
+                # Higher xg_diff means underperforming (room to improve) -- invert
+                extra_norm = normalize_series_fpl(pos_df['ga'].astype(float))
+
+            pos_df['fpl_score'] = (ppm_norm * 0.40 + pp90_norm * 0.30 + extra_norm * 0.30).round(2)
+            pos_df = pos_df.sort_values('fpl_score', ascending=False).head(5)
+
+            picks = []
+            for rank, (_, r) in enumerate(pos_df.iterrows(), 1):
+                picks.append({
+                    "rank": rank,
+                    "player_name": safe_str(r['player_name']),
+                    "team": safe_str(r['team']),
+                    "position": pos,
+                    "price": safe_float(r['price'], 1),
+                    "total_points": safe_int(r['total_points']),
+                    "points_per_million": safe_float(r['points_per_million']),
+                    "goals": safe_int(r['goals']),
+                    "assists": safe_int(r['assists']),
+                    "clean_sheets": safe_int(r['clean_sheets']),
+                    "minutes": safe_int(r['minutes']),
+                    "xg": safe_float(r['xg']),
+                    "xa": safe_float(r['xa']),
+                    "fpl_score": safe_float(r['fpl_score']),
+                })
+            top_picks_by_position[pos] = picks
+
+        # -- (b) Value picks -- best points per million across all positions --
+        value_sorted = active.sort_values('points_per_million', ascending=False).head(10)
+        value_picks = []
+        for rank, (_, r) in enumerate(value_sorted.iterrows(), 1):
+            value_picks.append({
+                "rank": rank,
+                "player_name": safe_str(r['player_name']),
+                "team": safe_str(r['team']),
+                "position": safe_str(r['position']),
+                "price": safe_float(r['price'], 1),
+                "total_points": safe_int(r['total_points']),
+                "points_per_million": safe_float(r['points_per_million']),
+                "goals": safe_int(r['goals']),
+                "assists": safe_int(r['assists']),
+                "minutes": safe_int(r['minutes']),
+            })
+
+        # -- (c) xG underperformers -- due a breakout --
+        # Uses combined G+A vs xG+xA so creators like Bruno Fernandes
+        # don't falsely show as underperformers when they assist heavily.
+        attackers = active[active['position'].isin(['MID', 'FWD'])].copy()
+        under = attackers[attackers['involvement_diff'] > 0].sort_values('involvement_diff', ascending=False).head(8)
+        xg_underperformers = []
+        for _, r in under.iterrows():
+            xg_underperformers.append({
+                "player_name": safe_str(r['player_name']),
+                "team": safe_str(r['team']),
+                "position": safe_str(r['position']),
+                "price": safe_float(r['price'], 1),
+                "goals": safe_int(r['goals']),
+                "assists": safe_int(r['assists']),
+                "ga": safe_int(r['ga']),
+                "xg": safe_float(r['xg']),
+                "xa": safe_float(r['xa']),
+                "expected_ga": safe_float(r['expected_ga']),
+                "diff": safe_float(r['involvement_diff']),
+                "minutes": safe_int(r['minutes']),
+                "shots": safe_int(r['shots']),
+            })
+
+        # -- (d) xG overperformers -- regression risk --
+        over = attackers[attackers['involvement_diff'] < 0].copy()
+        over['over_diff'] = -over['involvement_diff']
+        over = over.sort_values('over_diff', ascending=False).head(8)
+        xg_overperformers = []
+        for _, r in over.iterrows():
+            xg_overperformers.append({
+                "player_name": safe_str(r['player_name']),
+                "team": safe_str(r['team']),
+                "position": safe_str(r['position']),
+                "price": safe_float(r['price'], 1),
+                "goals": safe_int(r['goals']),
+                "assists": safe_int(r['assists']),
+                "ga": safe_int(r['ga']),
+                "xg": safe_float(r['xg']),
+                "xa": safe_float(r['xa']),
+                "expected_ga": safe_float(r['expected_ga']),
+                "diff": safe_float(-r['involvement_diff']),
+                "minutes": safe_int(r['minutes']),
+            })
+
+        # -- (e) Differential picks -- budget gems under 7m --
+        budget = active[active['price'] < 7.0].sort_values('points_per_million', ascending=False).head(8)
+        differential_picks = []
+        for rank, (_, r) in enumerate(budget.iterrows(), 1):
+            differential_picks.append({
+                "rank": rank,
+                "player_name": safe_str(r['player_name']),
+                "team": safe_str(r['team']),
+                "position": safe_str(r['position']),
+                "price": safe_float(r['price'], 1),
+                "total_points": safe_int(r['total_points']),
+                "points_per_million": safe_float(r['points_per_million']),
+                "goals": safe_int(r['goals']),
+                "assists": safe_int(r['assists']),
+            })
+
+        fpl_picks = {
+            "top_picks_by_position": top_picks_by_position,
+            "value_picks": value_picks,
+            "xg_underperformers": xg_underperformers,
+            "xg_overperformers": xg_overperformers,
+            "differential_picks": differential_picks,
+        }
+
+        total_recs = sum(len(v) for v in top_picks_by_position.values()) + len(value_picks) + len(xg_underperformers) + len(xg_overperformers) + len(differential_picks)
+        print(f"FPL picks: {total_recs} recommendations across 5 categories")
+
     # -- CONDITIONAL: MONEY VS POINTS ---------------------------------------
     # The core thesis: does squad spending predict league position?
     # FPL player prices are a proxy for market value. Sum per team = squad value.
@@ -714,6 +880,7 @@ def main():
         "shot_quality": shot_quality,
         "player_value": player_value,
         "player_leaderboards": player_leaderboards,
+        "fpl_picks": fpl_picks,
         "money_vs_points": money_vs_points,
     }
 
